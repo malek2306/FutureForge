@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLController">
+   <children>
+      <Button fx:id="up" layoutX="275.0" layoutY="129.0" mnemonicParsing="false" onAction="#goToSignup" text="Sign_up" />
+      <Button fx:id="in" layoutX="275.0" layoutY="175.0" mnemonicParsing="false" text="Sign_in" />
+      <Label layoutX="272.0" layoutY="14.0" text="WELCOME" />
+      <Button fx:id="admin" layoutX="532.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToAdmin" text="Admin" />
+   </children>
+</AnchorPane>
