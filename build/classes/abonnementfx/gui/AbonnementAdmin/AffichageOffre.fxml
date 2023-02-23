@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="685.0" prefWidth="1345.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="abonnementfx.gui.AbonnementAdmin.AffichageOffreController">
+   <children>
+      <TableView fx:id="tableOffre" layoutX="394.0" layoutY="173.0" onMouseClicked="#getDetailOffer" prefHeight="333.0" prefWidth="474.0" />
+      <Text fill="#ff730e" layoutX="468.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Offres" textAlignment="CENTER" wrappingWidth="335.50048828125">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
+      <Pane fx:id="paneOption" layoutX="3.0" layoutY="111.0" prefHeight="444.0" prefWidth="229.0" />
+      <Button layoutX="550.0" layoutY="562.0" mnemonicParsing="false" onAction="#addOffre" prefHeight="52.0" prefWidth="127.0" style="-fx-background-color: #2abf39;" text="Add Offre" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button layoutX="942.0" layoutY="562.0" mnemonicParsing="false" onAction="#modifierOffer" prefHeight="52.0" prefWidth="175.0" style="-fx-background-color: #e4b339;" text="Modifier Offre" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button layoutX="1138.0" layoutY="562.0" mnemonicParsing="false" onAction="#deleteOffre" prefHeight="52.0" prefWidth="175.0" style="-fx-background-color: #e08686;" text="Delete Offre" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <TextField fx:id="nom" layoutX="1108.0" layoutY="160.0" />
+      <Text layoutX="937.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" textAlignment="CENTER" wrappingWidth="76.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="description" layoutX="1108.0" layoutY="208.0" />
+      <Text layoutX="942.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" textAlignment="CENTER" wrappingWidth="126.99999189376831">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="reduction" layoutX="1108.0" layoutY="260.0" prefHeight="31.0" prefWidth="69.0" />
+      <Text layoutX="940.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reduction" textAlignment="CENTER" wrappingWidth="115.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="932.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" textAlignment="CENTER" wrappingWidth="76.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="1179.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\%" textAlignment="CENTER" wrappingWidth="44.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="type" layoutX="1108.0" layoutY="308.0" prefHeight="31.0" prefWidth="187.0" />
+      <Text layoutX="942.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Début" textAlignment="CENTER" wrappingWidth="127.00001195073128">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="941.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Fin" textAlignment="CENTER" wrappingWidth="97.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="dateD" layoutX="1108.0" layoutY="358.0" prefHeight="31.0" prefWidth="187.0" />
+      <DatePicker fx:id="dateF" layoutX="1108.0" layoutY="407.0" prefHeight="31.0" prefWidth="187.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="1253.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="abonnementfx.gui.AbonnementEtudent.AffichageOffreController">
+   <children>
+      <TableView fx:id="tableOffre" layoutX="126.0" layoutY="99.0" onMouseClicked="#choisirOffre" prefHeight="351.0" prefWidth="662.0" />
+      <Text fill="#ff730e" layoutX="324.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Offres" textAlignment="CENTER" wrappingWidth="251.50048828125">
+         <font>
+            <Font size="52.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="imgEtudiant" fitHeight="104.0" fitWidth="189.0" layoutX="1035.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="nom" layoutX="1035.0" layoutY="244.0" />
+      <Text layoutX="864.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" textAlignment="CENTER" wrappingWidth="76.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="prenom" layoutX="1035.0" layoutY="279.0" />
+      <Text layoutX="864.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom" textAlignment="CENTER" wrappingWidth="76.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="email" layoutX="1035.0" layoutY="311.0" />
+      <Text layoutX="864.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER" wrappingWidth="76.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="identifiant" layoutX="1035.0" layoutY="343.0" />
+      <Text layoutX="852.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identifiant" textAlignment="CENTER" wrappingWidth="110.9999930858612">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="cin" layoutX="1035.0" layoutY="375.0" />
+      <Text layoutX="859.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CIN" textAlignment="CENTER" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="859.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" textAlignment="CENTER" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="type" layoutX="1035.0" layoutY="408.0" onAction="#typeChangerd" prefHeight="31.0" prefWidth="187.0" />
+      <DatePicker fx:id="dateD" layoutX="1035.0" layoutY="441.0" prefHeight="31.0" prefWidth="187.0" />
+      <DatePicker fx:id="dateF" layoutX="1035.0" layoutY="474.0" prefHeight="31.0" prefWidth="187.0" />
+      <Text layoutX="831.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date debut" textAlignment="CENTER" wrappingWidth="156.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="859.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Fin" textAlignment="CENTER" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="373.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix sans reduction" textAlignment="CENTER" wrappingWidth="228.9999969303608">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="idOffre" layoutX="1035.0" layoutY="517.0" />
+      <Text layoutX="854.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id offre " textAlignment="CENTER" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="682.0" layoutY="510.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dinar" textAlignment="CENTER" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="prixSR" layoutX="581.0" layoutY="510.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="351.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reduction" textAlignment="CENTER" wrappingWidth="228.9999969303608">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="681.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dinar" textAlignment="CENTER" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="reduction" fill="#1ab215" layoutX="580.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="352.0" layoutY="581.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix A payer" textAlignment="CENTER" wrappingWidth="228.9999969303608">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="682.0" layoutY="582.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dinar" textAlignment="CENTER" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="prixAR" fill="RED" layoutX="576.0" layoutY="616.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Button fx:id="addBTN" layoutX="932.0" layoutY="578.0" mnemonicParsing="false" onAction="#addAbonnement" prefHeight="52.0" prefWidth="212.0" style="-fx-background-color: #2abf39;" text="Add Abonnement" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Text layoutX="864.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image" textAlignment="CENTER" wrappingWidth="76.50048828125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Button layoutX="1035.0" layoutY="90.0" mnemonicParsing="false" onAction="#ajouterImage" prefHeight="31.0" prefWidth="187.0" text="Import Image" />
+      <Button layoutX="53.0" layoutY="477.0" mnemonicParsing="false" onAction="#sansOffre" prefHeight="52.0" prefWidth="212.0" style="-fx-background-color: #a1a1a1;" text="Sans Offre">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <TextField fx:id="identifiantModifier" layoutX="1035.0" layoutY="36.0" prefHeight="31.0" prefWidth="131.0" />
+      <Text layoutX="849.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identifiant" textAlignment="CENTER" wrappingWidth="110.9999930858612">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Button layoutX="1190.0" layoutY="36.0" mnemonicParsing="false" onAction="#searchAbonnement" text="Search" />
+      <Button fx:id="modifierBTN" layoutX="844.0" layoutY="578.0" mnemonicParsing="false" onAction="#ModifierAbonnement" prefHeight="52.0" prefWidth="178.0" style="-fx-background-color: #e4b339;" text="Modifier" textFill="WHITE" visible="false">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="annulerBTN" layoutX="1091.0" layoutY="578.0" mnemonicParsing="false" onAction="#annulerAbonnement" prefHeight="52.0" prefWidth="178.0" style="-fx-background-color: #a1a1a1;" text="Annuler" textFill="WHITE" visible="false">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

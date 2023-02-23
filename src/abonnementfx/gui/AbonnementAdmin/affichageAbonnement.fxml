@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="685.0" prefWidth="1345.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="abonnementfx.gui.AbonnementAdmin.AffichageAbonnementController">
+   <children>
+      <TableView fx:id="tableAbonnement" layoutX="253.0" layoutY="150.0" onMouseClicked="#afficherImgEtudent" prefHeight="447.0" prefWidth="726.0" />
+      <Text fill="#ff730e" layoutX="391.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Abonnements" textAlignment="CENTER" wrappingWidth="445.50048828125">
+         <font>
+            <Font size="52.0" />
+         </font>
+      </Text>
+      <Pane fx:id="paneOption" layoutX="3.0" layoutY="111.0" prefHeight="444.0" prefWidth="229.0" />
+      <Button layoutX="1044.0" layoutY="606.0" mnemonicParsing="false" onAction="#deleteAbonnement" prefHeight="52.0" prefWidth="229.0" style="-fx-background-color: #e08686;" text="Delete Abonnement" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="imgEtudiant" fitHeight="218.0" fitWidth="312.0" layoutX="991.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
