@@ -6,6 +6,7 @@
 package GUI;
 
 import entities.User;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -23,11 +24,16 @@ import service.ServiceUser;
 import util.Data;
 import java.sql.Connection;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -54,6 +60,25 @@ public class AdminController implements Initializable {
     private TextField uname;
     @FXML
     private Button delete;
+    @FXML
+    private Button modify;
+    @FXML
+    private TextField nom1;
+    private TextField id;
+    @FXML
+    private TextField prenom1;
+    @FXML
+    private TextField uname1;
+    @FXML
+    private TextField email1;
+    @FXML
+    private TextField tel1;
+    @FXML
+    private Button GoBack;
+    @FXML
+    private TextField role;
+    @FXML
+    private TextField role1;
 
     //ObservableList<String> list = FXCollections.observableArrayList("s","ss");
     /**
@@ -65,7 +90,7 @@ public class AdminController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //listview.setItems(list);
-        int id=0;
+        int id = 0;
         ServiceUser sp = new ServiceUser();
         List arr = sp.getAll();
         ObservableList<User> UserList = FXCollections.observableArrayList(arr);
@@ -91,13 +116,21 @@ public class AdminController implements Initializable {
         ServiceUser sp = new ServiceUser();
         String un = list.getSelectionModel().getSelectedItem();
         User u = sp.getOneByUsername(un);
-        int id=u.getId();
         nom.setText(u.getNom());
+        nom1.setText(u.getNom());
         prenom.setText(u.getPrenom());
+        prenom1.setText(u.getPrenom());
         email.setText(u.getEmail());
+        email1.setText(u.getEmail());
         tel.setText(u.getTel());
+        tel1.setText(u.getTel());
         mdp.setText(u.getMdp());
         uname.setText(u.getUsername());
+        uname1.setText(u.getUsername());
+        role.setText(u.getRole());
+        role1.setText(u.getRole());
+        id.setText(""+u.getId());
+        System.out.println(id);
     }
 
     @FXML
@@ -110,6 +143,75 @@ public class AdminController implements Initializable {
             sp.supprimerusername(uname.getText());
             list.refresh();
         }
+    }
+
+    @FXML
+    private void ModifyUser(ActionEvent event) {
+        Alert a = new Alert(Alert.AlertType.INFORMATION, "Done", ButtonType.OK);
+        ServiceUser su = new ServiceUser();
+        System.out.println(nom.getText());
+        System.out.println(nom1.getText());
+        if (!nom.getText().equals(nom1.getText())) {
+            Alert alert = new Alert(AlertType.CONFIRMATION, "tu es sûr de vouloir changer le nom de " + uname.getText() + " ?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+            alert.showAndWait();
+            if (alert.getResult() == ButtonType.YES) {
+                User um = new User(Integer.parseInt(id.getText()),nom1.getText(), prenom.getText(), uname.getText(), email.getText(), tel.getText(), mdp.getText(), role.getText());
+                System.out.println(um);
+                su.modifier(um);
+                a.show();
+            }
+        }
+        if (!prenom.getText().equals(prenom1.getText())) {
+            Alert alert = new Alert(AlertType.CONFIRMATION, "tu es sûr de vouloir changer le prenom de " + uname.getText() + " ?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+            alert.showAndWait();
+            if (alert.getResult() == ButtonType.YES) {
+                User um = new User(Integer.parseInt(id.getText()),nom.getText(), prenom1.getText(), uname.getText(), email.getText(), tel.getText(), mdp.getText(), role.getText());
+                System.out.println(um);
+                su.modifier(um);
+                a.show();
+            }
+        }
+        if (!email.getText().equals(email1.getText())) {
+            Alert alert = new Alert(AlertType.CONFIRMATION, "tu es sûr de vouloir changer l' email de " + uname.getText() + " ?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+            alert.showAndWait();
+            if (alert.getResult() == ButtonType.YES) {
+                User um = new User(Integer.parseInt(id.getText()),nom.getText(), prenom.getText(), uname.getText(), email1.getText(), tel.getText(), mdp.getText(), role.getText());
+                System.out.println(um);
+                su.modifier(um);
+                a.show();
+            }
+        }
+        if (!tel.getText().equals(tel1.getText())) {
+            Alert alert = new Alert(AlertType.CONFIRMATION, "tu es sûr de vouloir changer le tel de " + uname.getText() + " ?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+            alert.showAndWait();
+            if (alert.getResult() == ButtonType.YES) {
+                User um = new User(Integer.parseInt(id.getText()),nom.getText(), prenom.getText(), uname.getText(), email.getText(), tel1.getText(), mdp.getText(), role.getText());
+                System.out.println(um);
+                su.modifier(um);
+                a.show();
+            }
+        }
+        if (!uname.getText().equals(uname1.getText()) && su.isUsernameTaken(uname1.getText())) {
+            Alert alert = new Alert(AlertType.CONFIRMATION, "tu es sûr de vouloir changer le username de " + uname.getText() + " ?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+            alert.showAndWait();
+            if (alert.getResult() == ButtonType.YES) {
+                User um = new User(Integer.parseInt(id.getText()),nom.getText(), prenom.getText(), uname1.getText(), email.getText(), tel.getText(), mdp.getText(), role.getText());
+                System.out.println(um);
+                su.modifier(um);
+                a.show();
+            }
+        }
+        else
+        {uname.setStyle("-fx-border-color: red;");}
+    }
+
+    @FXML
+    private void GoHome(ActionEvent event) throws IOException {
+        Parent homPage= FXMLLoader.load(getClass().getResource("FXML.fxml"));
+        Scene homaepageScene = new Scene(homPage);
+        Stage appStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        appStage.setScene(homaepageScene);
+        appStage.show();
     }
 
 }

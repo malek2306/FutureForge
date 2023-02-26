@@ -10,8 +10,8 @@ package entities;
  * @author Name
  */
 public class Admin extends User {
-    public Admin(String nom, String prenom, String email, String tel) {
-        super (nom,prenom,email,tel);
+    public Admin(String nom,String prenom , String username, String email, String tel,String mdp,String role) {
+        super (nom,prenom , username, email, tel,mdp,role);
     }
     
 }

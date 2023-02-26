@@ -63,5 +63,14 @@ public class FXMLController implements Initializable {
         appStage.setScene(homaepageScene);
         appStage.show();
     }
+
+    @FXML
+    private void goToSignin(ActionEvent event) throws IOException {
+        Parent homPage= FXMLLoader.load(getClass().getResource("login.fxml"));
+        Scene homaepageScene = new Scene(homPage);
+        Stage appStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        appStage.setScene(homaepageScene);
+        appStage.show();
+    }
     
 }

@@ -6,9 +6,10 @@
 package service;
 
 import entities.User;
+import entities.Etudiant;
 import entities.Admin;
-import entities.User.Etudiant;
-import entities.User.Etudiant_m;
+import entities.Etudiantm;
+
 import util.Data;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -36,7 +37,7 @@ public class ServiceUser {
         if (u instanceof Etudiant) {
             role = "Etudiant";
         }
-        if (u instanceof Etudiant_m) {
+        if (u instanceof Etudiantm) {
             role = "Etudiant_m";
         }
         try {
@@ -97,7 +98,7 @@ public class ServiceUser {
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
-                User p = new User(rs.getInt(1), rs.getString("nom_u"), rs.getString("prenom_u"), rs.getString("user_name"), rs.getString("email_u"), rs.getString("tel_u"), rs.getString("password_u"));
+                User p = new User(rs.getInt(1), rs.getString("nom_u"), rs.getString("prenom_u"), rs.getString("user_name"), rs.getString("email_u"), rs.getString("tel_u"), rs.getString("password_u"), rs.getString("role_u"));
                 list.add(p);
             }
         } catch (SQLException ex) {
@@ -114,7 +115,7 @@ public class ServiceUser {
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
-               p = new User(rs.getInt(1), rs.getString("nom_u"), rs.getString("prenom_u"), rs.getString("user_name"), rs.getString("email_u"), rs.getString("tel_u"), rs.getString("password_u"));
+               p = new User(rs.getInt(1), rs.getString("nom_u"), rs.getString("prenom_u"), rs.getString("user_name"), rs.getString("email_u"), rs.getString("tel_u"), rs.getString("password_u"), rs.getString("role_u"));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -130,7 +131,7 @@ public class ServiceUser {
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
-            p = new User(resultSet.getInt(1), resultSet.getString("nom_u"), resultSet.getString("prenom_u"), resultSet.getString("user_name"), resultSet.getString("email_u"), resultSet.getString("tel_u"), resultSet.getString("password_u"));
+            p = new User(resultSet.getInt(1), resultSet.getString("nom_u"), resultSet.getString("prenom_u"), resultSet.getString("user_name"), resultSet.getString("email_u"), resultSet.getString("tel_u"), resultSet.getString("password_u"), resultSet.getString("role_u"));
         } catch (SQLException e) {
             System.err.println("Error checking username: " + e.getMessage());
         }

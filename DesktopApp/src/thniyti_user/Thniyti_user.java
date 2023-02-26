@@ -11,7 +11,7 @@ import service.ServiceUser;
 import util.Data;
 /**
  *
- * @author Name
+ * @ayachizakaria
  */
 public class Thniyti_user {
 
@@ -26,8 +26,8 @@ public class Thniyti_user {
         //sp.ajouter(u2);
         //sp.supprimer(5);
         //update
-        //User pm = new User(6,"admin","ADMIN","sa@sa","123");
-        //sp.modifier(pm);
+        User pm = new User(40,"tests","test","test","test@test.test","123","Q4D+0YqIj+WcZQML6kUbrT35HdTE0cP+OJAn4YxtBik=");
+        sp.modifier(pm);
         
         //affichage
         //sp.getAll();

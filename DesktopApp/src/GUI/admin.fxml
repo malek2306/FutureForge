@@ -8,14 +8,22 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AdminController">
    <children>
-      <ListView fx:id="list" layoutX="93.0" layoutY="39.0" onMouseClicked="#OnMouseClick" prefHeight="323.0" prefWidth="149.0" />
-      <TextField fx:id="nom" layoutX="300.0" layoutY="65.0" promptText="Nom" />
-      <TextField fx:id="prenom" layoutX="300.0" layoutY="98.0" promptText="Prenom" />
-      <TextField fx:id="email" layoutX="300.0" layoutY="170.0" promptText="Email" />
-      <TextField fx:id="tel" layoutX="300.0" layoutY="205.0" promptText="Tel" />
-      <PasswordField fx:id="mdp" layoutX="300.0" layoutY="242.0" promptText="mot de passe" />
-      <TextField fx:id="uname" layoutX="300.0" layoutY="136.0" promptText="Username" />
-      <Button fx:id="delete" layoutX="300.0" layoutY="275.0" mnemonicParsing="false" onAction="#DeleteUser" text="Delete" />
-      <Button fx:id="modify" layoutX="398.0" layoutY="275.0" mnemonicParsing="false" onAction="#DeleteUser" text="Modify" />
+      <TextField fx:id="tel1" layoutX="300.0" layoutY="194.0" promptText="Tel" />
+      <TextField fx:id="email1" layoutX="300.0" layoutY="162.0" promptText="Email" />
+      <TextField fx:id="uname1" layoutX="300.0" layoutY="128.0" promptText="Username" />
+      <TextField fx:id="prenom1" layoutX="300.0" layoutY="94.0" promptText="Prenom" />
+      <ListView fx:id="list" layoutX="131.0" layoutY="26.0" onMouseClicked="#OnMouseClick" prefHeight="264.0" prefWidth="149.0" />
+      <TextField fx:id="nom" layoutX="300.0" layoutY="61.0" promptText="Nom" />
+      <TextField fx:id="prenom" layoutX="300.0" layoutY="94.0" promptText="Prenom" />
+      <TextField fx:id="email" layoutX="300.0" layoutY="162.0" promptText="Email" />
+      <TextField fx:id="tel" layoutX="300.0" layoutY="194.0" promptText="Tel" />
+      <PasswordField fx:id="mdp" layoutX="300.0" layoutY="227.0" promptText="mot de passe" />
+      <TextField fx:id="uname" layoutX="300.0" layoutY="128.0" promptText="Username" />
+      <Button fx:id="delete" layoutX="131.0" layoutY="300.0" mnemonicParsing="false" onAction="#DeleteUser" prefHeight="16.0" prefWidth="149.0" text="Delete" />
+      <Button fx:id="modify" layoutX="300.0" layoutY="300.0" mnemonicParsing="false" onAction="#ModifyUser" prefHeight="25.0" prefWidth="149.0" text="Modify" />
+      <TextField fx:id="nom1" layoutX="300.0" layoutY="61.0" promptText="Nom" />
+      <Button fx:id="GoBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoHome" text="&lt;---" />
+      <TextField fx:id="role" layoutX="300.0" layoutY="265.0" promptText="role" />
+      <TextField fx:id="role1" layoutX="300.0" layoutY="265.0" promptText="role" />
    </children>
 </AnchorPane>
