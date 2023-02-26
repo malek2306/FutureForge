@@ -84,9 +84,9 @@ public class LoginController implements Initializable {
                     appStage.setScene(homaepageScene);
                     appStage.show();
                 }
-            } else {
+            } 
+        }else {
                 wrong_user.setText("User nexiste pas!!");
             }
-        }
     }
 }

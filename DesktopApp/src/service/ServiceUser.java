@@ -41,7 +41,7 @@ public class ServiceUser {
             role = "Etudiant_m";
         }
         try {
-            String req = "INSERT INTO `user` (`nom_u`, `prenom_u`, `email_u`, `tel_u`, `role_u`, `password_u`, `user_name`) VALUES ('" + u.getNom() + "', '" + u.getPrenom() + "', '" + u.getEmail() + "', '" + u.getTel() + "', '" +role+ "', '" + u.getMdp() + "', '" + u.getUsername() + "')";
+            String req = "INSERT INTO `user` (`nom_u`, `prenom_u`, `email_u`, `tel_u`, `role_u`, `password_u`, `user_name`) VALUES ('" + u.getNom() + "', '" + u.getPrenom() + "', '" + u.getEmail() + "', '" + u.getTel() + "', '" + role + "', '" + u.getMdp() + "', '" + u.getUsername() + "')";
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
             System.out.println("User created !");
@@ -49,6 +49,7 @@ public class ServiceUser {
             System.out.println(ex.getMessage());
         }
     }
+
     /*public void ajouter2(User u) {
         try {
             String req = "INSERT INTO `user` (`nom`, `prenom`) VALUES (?,?)";
@@ -70,16 +71,18 @@ public class ServiceUser {
             System.out.println(ex.getMessage());
         }
     }
-    public void supprimerusername(String username) {
-        String req  = "DELETE FROM `User` WHERE user_name = ?";
 
-        try (PreparedStatement statement = cnx.prepareStatement(req )) {
+    public void supprimerusername(String username) {
+        String req = "DELETE FROM `User` WHERE user_name = ?";
+
+        try (PreparedStatement statement = cnx.prepareStatement(req)) {
             statement.setString(1, username);
             statement.executeUpdate();
         } catch (SQLException e) {
             System.err.println("Error checking username: " + e.getMessage());
         }
     }
+
     public void modifier(User u) {
         try {
             String req = "UPDATE `User` SET `nom_u` = '" + u.getNom() + "', `prenom_u` = '" + u.getPrenom() + "', `email_u` = '" + u.getEmail() + "', `tel_u` = '" + u.getTel() + "' WHERE `user`.`id_user` = " + u.getId();
@@ -115,7 +118,7 @@ public class ServiceUser {
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
-               p = new User(rs.getInt(1), rs.getString("nom_u"), rs.getString("prenom_u"), rs.getString("user_name"), rs.getString("email_u"), rs.getString("tel_u"), rs.getString("password_u"), rs.getString("role_u"));
+                p = new User(rs.getInt(1), rs.getString("nom_u"), rs.getString("prenom_u"), rs.getString("user_name"), rs.getString("email_u"), rs.getString("tel_u"), rs.getString("password_u"), rs.getString("role_u"));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -123,11 +126,12 @@ public class ServiceUser {
 
         return p;
     }
+
     public User getOneByUsername(String username) {
         User p = null;
-        String req  = "SELECT * FROM user WHERE user_name = ?";
+        String req = "SELECT * FROM user WHERE user_name = ?";
 
-        try (PreparedStatement statement = cnx.prepareStatement(req )) {
+        try (PreparedStatement statement = cnx.prepareStatement(req)) {
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
@@ -137,11 +141,12 @@ public class ServiceUser {
         }
         return p;
     }
+
     public boolean isUsernameTaken(String username) {
         boolean isTaken = false;
-        String req  = "SELECT COUNT(*) FROM user WHERE user_name = ?";
+        String req = "SELECT COUNT(*) FROM user WHERE user_name = ?";
 
-        try (PreparedStatement statement = cnx.prepareStatement(req )) {
+        try (PreparedStatement statement = cnx.prepareStatement(req)) {
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
@@ -155,11 +160,12 @@ public class ServiceUser {
         }
         return isTaken;
     }
+
     public boolean isEmailTaken(String email) {
         boolean isTaken = false;
-        String req  = "SELECT COUNT(*) FROM user WHERE email_u = ?";
+        String req = "SELECT COUNT(*) FROM user WHERE email_u = ?";
 
-        try (PreparedStatement statement = cnx.prepareStatement(req )) {
+        try (PreparedStatement statement = cnx.prepareStatement(req)) {
             statement.setString(1, email);
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
@@ -173,4 +179,19 @@ public class ServiceUser {
         }
         return isTaken;
     }
-} 
+
+    public int countEtudiantUsers() throws SQLException {
+        String req = "SELECT COUNT(*) FROM user WHERE role_u <> ?";
+        int count = 0;
+        try (PreparedStatement statement = cnx.prepareStatement(req)) {
+            statement.setString(1, "Admin");
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                count = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error checking: " + e.getMessage());
+        }
+        return count;
+    }
+}

@@ -23,6 +23,9 @@ import javafx.scene.input.MouseEvent;
 import service.ServiceUser;
 import util.Data;
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -54,9 +57,7 @@ public class AdminController implements Initializable {
     private TextField email;
     @FXML
     private TextField tel;
-    @FXML
     private PasswordField mdp;
-    @FXML
     private TextField uname;
     @FXML
     private Button delete;
@@ -67,7 +68,6 @@ public class AdminController implements Initializable {
     private TextField id;
     @FXML
     private TextField prenom1;
-    @FXML
     private TextField uname1;
     @FXML
     private TextField email1;
@@ -79,6 +79,8 @@ public class AdminController implements Initializable {
     private TextField role;
     @FXML
     private TextField role1;
+    @FXML
+    private Label nbr_users;
 
     //ObservableList<String> list = FXCollections.observableArrayList("s","ss");
     /**
@@ -89,26 +91,33 @@ public class AdminController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //listview.setItems(list);
-        int id = 0;
-        ServiceUser sp = new ServiceUser();
-        List arr = sp.getAll();
-        ObservableList<User> UserList = FXCollections.observableArrayList(arr);
-        for (User user : UserList) {
-            list.getItems().add(user.getUsername());
+        try {
+            //listview.setItems(list);
+            int id = 0;
+            
+            ServiceUser sp = new ServiceUser();
+            List arr = sp.getAll();
+            ObservableList<User> UserList = FXCollections.observableArrayList(arr);
+            for (User user : UserList) {
+                list.getItems().add(user.getUsername());
+            }
+            int n=sp.countEtudiantUsers();
+            nbr_users.setText(Integer.toString(n));
+            /* element
+            System.out.println("Element  " + u.getNom());
+            System.out.println("List: " + arr);
+            System.out.println("observe: " + UserList);
+            
+            list.getItems().add(u.getNom());
+            list.getItems().add("Second Item");
+            list.getItems().add("Third Item");
+            list.getItems().add("Fourth Item");
+            list.getItems().add("Fifth Item");
+            */
+            // TODO
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        /* element
-        System.out.println("Element  " + u.getNom());
-        System.out.println("List: " + arr);
-        System.out.println("observe: " + UserList);
-        
-        list.getItems().add(u.getNom());
-        list.getItems().add("Second Item");
-        list.getItems().add("Third Item");
-        list.getItems().add("Fourth Item");
-        list.getItems().add("Fifth Item");
-         */
-        // TODO
     }
 
     @FXML
