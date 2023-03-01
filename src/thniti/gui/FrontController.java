@@ -14,10 +14,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -28,18 +31,13 @@ public class FrontController implements Initializable {
 
     @FXML
     private BorderPane BorderPane;
+   
+    @FXML
+    private Button reclamtion;
+    @FXML
+    private Button messagerie;
     @FXML
     private AnchorPane ajouterButtton;
-    @FXML
-    private Button ajouterButtton1;
-    @FXML
-    private Button modif;
-    @FXML
-    private Button supp;
-    @FXML
-    private Button ajouterMessage;
-    @FXML
-    private Button suppM;
     
     
 
@@ -58,74 +56,41 @@ public class FrontController implements Initializable {
         }
         BorderPane.setCenter(root); 
     }
+    @FXML
     private void reclamation(ActionEvent event) {
-        loadUi("reclamation");
-        System.out.println("ok");
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("Liste_1.fxml"));
+            //Scene scene = new Scene(root, 1100, 650);
+            Scene scene = new Scene(root);//fhemtha faza edhyka imchi hajet tefha le:p hhh
+            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            appStage.setScene(scene);
+            appStage.show();
+            System.out.println("ok");
+    } catch (IOException ex) {
+        System.err.println(ex.getMessage());
     }
 //private void ajouter(ActionEvent event) {
     // Code to handle button click here
 //}
 
+
+    }
+
+
     @FXML
-    private void ajouterButtton1(ActionEvent event) {
+    private void messagerie(ActionEvent event) {
         try {
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ajouter.fxml"));
-            Parent root = loader.load();
-            AjouterController pc = loader.getController();
-            
-            ajouterButtton1.getScene().setRoot(root);
-        } catch (IOException ex) {
-            System.err.println(ex.getMessage());
-        }
-    }
-
-    @FXML
-    private void modif(ActionEvent event) {
-    try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("modifier.fxml"));
-        Parent root = loader.load();
-        ModifierController pc = loader.getController();
-        modif.getScene().setRoot(root);
+            Parent root = FXMLLoader.load(getClass().getResource("Liste_1_1.fxml"));
+            //Scene scene = new Scene(root, 1100, 650);
+            Scene scene = new Scene(root);//fhemtha faza edhyka imchi hajet tefha le:p hhh
+            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            appStage.setScene(scene);
+            appStage.show();
+            System.out.println("ok");
     } catch (IOException ex) {
         System.err.println(ex.getMessage());
     }
-}
 
-    @FXML
-    private void supp(ActionEvent event) {
-    try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("supprimer.fxml"));
-        Parent root = loader.load();
-        SupprimerController pc = loader.getController();
-        supp.getScene().setRoot(root);
-    } catch (IOException ex) {
-        System.err.println(ex.getMessage());
-    }
-    }
-
-    @FXML
-    private void ajouterMessage(ActionEvent event) {
-        try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ajoutMessage.fxml"));
-        Parent root = loader.load();
-        AjoutMessageController pc = loader.getController();
-        ajouterMessage.getScene().setRoot(root);
-    } catch (IOException ex) {
-        System.err.println(ex.getMessage());
-    }
-    }
-
-    @FXML
-    private void suppM(ActionEvent event) {
-        try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("suppMessage.fxml"));
-        Parent root = loader.load();
-        SuppMessageController pc = loader.getController();
-        suppM.getScene().setRoot(root);
-    } catch (IOException ex) {
-        System.err.println(ex.getMessage());
-    }
     }
 }
 

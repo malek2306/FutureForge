@@ -15,7 +15,7 @@ public class Messagerie {
     private int id_M;
     private String contenuM;
     private String etat;
-
+    private User user;
     public Messagerie() {
     }
 
@@ -24,6 +24,27 @@ public class Messagerie {
         this.etat = etat;
     }
 
+    public Messagerie(String contenuM, String etat, User user) {
+        this.contenuM = contenuM;
+        this.etat = etat;
+        this.user = user;
+    }
+
+    public Messagerie(int id_M, String contenuM, String etat, User user) {
+        this.id_M = id_M;
+        this.contenuM = contenuM;
+        this.etat = etat;
+        this.user = user;
+    }
+    
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+    
     public Messagerie(TextField contenuM, TextField etat) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

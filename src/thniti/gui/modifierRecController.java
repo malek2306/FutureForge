@@ -17,7 +17,7 @@ import javafx.scene.control.TextField;
 import thniti.entities.Reclamation;
 import thniti.services.ServiceReclamation;
 
-public class ModifierController implements Initializable {
+public class modifierRecController implements Initializable {
 
     @FXML
     private TextField TypeR;
@@ -29,7 +29,7 @@ public class ModifierController implements Initializable {
     private DatePicker DateR;
     @FXML
     private TextField etat;
-
+    Reclamation rec ;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -37,24 +37,18 @@ public class ModifierController implements Initializable {
 
     @FXML
     private void modifier(ActionEvent event) {
-    ServiceReclamation serviceReclamation = new ServiceReclamation();
-    Reclamation reclamation = new Reclamation(); // create a new Reclamation object
-
-    reclamation.setTypeR(TypeR.getText());
-    reclamation.setDescriptionR(DescriptionR.getText());
-    reclamation.setObjet(Objet.getText());
-    //reclamation.setDateR(Date.valueOf(DateR.getValue()));
-    reclamation.setEtat(etat.getText());
-
-    // modify the existing record in the database using the serviceReclamation object
-    //serviceReclamation.modifier(reclamation);
-
-    // clear the text fields and date picker
-    TypeR.clear();
-    DescriptionR.clear();
-    Objet.clear();
-    DateR.setValue(null);
-    etat.clear();
+    
 }
-
+public void initData(Reclamation rec) {
+    this.rec = rec;
+    if (rec != null) {
+        TypeR.setText(rec.getTypeR());
+        DescriptionR.setText(rec.getDescriptionR());
+        Objet.setText(rec.getObjet());
+        etat.setText(rec.getEtat());
+        
+        
+    
+    }
+}
 }

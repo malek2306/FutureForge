@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="436.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thniti.gui.ListeController1_1">
+   <VBox layoutX="32.0" layoutY="41.0" prefHeight="395.0" prefWidth="709.0" spacing="10.0">
+      <HBox prefHeight="25.0" prefWidth="563.0" spacing="5.0">
+         <TextField fx:id="searchField" onAction="#searchField" promptText="Rechercher" />
+       
+         <Button onAction="#handleRefresh" style="-fx-background-color: black;" text="Rafraîchir" textFill="WHITE" />
+         <Button fx:id="trier" layoutX="202.0" layoutY="10.0" onAction="#trier" style="-fx-background-color: black;" text="trier" textFill="WHITE" />
+         <Button fx:id="Supprimerprod" layoutX="290.0" layoutY="10.0" onAction="#Supprimerprod" style="-fx-background-color: black;" text="supp" textFill="WHITE" />
+         <Button fx:id="stat" layoutX="290.0" layoutY="10.0" onAction="#stat" style="-fx-background-color: black;" text="stat" textFill="WHITE" />
+         <Button fx:id="ajouter" onAction="#ajouter" style="-fx-background-color: black;" text="ajouter msg" textFill="WHITE" />
+      </HBox>
+      <Label fx:id="userCountLabel" text="Total des produits : " />
+      <ListView fx:id="usersListView" prefHeight="300.0" prefWidth="661.0" />
+   </VBox>
+</AnchorPane>

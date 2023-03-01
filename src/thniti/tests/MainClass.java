@@ -12,7 +12,9 @@ import thniti.utils.DataSource;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import thniti.entities.Messagerie;
+import thniti.entities.User;
 import thniti.services.ServiceMessagerie;
 /**
  *
@@ -21,6 +23,8 @@ import thniti.services.ServiceMessagerie;
 public class MainClass {
     public static void main(String[] args) throws ParseException {
     String s = "2000-06-08";
+    User u= new User();
+    u.setId_u(6);
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     Date date = sdf.parse(s);
    
@@ -29,31 +33,32 @@ public class MainClass {
 
          Reclamation r2 = new Reclamation("d", "d"," d",date,"d");
          
-        Messagerie m1 =  new Messagerie ("Mfrjhbmmm","Lll");
+        Messagerie m1 =  new Messagerie (6,"Mfrjhbmmm","Lll",u);
         
        
         ServiceReclamation sr = new ServiceReclamation();
         ServiceMessagerie sm = new ServiceMessagerie();
        
       //sm.modifier(m1,1);   //done
-       // sm.supprimer(1);   //done
+       sm.supprimer(m1);   //done
         //sr.modifier(r1,30);  //done
         
        try {
   //sr.ajouter(r2);done
   //sm.ajouter(m1); //done
+             System.out.println(sr.getAll());//appeler la méthode getAll
+
+  
 } catch (IllegalArgumentException ex) {
     System.out.println(ex.getMessage());
        
         
-        
-        
-       
+     
          
         
-        sr.getAll().toString() ;
-         sm.getAll().toString() ;
-       //System.out.println(sr.getAll());        
+        
+         //sm.getAll().toString() ;
+             
        
        
     }

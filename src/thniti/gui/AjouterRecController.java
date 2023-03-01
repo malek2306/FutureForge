@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import thniti.entities.Reclamation;
@@ -23,7 +24,7 @@ import thniti.services.ServiceReclamation;
  *
  * @author 21692
  */
-public class AjouterController implements Initializable {
+public class AjouterRecController implements Initializable {
 
     @FXML
     private TextField TypeR;
@@ -47,28 +48,15 @@ public class AjouterController implements Initializable {
     @FXML
 private void add(ActionEvent event) {
     
-    ServiceReclamation commentaireService = new ServiceReclamation();
-    String type = TypeR.getText();
-    String description = DescriptionR.getText();
-    String objet = Objet.getText();
-    java.sql.Date date = java.sql.Date.valueOf(DateR.getValue());
-    String Etat = etat.getText(); // assuming this is the attribute for the "etat" field
-
-    // Perform input validation and error handling here
-
-    Reclamation comment = new Reclamation(type, description, objet, date, Etat,2); // use localDate here
-    try {                                  //try de controle de saisie
-  commentaireService.ajouter(comment);
-} catch (IllegalArgumentException ex) {
-    System.out.println(ex.getMessage());
-    
-
-    // Clear fields after adding article
-    TypeR.clear();
-    DescriptionR.clear();
-    Objet.clear();
-    DateR.setValue(null);
-    etat.clear();
-}
+    String Type = TypeR.getText();
+     String description = DescriptionR.getText();
+      String objets = Objet.getText();
+       String etats ="en cours";
+       Date date = new Date(System.currentTimeMillis());
+        Reclamation ce =new Reclamation( Type,  description,  objets, date,  "non traité", 1);
+       ServiceReclamation ces =new ServiceReclamation();
+        ces.ajouter(ce);
+         Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION, "Votre etat est ajouté");
+alert1.showAndWait();
     
 }}

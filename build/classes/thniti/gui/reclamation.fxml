@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thniti.gui.ReclamationController">
    <children>
-      <ListView fx:id="RecLV" layoutX="24.0" layoutY="36.0" prefHeight="371.0" prefWidth="552.0" />
+      <ListView fx:id="RecLV" layoutX="24.0" layoutY="64.0" prefHeight="343.0" prefWidth="552.0" />
+      <Button layoutX="516.0" layoutY="14.0" mnemonicParsing="false" onAction="#traiter" text="traiter" />
    </children>
 </AnchorPane>

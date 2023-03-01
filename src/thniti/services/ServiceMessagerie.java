@@ -19,96 +19,75 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import thniti.entities.Reclamation;
+
 /**
  *
  * @author 21692
  */
-public class ServiceMessagerie implements IService<Messagerie>{
+public class ServiceMessagerie implements IService<Messagerie> {
+    Connection cnx = DataSource.getInstance().getCnx();
     
+@Override
+public void ajouter(Messagerie p) {
     
-    Connection cnx ;
-Statement stm;
-   
-        public ServiceMessagerie(){
-            cnx=DataSource.getInstance().getCnx();
-        }
-        @Override
-   public void ajouter(Messagerie message) {
-       
-      if (message.getContenuM().isEmpty() || message.getEtat().isEmpty() ) {
+    if (p.getContenuM().isEmpty() || p.getEtat().isEmpty()) {
     throw new IllegalArgumentException("Veuillez renseigner tous les champs !");
 }
-         if (!message.getContenuM().matches("^[A-Z].*")) {
-    throw new IllegalArgumentException("Le champ contenu et etat doit commencer par une lettre majuscule !");
-}
-if (message.getContenuM().length() > 10) {
-        throw new IllegalArgumentException("Le titre de l'article ne doit pas dépasser 10 caractères !");
-}
-
-         try {
-            String qry = "INSERT INTO messagerie (contenuM,etat) VALUES (  '" + message.getContenuM() + "', '" + message.getEtat() + "')";
-            stm = cnx.createStatement();
-            System.out.println("message Added Successfully !");
-            stm.executeUpdate(qry);
-        } catch (SQLException ex) {
-
-            System.out.println(ex.getMessage());
-
-        }
-       
-    }
     
-
-    @Override
-    public void supprimer(int id) {
-       try {
-     
-       String req = "DELETE FROM messagerie WHERE id_M=" +id ;
-        stm = cnx.createStatement();
-            System.out.println("Deleted Successfully !");
-            stm.executeUpdate(req);
-        } catch (SQLException ex) {
-             System.out.println(ex.getMessage());
-        }}
-
-    @Override
-    public void modifier(Messagerie p,int id) {
-             try {
-      String qry=   " UPDATE Messagerie SET " + "    contenuM= ?, etat = ?  WHERE id_M= " + id;
-               PreparedStatement ps = cnx.prepareStatement(qry);
-        ps.setString(1, p.getContenuM());
-        ps.setString(2, p.getEtat());
-        //ps.setString(3, t.getObjet());
-       // ps.setString(4, t.getEtat());
-       
-        ps.executeUpdate();
-        System.out.println("message modifiée");
-    } catch (SQLException ex) {
-        System.out.println("Error updating message: " + ex.getMessage());
-    }
-        /*PreparedStatement ps = cnx.prepareStatement(qry);
-        try {
-            ps.setString(1, p.getContenuM());
-        } catch (SQLException ex) {
-            Logger.getLogger(ServiceMessagerie.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            ps.setString(2, p.getEtat());
-        } catch (SQLException ex) {
-            Logger.getLogger(ServiceMessagerie.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    try {
         
-       
-        ps.executeUpdate();
-        System.out.println("message modifiée");
-    } catch (SQLException ex) {
-        System.out.println("Error updating reclamation: " + ex.getMessage());
-    }*/
+            String req = "INSERT INTO `Reclamation` (`contenuM`, `etat`) VALUES (?,?)";
+            PreparedStatement ps = cnx.prepareStatement(req);
+            ps.setString(1, p.getContenuM());
+            ps.setString(2, p.getEtat());
+           
+            ps.executeUpdate();
+            System.out.println("msg created !");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
+        @Override
+    public List<Messagerie> getAll() {
+ ObservableList<Messagerie> messages = FXCollections.observableArrayList();
+        try {
+            String req = "select * from messagerie";
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+
+            while (rs.next()) {
+                Messagerie p = new Messagerie();
+                p.setContenuM(rs.getString("contenuM"));
+                p.setEtat(rs.getString("etat"));
+                
+                
+               messages.add(p);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return messages;    }
+
     
 
     @Override
-    public List<Messagerie> getAll() {
+    public void supprimer(Messagerie t) {
+        String sql = "delete from messagerie where id_M=?";
+       try {
+         PreparedStatement ste = cnx.prepareStatement(sql);
+           ste.setInt(1, t.getId_M());
+           ste.executeUpdate();
+      } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+       }
+    }
+    
+    
+
+    @Override
+    public void modifier(Messagerie p) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -117,6 +96,43 @@ if (message.getContenuM().length() > 10) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+     public List<Messagerie> TRI() {
+ ObservableList<Messagerie> messages = FXCollections.observableArrayList();
+        try {
+            String req = "select * from messagerie ORDER BY etat DESC";
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
 
-   
+            while (rs.next()) {
+                Messagerie p = new Messagerie();
+                p.setContenuM(rs.getString("contenuM"));
+                p.setEtat(rs.getString("etat"));
+                
+                
+               messages.add(p);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return messages;    }
+
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

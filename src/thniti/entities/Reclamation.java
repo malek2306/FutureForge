@@ -46,13 +46,13 @@ public class Reclamation {
         this.id_u = id_u;       
         
     }*/
-    public Reclamation(String typeR, String descriptionR, String objet, Date dateR, String etat, int id_R) {
+    public Reclamation(String typeR, String descriptionR, String objet, Date dateR, String etat, int id_u) {
     this.TypeR = typeR;
     this.DescriptionR = descriptionR;
     this.Objet = objet;
     this.DateR = dateR;
     this.etat = etat;
-    this.id_R = id_R;
+    this.id_u = id_u;
 }
 
     public Reclamation(String type, String description, String objet, Date localDate, String Etat) {
