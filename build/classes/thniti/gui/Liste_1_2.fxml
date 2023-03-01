@@ -9,10 +9,10 @@
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="436.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thniti.gui.ListeController1_2">
-   <VBox layoutX="32.0" layoutY="41.0" prefHeight="395.0" prefWidth="709.0" spacing="10.0">
+   <VBox layoutX="14.0" layoutY="21.0" prefHeight="395.0" prefWidth="709.0" spacing="10.0">
       <HBox prefHeight="25.0" prefWidth="563.0" spacing="5.0">
          <TextField fx:id="searchField" onAction="#searchField" promptText="Rechercher" />
-         <Button fx:id="traitter" mnemonicParsing="false" onAction="#traitter" text="traitter" />
+         <Button fx:id="traitter" mnemonicParsing="false" onAction="#traitter" onTouchMoved="#initialize" text="traitter" />
       </HBox>
       <Label fx:id="userCountLabel" text="Total des reclamations: " />
       <ListView fx:id="usersListView" prefHeight="300.0" prefWidth="661.0" />

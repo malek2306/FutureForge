@@ -21,6 +21,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.TouchEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -169,7 +170,7 @@ alert1.showAndWait();
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Erreur");
         alert.setHeaderText(null);
-        alert.setContentText("Veuillez sélectionner une candidature à accepter.");
+        alert.setContentText("Veuillez sélectionner une reclamation à traitter.");
         alert.showAndWait();
         return;
         }
@@ -188,6 +189,10 @@ alert1.showAndWait();
         alert.showAndWait();
         
             userListObservable.setAll(s.getAll());
+    }
+
+    @FXML
+    private void initialize(TouchEvent event) {
     }
 
 }
