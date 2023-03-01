@@ -5,16 +5,24 @@
  */
 package GUI;
 
+import entities.Friend;
 import entities.User;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import service.ServiceFriend;
 import service.ServiceUser;
+import util.Login;
 
 /**
  * FXML Controller class
@@ -23,20 +31,46 @@ import service.ServiceUser;
  */
 public class FriendlistController implements Initializable {
 
+    private ListView<Friend> listview;
     @FXML
-    private ListView<?> friend_list;
+    private ListView<String> friend_list = new ListView<String>();
+    @FXML
+    private TextField friend;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        ServiceUser sp = new ServiceUser();
-            List arr = sp.getAll();
-            ObservableList<User> UserList = FXCollections.observableArrayList(arr);
-            for (User user : UserList) {
-                list.getItems().add(user.getUsername());
-            }
-    }    
-    
+        Login login = Login.getInstance();
+        ServiceFriend sp = new ServiceFriend();
+        List arr = sp.getAll(login.getUsername());
+        ObservableList<Friend> FriendList = FXCollections.observableArrayList(arr);
+        for (Friend friend : FriendList) {
+            System.out.println(friend);
+            friend_list.getItems().add(friend.getUser1());
+        }
+    }
+
+    @FXML
+    private void OnMouseClick(MouseEvent event) {
+        ServiceFriend sf = new ServiceFriend();
+        String un = friend_list.getSelectionModel().getSelectedItem();
+        Friend f = sf.getOneByUsername(un);
+        friend.setText(f.getUser1());
+        System.out.println(f);
+    }
+
+    @FXML
+    private void AcceptInv(ActionEvent event) {
+        ServiceFriend sf = new ServiceFriend();
+        Friend f = sf.getOneByUsername(friend.getText());
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Ajouter" + friend.getText() + " ?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+        alert.showAndWait();
+        if (alert.getResult() == ButtonType.YES) {
+            sf.accept(f);
+        }
+
+    }
+
 }

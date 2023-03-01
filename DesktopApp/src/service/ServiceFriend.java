@@ -14,6 +14,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.ListView;
 import util.Data;
 
 /**
@@ -36,7 +41,7 @@ public class ServiceFriend {
     }
 
     public int notification(String u2) {
-        int nb=0;
+        int nb = 0;
         String req = "SELECT COUNT(*) FROM friends WHERE username2 = ? AND valide_f = 0";
 
         try (PreparedStatement statement = cnx.prepareStatement(req)) {
@@ -50,20 +55,84 @@ public class ServiceFriend {
         System.out.println(nb);
         return nb;
     }
-    
-    public Friend getList(String username) {
-        Friend p = null;
-        String req = "SELECT * FROM user WHERE username1 = ? AND valide_f = 0";
+
+    public List<Friend> getAll(String u2) {
+        List<Friend> list = new ArrayList<>();
+        String req = "SELECT * FROM friends WHERE username2 = ? AND valide_f = 0";
+        try (PreparedStatement statement = cnx.prepareStatement(req)) {
+            statement.setString(1, u2);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Friend p = new Friend(rs.getInt(1), rs.getString("username1"), rs.getString("username2"), rs.getInt("valide_f"));
+                list.add(p);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return list;
+    }
+
+    public Friend getOneByUsername(String username) {
+        Friend f = null;
+        String req = "SELECT * FROM friends WHERE username1 = ?";
 
         try (PreparedStatement statement = cnx.prepareStatement(req)) {
             statement.setString(1, username);
-            ResultSet resultSet = statement.executeQuery();
-            resultSet.next();
-            p = new Friend(resultSet.getInt(1), resultSet.getString("username1"), resultSet.getString("username2"), resultSet.getInt("valide_f"));
+            ResultSet rs = statement.executeQuery();
+            rs.next();
+            f = new Friend(rs.getInt(1), rs.getString("username1"), rs.getString("username2"), rs.getInt("valide_f"));
         } catch (SQLException e) {
             System.err.println("Error checking username: " + e.getMessage());
         }
-        return p;
+        return f;
     }
 
+    public void accept(Friend f) {
+        try {
+            String req = "UPDATE `friends` SET `valide_f` = '" + 1 + "' WHERE `friends`.`username1` = '" + f.getUser1() + "'";
+            Statement st = cnx.createStatement();
+            st.executeUpdate(req);
+            System.out.println("Friend added !");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public List<Friend> IsFriend(String u) {
+        List<Friend> list = new ArrayList<>();
+        String req = "SELECT * FROM friends WHERE username1 = ? OR username2 = ? AND valide_f = 1";
+        try (PreparedStatement statement = cnx.prepareStatement(req)) {
+            statement.setString(1, u);
+            statement.setString(2, u);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Friend p = new Friend(rs.getInt(1), rs.getString("username1"), rs.getString("username2"), rs.getInt("valide_f"));
+                list.add(p);
+                System.out.println(p);
+                System.out.println("frenbedes");
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return list;
+    }
+
+    public void supprimer(String username) {
+        String req = "DELETE FROM friends WHERE username1 = ? OR username2=  ? ";
+        try (PreparedStatement statement = cnx.prepareStatement(req)) {
+            statement.setString(1, username);
+            statement.setString(2, username);
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+    }
+
+    public int wehomies(String u1,String u2) {
+        int ok = 0;
+        return ok;
+    }
 }

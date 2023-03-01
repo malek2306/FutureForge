@@ -17,7 +17,10 @@ import java.io.InputStream;
 import java.net.URL;
 import java.sql.Blob;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,6 +34,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
@@ -73,6 +77,12 @@ public class ProfileController implements Initializable {
     private ImageView friend_list;
     @FXML
     private ImageView friend_list1;
+    @FXML
+    private ListView<String> is_friend = new ListView<String>();
+    @FXML
+    private Button delete;
+    @FXML
+    private TextField friendtodelete;
 
     /**
      * Initializes the controller class.
@@ -81,7 +91,19 @@ public class ProfileController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         ServiceUser su = new ServiceUser();
         Login login = Login.getInstance();
-        
+        //friend list
+        ServiceFriend sp = new ServiceFriend();
+        List arr = sp.IsFriend(login.getUsername());
+        ObservableList<Friend> FriendList = FXCollections.observableArrayList(arr);
+        for (Friend friend : FriendList) {
+            System.out.println(friend);
+            if (friend.getUser1().equals(login.getUsername())) {
+                is_friend.getItems().add(friend.getUser2());
+            } else {
+                is_friend.getItems().add(friend.getUser1());
+            }
+
+        }
         User u = su.getOneByUsername(login.getUsername());
         user.setText(login.getUsername());
         System.out.println(u.getPrenom());
@@ -90,9 +112,10 @@ public class ProfileController implements Initializable {
 
         // NOTIFICATION
         ServiceFriend sf = new ServiceFriend();
-        String s=String.valueOf(sf.notification(login.getUsername()));
+        String s = String.valueOf(sf.notification(login.getUsername()));
         sf.notification(login.getUsername());
         not_nb.setText(s);
+
     }
 
     @FXML
@@ -121,8 +144,10 @@ public class ProfileController implements Initializable {
     private void FindUser(ActionEvent event) {
         String r = recherche.getText();
         ServiceUser su = new ServiceUser();
+        ServiceFriend sf = new ServiceFriend();
         Login login = Login.getInstance();
         User u = su.getOneByUsername(r);
+        List f = sf.IsFriend(u.getUsername());
         if (r.isEmpty()) {
             recherche.setStyle("-fx-border-color: red;");
             uname.setText("Insérez username!!");
@@ -134,7 +159,8 @@ public class ProfileController implements Initializable {
         } else if (u.getUsername().equals(login.getUsername())) {
             uname.setText("pas d'amis?!!");
             role.setText("...");
-        } else {
+        } else 
+        {
             recherche.setStyle("");
             uname.setText(u.getUsername());
             role.setText(u.getRole());
@@ -144,7 +170,7 @@ public class ProfileController implements Initializable {
     @FXML
     private void AddFriend(ActionEvent event) {
         Alert a = new Alert(Alert.AlertType.INFORMATION, "Friend added", ButtonType.OK);
-        Friend f = new Friend(user.getText(),uname.getText(),0);
+        Friend f = new Friend(user.getText(), uname.getText(), 0);
         ServiceFriend sf = new ServiceFriend();
         sf.ajouter(f);
         a.show();
@@ -165,11 +191,30 @@ public class ProfileController implements Initializable {
 
     @FXML
     private void GoFriendList(MouseEvent event) throws IOException {
-        Parent homPage= FXMLLoader.load(getClass().getResource("friendlist.fxml"));
+        Parent homPage = FXMLLoader.load(getClass().getResource("friendlist.fxml"));
         Scene homaepageScene = new Scene(homPage);
-        Stage appStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         appStage.setScene(homaepageScene);
         appStage.show();
+    }
+
+    @FXML
+    private void DeleteFriendList(MouseEvent event) {
+        ServiceFriend sf = new ServiceFriend();
+        String un = is_friend.getSelectionModel().getSelectedItem();
+        Friend f = sf.getOneByUsername(un);
+        friendtodelete.setText(f.getUser1());
+        System.out.println(f);
+    }
+
+    @FXML
+    private void DeleteFriendButton(ActionEvent event) {
+        ServiceFriend sf = new ServiceFriend();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "tu es sûr de vouloir supprimer " + friendtodelete.getText() + " ?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+        alert.showAndWait();
+        if (alert.getResult() == ButtonType.YES) {
+            sf.supprimer(friendtodelete.getText());
+        }
     }
 
 }
