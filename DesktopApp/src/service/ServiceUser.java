@@ -195,6 +195,7 @@ public class ServiceUser {
         }
         return count;
     }
+    
 
     public InputStream getBinaryStream(String image_blob) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

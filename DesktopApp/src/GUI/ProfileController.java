@@ -96,7 +96,7 @@ public class ProfileController implements Initializable {
         List arr = sp.IsFriend(login.getUsername());
         ObservableList<Friend> FriendList = FXCollections.observableArrayList(arr);
         for (Friend friend : FriendList) {
-            System.out.println(friend);
+            
             if (friend.getUser1().equals(login.getUsername())) {
                 is_friend.getItems().add(friend.getUser2());
             } else {
@@ -142,13 +142,16 @@ public class ProfileController implements Initializable {
 
     @FXML
     private void FindUser(ActionEvent event) {
+        Login login = Login.getInstance();
         String r = recherche.getText();
         ServiceUser su = new ServiceUser();
-        ServiceFriend sf = new ServiceFriend();
-        Login login = Login.getInstance();
         User u = su.getOneByUsername(r);
-        List f = sf.IsFriend(u.getUsername());
+        ServiceFriend sf = new ServiceFriend();
+        /*
+        
+        List f = sf.IsFriend(u.getUsername());*/
         if (r.isEmpty()) {
+            System.out.println("relax");
             recherche.setStyle("-fx-border-color: red;");
             uname.setText("Insérez username!!");
             role.setText("...");
@@ -159,8 +162,10 @@ public class ProfileController implements Initializable {
         } else if (u.getUsername().equals(login.getUsername())) {
             uname.setText("pas d'amis?!!");
             role.setText("...");
-        } else 
-        {
+        } else if (sf.wehomies(login.getUsername(), r)) {
+            uname.setText("Déjà amis!!");
+            role.setText("...");
+        } else {
             recherche.setStyle("");
             uname.setText(u.getUsername());
             role.setText(u.getRole());
@@ -170,11 +175,17 @@ public class ProfileController implements Initializable {
     @FXML
     private void AddFriend(ActionEvent event) {
         Alert a = new Alert(Alert.AlertType.INFORMATION, "Friend added", ButtonType.OK);
-        Friend f = new Friend(user.getText(), uname.getText(), 0);
+
         ServiceFriend sf = new ServiceFriend();
-        sf.ajouter(f);
-        a.show();
-        System.out.println("frend");
+        if (!sf.wehomies(user.getText(), uname.getText())) {
+            Friend f = new Friend(user.getText(), uname.getText(), 0);
+            sf.ajouter(f);
+            a.show();
+            System.out.println("frend");
+        } else {
+            System.out.println("Deja amis 2");
+        }
+
     }
 
     @FXML
@@ -202,18 +213,19 @@ public class ProfileController implements Initializable {
     private void DeleteFriendList(MouseEvent event) {
         ServiceFriend sf = new ServiceFriend();
         String un = is_friend.getSelectionModel().getSelectedItem();
-        Friend f = sf.getOneByUsername(un);
-        friendtodelete.setText(f.getUser1());
-        System.out.println(f);
+        System.out.println("un=");
+        System.out.println(un);
+        friendtodelete.setText(un);
     }
 
     @FXML
     private void DeleteFriendButton(ActionEvent event) {
+ Login login = Login.getInstance();
         ServiceFriend sf = new ServiceFriend();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "tu es sûr de vouloir supprimer " + friendtodelete.getText() + " ?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
         alert.showAndWait();
         if (alert.getResult() == ButtonType.YES) {
-            sf.supprimer(friendtodelete.getText());
+            sf.supprimer(login.getUsername(),friendtodelete.getText());
         }
     }
 

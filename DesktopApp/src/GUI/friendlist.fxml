@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="383.0" prefWidth="265.0" style="-fx-background-color: e2f5f8;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="GUI.FriendlistController">
+<AnchorPane id="AnchorPane" prefHeight="383.0" prefWidth="265.0" style="-fx-background-color: e2f5f8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FriendlistController">
    <children>
+      <TextField fx:id="friend" layoutX="98.0" layoutY="309.0" prefHeight="25.0" prefWidth="62.0" />
       <Label layoutX="86.0" layoutY="50.0" text="invitations">
          <font>
             <Font name="Lucida Sans Unicode" size="17.0" />
@@ -23,7 +23,6 @@
          </image>
       </ImageView>
       <ListView fx:id="friend_list" layoutX="45.0" layoutY="79.0" onMouseClicked="#OnMouseClick" prefHeight="255.0" prefWidth="176.0" style="-fx-background-radius: 0px;" />
-      <Button layoutX="98.0" layoutY="344.0" mnemonicParsing="false" onAction="#AcceptInv" style="-fx-background-radius: 50px;" text="accepter" />
-      <TextField fx:id="friend" layoutX="24.0" layoutY="344.0" prefHeight="25.0" prefWidth="62.0" />
+      <Button layoutX="43.0" layoutY="344.0" mnemonicParsing="false" onAction="#AcceptInv" prefHeight="25.0" prefWidth="176.0" style="-fx-background-radius: 50px;" text="accepter" />
    </children>
 </AnchorPane>

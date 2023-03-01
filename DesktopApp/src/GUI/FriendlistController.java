@@ -46,9 +46,9 @@ public class FriendlistController implements Initializable {
         ServiceFriend sp = new ServiceFriend();
         List arr = sp.getAll(login.getUsername());
         ObservableList<Friend> FriendList = FXCollections.observableArrayList(arr);
-        for (Friend friend : FriendList) {
-            System.out.println(friend);
-            friend_list.getItems().add(friend.getUser1());
+        for (Friend l : FriendList) {
+            System.out.println(l);
+            friend_list.getItems().add(l.getUser1());
         }
     }
 
@@ -56,7 +56,7 @@ public class FriendlistController implements Initializable {
     private void OnMouseClick(MouseEvent event) {
         ServiceFriend sf = new ServiceFriend();
         String un = friend_list.getSelectionModel().getSelectedItem();
-        Friend f = sf.getOneByUsername(un);
+        Friend f = sf.getOneByUsername2(un);
         friend.setText(f.getUser1());
         System.out.println(f);
     }
@@ -64,11 +64,12 @@ public class FriendlistController implements Initializable {
     @FXML
     private void AcceptInv(ActionEvent event) {
         ServiceFriend sf = new ServiceFriend();
-        Friend f = sf.getOneByUsername(friend.getText());
+        Login login = Login.getInstance();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Ajouter" + friend.getText() + " ?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
         alert.showAndWait();
+        System.out.println("SESSION");System.out.println(login.getUsername());
         if (alert.getResult() == ButtonType.YES) {
-            sf.accept(f);
+            sf.accept(login.getUsername(),friend.getText());
         }
 
     }
