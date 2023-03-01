@@ -12,8 +12,6 @@
 <AnchorPane id="AnchorPane" prefHeight="774.0" prefWidth="1231.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AdminController">
    <children>
       <ListView fx:id="list" layoutX="322.0" layoutY="269.0" onMouseClicked="#OnMouseClick" prefHeight="415.0" prefWidth="233.0" />
-      <Button fx:id="delete" layoutX="616.0" layoutY="521.0" mnemonicParsing="false" onAction="#DeleteUser" prefHeight="16.0" prefWidth="149.0" text="Delete" />
-      <Button fx:id="modify" layoutX="842.0" layoutY="521.0" mnemonicParsing="false" onAction="#ModifyUser" prefHeight="25.0" prefWidth="149.0" text="Modify" />
       <Button fx:id="GoBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoHome" text="&lt;---" />
       <ImageView fitHeight="36.0" fitWidth="48.0" layoutX="1169.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
       <AnchorPane layoutX="322.0" layoutY="114.0" prefHeight="127.0" prefWidth="240.0" style="-fx-background-color: CBD1E2; -fx-background-radius: 50px;">
@@ -23,7 +21,7 @@
                   <Font name="Yu Gothic Light" size="29.0" />
                </font>
             </Text>
-            <Label fx:id="nbr_users" layoutX="93.0" layoutY="64.0" text="N/A" textFill="RED">
+            <Label fx:id="nbr_users" layoutX="93.0" layoutY="46.0" text="N/A" textFill="RED">
                <font>
                   <Font size="30.0" />
                </font>
@@ -37,7 +35,7 @@
                   <Font name="Yu Gothic Light" size="29.0" />
                </font>
             </Text>
-            <Label layoutX="93.0" layoutY="64.0" text="N/A" textFill="#0004ff">
+            <Label layoutX="93.0" layoutY="46.0" text="N/A" textFill="#0004ff">
                <font>
                   <Font size="30.0" />
                </font>
@@ -51,15 +49,17 @@
                   <Font name="Yu Gothic Light" size="29.0" />
                </font>
             </Text>
-            <Label layoutX="93.0" layoutY="64.0" text="N/A" textFill="#00d707">
+            <Label layoutX="93.0" layoutY="46.0" text="N/A" textFill="#00d707">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="583.0" layoutY="269.0" prefHeight="237.0" prefWidth="500.0" style="-fx-background-color: E7ECF9; -fx-background-radius: 50px;">
+      <AnchorPane layoutX="583.0" layoutY="269.0" prefHeight="415.0" prefWidth="500.0" style="-fx-background-color: E7ECF9; -fx-background-radius: 50px;">
          <children>
+            <TextField fx:id="uname1" layoutX="77.0" layoutY="24.0" promptText="Username" style="-fx-background-radius: 50px;" />
+            <TextField fx:id="role1" layoutX="296.0" layoutY="24.0" promptText="role" style="-fx-background-radius: 50px;" />
             <TextField fx:id="nom" layoutX="77.0" layoutY="64.0" promptText="Nom" style="-fx-background-radius: 50px;" />
             <Label layoutX="21.0" layoutY="68.0" text="Nom:">
                <font>
@@ -69,12 +69,11 @@
             <TextField fx:id="prenom1" layoutX="296.0" layoutY="64.0" promptText="Prenom" style="-fx-background-radius: 50px;" />
             <TextField fx:id="email1" layoutX="77.0" layoutY="106.0" promptText="Email" style="-fx-background-radius: 50px;" />
             <TextField fx:id="tel1" layoutX="77.0" layoutY="145.0" promptText="Tel" style="-fx-background-radius: 50px;" />
-            <TextField fx:id="role" layoutX="264.0" layoutY="173.0" promptText="role" style="-fx-background-radius: 50px;" />
+            <TextField fx:id="role" layoutX="296.0" layoutY="24.0" promptText="Role" style="-fx-background-radius: 50px;" />
             <TextField fx:id="nom1" layoutX="77.0" layoutY="64.0" promptText="Nom" style="-fx-background-radius: 50px;" />
             <TextField fx:id="prenom" layoutX="296.0" layoutY="64.0" promptText="Prenom" style="-fx-background-radius: 50px;" />
             <TextField fx:id="email" layoutX="77.0" layoutY="106.0" promptText="Email" style="-fx-background-radius: 50px;" />
             <TextField fx:id="tel" layoutX="77.0" layoutY="145.0" promptText="Tel" style="-fx-background-radius: 50px;" />
-            <TextField fx:id="role1" layoutX="278.0" layoutY="132.0" promptText="role" style="-fx-background-radius: 50px;" />
             <Label layoutX="233.0" layoutY="66.0" text="Prenom:">
                <font>
                   <Font name="Yu Gothic Light" size="17.0" />
@@ -90,7 +89,21 @@
                   <Font name="Yu Gothic Light" size="17.0" />
                </font>
             </Label>
+            <ImageView fx:id="pfp" fitHeight="150.0" fitWidth="200.0" layoutX="21.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true" />
+            <TextField fx:id="uname" layoutX="77.0" layoutY="24.0" promptText="Username" style="-fx-background-radius: 50px;" />
+            <Label layoutX="21.0" layoutY="26.0" text="User">
+               <font>
+                  <Font name="Yu Gothic Light" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="234.0" layoutY="26.0" text="Role">
+               <font>
+                  <Font name="Yu Gothic Light" size="17.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
+      <Button fx:id="modify" layoutX="592.0" layoutY="686.0" mnemonicParsing="false" onAction="#ModifyUser" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: green; -fx-background-radius: 50px;" text="Modify" />
+      <Button fx:id="delete" layoutX="820.0" layoutY="686.0" mnemonicParsing="false" onAction="#DeleteUser" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: red; -fx-background-radius: 50px;" text="Delete" />
    </children>
 </AnchorPane>

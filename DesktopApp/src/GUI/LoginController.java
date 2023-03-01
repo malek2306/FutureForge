@@ -76,17 +76,26 @@ public class LoginController implements Initializable {
                 if (u.getRole().equals("Admin")) {
                     login.setUsername(u.getUsername());
                     login.setPassword(u.getMdp());
-                    System.out.println(login.getPassword());
-                    System.out.println(login.getUsername());
                     Parent homPage = FXMLLoader.load(getClass().getResource("admin.fxml"));
                     Scene homaepageScene = new Scene(homPage);
                     Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     appStage.setScene(homaepageScene);
                     appStage.show();
+                } else if (u.getRole().equals("Etudiant")) {
+                    System.out.println("oi");
+                    login.setUsername(u.getUsername());
+                    login.setPassword(u.getMdp());
+                    System.out.println(login.getPassword());
+                    System.out.println(login.getUsername());
+                    Parent homPage = FXMLLoader.load(getClass().getResource("profile.fxml"));
+                    Scene homaepageScene = new Scene(homPage);
+                    Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    appStage.setScene(homaepageScene);
+                    appStage.show();
                 }
-            } 
-        }else {
-                wrong_user.setText("User nexiste pas!!");
             }
+        } else {
+            wrong_user.setText("User nexiste pas!!");
+        }
     }
 }

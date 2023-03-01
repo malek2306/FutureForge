@@ -5,27 +5,32 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.SignupController">
+<AnchorPane id="AnchorPane" prefHeight="693.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.SignupController">
    <children>
       <Label layoutX="272.0" layoutY="6.0" text="Sign_Up" />
-      <TextField fx:id="nom" layoutX="220.0" layoutY="60.0" promptText="Nom" />
-      <TextField fx:id="prenom" layoutX="220.0" layoutY="93.0" promptText="Prenom" />
-      <TextField fx:id="email" layoutX="220.0" layoutY="165.0" promptText="Email" />
-      <TextField fx:id="tel" layoutX="220.0" layoutY="200.0" promptText="Tel" />
-      <Button fx:id="submit" layoutX="220.0" layoutY="336.0" mnemonicParsing="false" onAction="#submit" prefHeight="50.0" prefWidth="149.0" text="Submit!" />
+      <TextField fx:id="nom" layoutX="220.0" layoutY="60.0" promptText="Nom" style="-fx-background-radius: 50px;" />
+      <TextField fx:id="prenom" layoutX="220.0" layoutY="93.0" promptText="Prenom" style="-fx-background-radius: 50px;" />
+      <TextField fx:id="email" layoutX="220.0" layoutY="165.0" promptText="Email" style="-fx-background-radius: 50px;" />
+      <TextField fx:id="tel" layoutX="220.0" layoutY="200.0" promptText="Tel" style="-fx-background-radius: 50px;" />
+      <Button fx:id="submit" layoutX="220.0" layoutY="629.0" mnemonicParsing="false" onAction="#submit" prefHeight="50.0" prefWidth="149.0" text="Submit!" />
       <Label fx:id="nom_wrong" layoutX="376.0" layoutY="64.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
       <Label fx:id="prenom_wrong" layoutX="376.0" layoutY="97.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
       <Label fx:id="email_wrong" layoutX="376.0" layoutY="169.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
       <Label fx:id="tel_wrong" layoutX="376.0" layoutY="204.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
-      <PasswordField fx:id="mdp" layoutX="220.0" layoutY="237.0" promptText="mot de passe" />
-      <TextField fx:id="uname" layoutX="220.0" layoutY="131.0" promptText="Username" />
-      <PasswordField fx:id="cmdp" layoutX="220.0" layoutY="273.0" promptText="confimer mot de passe" />
+      <PasswordField fx:id="mdp" layoutX="220.0" layoutY="237.0" promptText="mot de passe" style="-fx-background-radius: 50px;" />
+      <TextField fx:id="uname" layoutX="220.0" layoutY="131.0" promptText="Username" style="-fx-background-radius: 50px;" />
+      <PasswordField fx:id="cmdp" layoutX="220.0" layoutY="273.0" promptText="confimer mot de passe" style="-fx-background-radius: 50px;" />
       <Label fx:id="mdp_wrong" layoutX="376.0" layoutY="241.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
       <Label fx:id="uname_wrong" layoutX="376.0" layoutY="135.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
       <Label fx:id="cmdp_wrong" layoutX="376.0" layoutY="277.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
-      <CheckBox fx:id="checkBox" layoutX="220.0" layoutY="309.0" mnemonicParsing="false" text="As-tu une voiture?" />
+      <CheckBox fx:id="checkBox" layoutX="235.0" layoutY="308.0" mnemonicParsing="false" onAction="#ShowMat" text="As-tu une voiture?" />
       <Button fx:id="GoBack" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#GoHome" text="&lt;---" />
+      <TextField fx:id="mat" layoutX="220.0" layoutY="332.0" promptText="Matricule voiture" style="-fx-background-radius: 50px;" />
+      <Label fx:id="mat_wrong" layoutX="376.0" layoutY="336.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
+      <Button layoutX="220.0" layoutY="365.0" mnemonicParsing="false" onAction="#Pfp" prefHeight="32.0" prefWidth="149.0" text="Aouter photo de profil" />
+      <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" layoutX="195.0" layoutY="408.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

@@ -5,18 +5,21 @@
  */
 package entities;
 
+import java.sql.Blob;
+
 /**
  *
  * @author Name
  */
 public  class User {
     private int id;
-    private String nom, prenom,username, datec, role, email, tel, mdp;
+    private String nom, prenom,username, datec, role, email, tel, mdp,mat;
+    Blob pfp;
 
     public User() {
     }
 
-    public User(String nom,String prenom , String username, String email, String tel,String mdp,String role) {
+    public User(String nom,String prenom , String username, String email, String tel,String mdp,String role,Blob pfp,String mat) {
         this.nom = nom;
         this.prenom = prenom;
         this.username = username;
@@ -24,9 +27,11 @@ public  class User {
         this.tel = tel;
         this.mdp = mdp;
         this.role = role;
+        this.pfp=pfp;
+        this.mat=mat;
     }
 
-    public User(int id,String nom,String prenom , String username, String email, String tel,String mdp,String role) {
+    public User(int id,String nom,String prenom , String username, String email, String tel,String mdp,String role,Blob pfp,String mat) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -35,8 +40,31 @@ public  class User {
         this.tel = tel;
         this.mdp = mdp;
         this.role = role;
+        this.pfp=pfp;
+        this.mat=mat;
     }
-
+    public User(int id,String nom,String prenom , String username, String email, String tel,String mdp,String role,String mat) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.username = username;
+        this.email = email;
+        this.tel = tel;
+        this.mdp = mdp;
+        this.role = role;
+        this.mat=mat;
+    }
+     public User(int id,String nom,String prenom , String username, String email, String tel,String mdp,String role) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.username = username;
+        this.email = email;
+        this.tel = tel;
+        this.mdp = mdp;
+        this.role = role;
+        this.mat=mat;
+    }
     //getter
     public int getId() {
         return id;
@@ -68,6 +96,14 @@ public  class User {
     
     public String getRole() {
         return role;
+    }
+    
+    public Blob getPfp() {
+        return pfp;
+    }
+    
+    public String getMat() {
+        return mat;
     }
 
     //setters
@@ -102,10 +138,18 @@ public  class User {
     public void setRole(String role) {
         this.role = role;
     }
+    
+    public void setPfp(Blob pfp) {
+        this.pfp = pfp;
+    }
+    
+    public void setPfp(String mat) {
+        this.mat = mat;
+    }
 
     @Override
     public String toString() {
-        return "user{" + "nom=" + nom + ", prenom=" + prenom + ", username=" + username + ", email=" + email + ", tel=" + tel + ", mdp=" + mdp + ", role=" + role + "}";
+        return "user{" + "nom=" + nom + ", prenom=" + prenom + ", username=" + username + ", email=" + email + ", tel=" + tel + ", mdp=" + mdp + ", role=" + role + ", pfp=" + pfp + ", pfp=" + mat + "}";
     }
 
     @Override

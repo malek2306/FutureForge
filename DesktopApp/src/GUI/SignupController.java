@@ -8,6 +8,13 @@ package GUI;
 import entities.Admin;
 import entities.Etudiantm;
 import entities.User;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.awt.image.RenderedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,7 +29,13 @@ import service.ServiceUser;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.sql.Blob;
+import java.sql.SQLException;
 import java.util.Base64;
+import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -30,7 +43,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
+import javax.imageio.ImageIO;
 
 /**
  * FXML Controller class
@@ -73,13 +93,56 @@ public class SignupController implements Initializable {
     private CheckBox checkBox;
     @FXML
     private Button GoBack;
+    @FXML
+    private TextField mat;
+    @FXML
+    private Label mat_wrong;
+    @FXML
+    private ImageView imageView;
+    private Label Blob;
+    private Label Blobres;
+
+    private Blob blob;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        mat.setVisible(false);
+        File file = new File("C:\\Users\\Name\\Documents\\NetBeansProjects\\thniyti_user\\pfp\\pfp.jpg");
+        BufferedImage bufferedImage = null;
+        try {
+            bufferedImage = ImageIO.read(file);
+        } catch (IOException ex) {
+            Logger.getLogger(SignupController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        WritableImage image = SwingFXUtils.toFXImage(bufferedImage, null);
+        imageView.setImage(image);
+    }
+
+    @FXML
+    private void Pfp(ActionEvent event) throws IOException, SQLException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Choose Image");
+        fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
+        File selectedFile = fileChooser.showOpenDialog(null);
+        if (selectedFile != null) {
+            try {
+
+                BufferedImage bufferedImage = ImageIO.read(selectedFile);
+                WritableImage image = SwingFXUtils.toFXImage(bufferedImage, null);
+                imageView.setImage(image);
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                ImageIO.write(bufferedImage, "jpg", baos);
+                byte[] bytes = baos.toByteArray();
+                blob = new javax.sql.rowset.serial.SerialBlob(bytes);
+                System.out.println(blob);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+
     }
 
     @FXML
@@ -93,7 +156,7 @@ public class SignupController implements Initializable {
         String t = tel.getText();
         String m = mdp.getText();
         String cm = cmdp.getText();
-        String role="";
+        String role = "";
         String regexPattern = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
                 + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
         String hashedPassword = "";
@@ -216,31 +279,51 @@ public class SignupController implements Initializable {
             cmdp_wrong.setText("");
             ok++;
         }
+        if (checkBox.isSelected()) {
+            if (mat.getText().isEmpty()) {
+                mat.setStyle("-fx-border-color: red;");
+                mat_wrong.setText("Insérez matricule de votre voiture ici!!");
+            }
+        }
+
         System.out.println(ok);
         if (ok == 8) {
             if (checkBox.isSelected()) {
                 Alert a = new Alert(Alert.AlertType.INFORMATION, "User created", ButtonType.OK);
-               Etudiantm u1 = new Etudiantm (nom.getText(), prenom.getText(), uname.getText(), email.getText(), tel.getText(), hashedPassword,role);
+                Etudiantm u1 = new Etudiantm(nom.getText(), prenom.getText(), uname.getText(), email.getText(), tel.getText(), hashedPassword, role, (Blob) blob, mat.getText());
                 ServiceUser su = new ServiceUser();
                 su.ajouter(u1);
                 a.show();
+                System.out.println("car");
             } else {
                 Alert a = new Alert(Alert.AlertType.INFORMATION, "User created", ButtonType.OK);
-                User u1 = new User(nom.getText(), prenom.getText(), uname.getText(), email.getText(), tel.getText(), hashedPassword,role);
+                User u1 = new User(nom.getText(), prenom.getText(), uname.getText(), email.getText(), tel.getText(), hashedPassword, role, (Blob) blob, mat.getText());
                 ServiceUser su = new ServiceUser();
                 su.ajouter(u1);
                 a.show();
+                System.out.println("normal");
             }
         }
     }
 
     @FXML
     private void GoHome(ActionEvent event) throws IOException {
-        Parent homPage= FXMLLoader.load(getClass().getResource("FXML.fxml"));
+        Parent homPage = FXMLLoader.load(getClass().getResource("FXML.fxml"));
         Scene homaepageScene = new Scene(homPage);
-        Stage appStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         appStage.setScene(homaepageScene);
         appStage.show();
+    }
+
+    @FXML
+    private void ShowMat(ActionEvent event) {
+
+        if (checkBox.isSelected()) {
+            mat.setVisible(true);
+        } else {
+            mat.setVisible(false);
+        }
+
     }
 
 }

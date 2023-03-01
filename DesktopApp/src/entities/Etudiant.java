@@ -5,13 +5,15 @@
  */
 package entities;
 
+import java.sql.Blob;
+
 /**
  *
  * @author Name
  */
 public class Etudiant extends User {
-    public Etudiant(String nom,String prenom , String username, String email, String tel,String mdp,String role) {
-        super (nom,prenom , username, email, tel,mdp,role);
+    public Etudiant(String nom,String prenom , String username, String email, String tel,String mdp,String role,Blob pfp,String mat) {
+        super (nom,prenom , username, email, tel,mdp,role,pfp,mat);
     }
     
 }

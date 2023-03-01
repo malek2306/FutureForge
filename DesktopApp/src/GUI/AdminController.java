@@ -6,8 +6,12 @@
 package GUI;
 
 import entities.User;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Blob;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.List;
@@ -26,6 +30,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -36,7 +41,10 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
 import javafx.stage.Stage;
+import javax.imageio.ImageIO;
 
 /**
  * FXML Controller class
@@ -58,6 +66,7 @@ public class AdminController implements Initializable {
     @FXML
     private TextField tel;
     private PasswordField mdp;
+    @FXML
     private TextField uname;
     @FXML
     private Button delete;
@@ -68,6 +77,7 @@ public class AdminController implements Initializable {
     private TextField id;
     @FXML
     private TextField prenom1;
+    @FXML
     private TextField uname1;
     @FXML
     private TextField email1;
@@ -81,6 +91,8 @@ public class AdminController implements Initializable {
     private TextField role1;
     @FXML
     private Label nbr_users;
+    @FXML
+    private ImageView pfp;
 
     //ObservableList<String> list = FXCollections.observableArrayList("s","ss");
     /**
@@ -94,7 +106,6 @@ public class AdminController implements Initializable {
         try {
             //listview.setItems(list);
             int id = 0;
-            
             ServiceUser sp = new ServiceUser();
             List arr = sp.getAll();
             ObservableList<User> UserList = FXCollections.observableArrayList(arr);
@@ -121,25 +132,40 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    private void OnMouseClick(MouseEvent event) {
+    private void OnMouseClick(MouseEvent event) throws SQLException, IOException {
         ServiceUser sp = new ServiceUser();
         String un = list.getSelectionModel().getSelectedItem();
         User u = sp.getOneByUsername(un);
         nom.setText(u.getNom());
         nom1.setText(u.getNom());
+        
         prenom.setText(u.getPrenom());
         prenom1.setText(u.getPrenom());
+        
         email.setText(u.getEmail());
         email1.setText(u.getEmail());
+
         tel.setText(u.getTel());
         tel1.setText(u.getTel());
-        mdp.setText(u.getMdp());
-        uname.setText(u.getUsername());
-        uname1.setText(u.getUsername());
+
+        
+        /*uname.setText(u.getUsername());
+        uname1.setText(u.getUsername());*/
+
         role.setText(u.getRole());
         role1.setText(u.getRole());
-        id.setText(""+u.getId());
+
         System.out.println(id);
+        //pfp
+        Blob blob = u.getPfp();
+        System.out.println(blob);
+        
+        byte[] imageBytes = blob.getBytes(1, (int) blob.length());
+        System.out.println("ok");
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(imageBytes);
+        BufferedImage bufferedImage = ImageIO.read(inputStream);
+        WritableImage image = SwingFXUtils.toFXImage(bufferedImage, null);
+        pfp.setImage(image);
     }
 
     @FXML
