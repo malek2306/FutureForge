@@ -128,7 +128,7 @@ alert1.showAndWait();
         alert.showAndWait();
         return;
         }
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ModifierEtat.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ModifierCategorie.fxml"));
         Parent root = (Parent) fxmlLoader.load();
         ModifierCategorieController updateUserController = fxmlLoader.getController();
         updateUserController.initData(selectedUser);
@@ -167,7 +167,7 @@ alert1.showAndWait();
 
     @FXML
     private void ajouter(ActionEvent event) throws IOException {
-           FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ajouterEtat.fxml"));
+           FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AjouterCategorie.fxml"));
         Parent root = (Parent) fxmlLoader.load();
         AjouterCategorieController updateUserController = fxmlLoader.getController();
        

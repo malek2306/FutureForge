@@ -21,9 +21,9 @@ public class MainClass {
     public static void main(String[] args) throws SQLException  {
        
     
-     Categories c2= new Categories (25,"roua","el","hammemi");
-      Servicecategories sc = new Servicecategories();
-         //sc.ajouter(c2);
+     Categories c2= new Categories (27,"roua","el","hammemi");
+     Servicecategories sc = new Servicecategories();
+         sc.ajouter(c2);
           
      // sc.supprimer(65);
      // System.out.println(sc.getAll());
@@ -32,7 +32,7 @@ public class MainClass {
 
 Evenement e2 = new Evenement (1,"farah", "toumi", "ben", "hassen",c2);
 Serviceevenement se = new Serviceevenement();
-//se.ajouter(e2);
+se.ajouter(e2);
 //se.modifier(e1);
 
 //se.afficherEvenement();

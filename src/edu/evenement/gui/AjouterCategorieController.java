@@ -20,6 +20,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 
 /**
@@ -39,6 +40,8 @@ public class AjouterCategorieController implements Initializable {
     @FXML
     private TextField tfphoto;
         UploadServices uploadservices= new UploadServices();
+    @FXML
+    private Button upload;
 
 
     /**
@@ -49,8 +52,7 @@ public class AjouterCategorieController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void addcatevent(ActionEvent event) throws SQLException {
+    private void AjouterCategorieController (ActionEvent event) throws SQLException {
          String noms = tfnom.getText();
          String description = tfdescription.getText();
          String photo = tfphoto.getText();
@@ -75,6 +77,14 @@ alert1.showAndWait();
         
     }
 
+    }
+
+    @FXML
+    private void addcatevent(ActionEvent event) {
+    }
+
+    @FXML
+    private void addcatevent(MouseEvent event) {
     }
     
 }

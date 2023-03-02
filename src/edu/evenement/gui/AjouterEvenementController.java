@@ -21,7 +21,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 
 /**
@@ -40,7 +42,6 @@ public class AjouterEvenementController implements Initializable {
     private TextField tfdescription;
     private TextField tfphoto;
         UploadServices uploadservices= new UploadServices();
-    @FXML
     private TextField tfdate;
     @FXML
     private TextField tftype;
@@ -66,7 +67,7 @@ public class AjouterEvenementController implements Initializable {
         Evenement ce =new Evenement(noms,type,description,date,categ);
         Serviceevenement ces =new Serviceevenement();
         ces.ajouter(ce);
-         Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION, "Votre etat est ajouté");
+         Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION, "Votre evenement est ajouté");
 alert1.showAndWait();
     }
 

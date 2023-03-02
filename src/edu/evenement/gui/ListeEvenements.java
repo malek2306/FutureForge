@@ -130,7 +130,7 @@ alert1.showAndWait();
         alert.showAndWait();
         return;
         }
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ModifierEtat_1.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ModifierEvenement.fxml"));
         Parent root = (Parent) fxmlLoader.load();
         ModifierEvenementController updateUserController = fxmlLoader.getController();
         updateUserController.initData(selectedUser);
@@ -169,7 +169,7 @@ alert1.showAndWait();
 
     @FXML
     private void ajouter(ActionEvent event) throws IOException {
-           FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ajouterEtat_1.fxml"));
+           FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AjouterEvenement.fxml"));
         Parent root = (Parent) fxmlLoader.load();
         AjouterEvenementController updateUserController = fxmlLoader.getController();
        
