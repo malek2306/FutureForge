@@ -7,9 +7,9 @@
 <?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thniti.gui.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="994.0" prefWidth="1168.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thniti.gui.LoginController">
    <children>
-      <TextField fx:id="username" layoutX="186.0" layoutY="109.0" prefHeight="37.0" prefWidth="239.0">
+      <TextField fx:id="username" layoutX="377.0" layoutY="417.0" prefHeight="37.0" prefWidth="266.0">
          <effect>
             <Lighting>
                <bumpInput>
@@ -20,7 +20,7 @@
                </light>
             </Lighting>
          </effect></TextField>
-      <TextField fx:id="pwd" layoutX="186.0" layoutY="173.0" prefHeight="37.0" prefWidth="239.0">
+      <TextField fx:id="pwd" layoutX="377.0" layoutY="479.0" prefHeight="37.0" prefWidth="266.0">
          <effect>
             <Lighting>
                <bumpInput>
@@ -31,16 +31,16 @@
                </light>
             </Lighting>
          </effect></TextField>
-      <Button layoutX="228.0" layoutY="255.0" mnemonicParsing="false" onAction="#connecter" prefHeight="50.0" prefWidth="154.0" text="connecter">
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant color="#62aae4" />
-               </light>
-            </Lighting>
-         </effect></Button>
+      <Button layoutX="420.0" layoutY="568.0" mnemonicParsing="false" onAction="#connecter" prefHeight="50.0" prefWidth="154.0" style="-fx-background-color: black;" text="connecter" textFill="#fcf9f9" />
    </children>
+   <effect>
+      <Lighting>
+         <bumpInput>
+            <Shadow />
+         </bumpInput>
+         <light>
+            <Light.Distant />
+         </light>
+      </Lighting>
+   </effect>
 </AnchorPane>

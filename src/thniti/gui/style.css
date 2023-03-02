@@ -22,3 +22,32 @@ and open the template in the editor.
 .secondary-background {
     -fx-background-color:#cced55
 }
+
+
+
+.btn:hover{
+    -fx-cursor:hand ;
+}
+.ListView {
+    
+    -fx-background-radius:14 14 0 0;
+    
+    }
+.ListView .column-header-background{
+        -fx-background-color: #651FFF;
+        -fx-background-radius:14;
+        -fx-background-insets: 0 0 10 0;
+       
+        
+        
+    }
+.ListView .column-header, .ListView .filler{
+        -fx-size:50px;
+        -fx-border-width: 0 0 10 0;
+        -fx-background-color:transparent;
+        
+    }
+    
+.ListView .column-header .label {
+        -fx-text-fill: white ;
+    }

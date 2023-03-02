@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="thniti.gui.BarChartController">
+<AnchorPane id="AnchorPane" prefHeight="871.0" prefWidth="1141.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thniti.gui.BarChartController">
    <children>
-      <PieChart fx:id="piechart" layoutX="38.0" />
+      <PieChart fx:id="piechart" layoutY="38.0" prefHeight="796.0" prefWidth="1356.0" />
    </children>
+   <stylesheets>
+      <URL value="@style.css" />
+      <URL value="@style.css" />
+   </stylesheets>
 </AnchorPane>
