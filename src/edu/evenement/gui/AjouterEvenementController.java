@@ -46,6 +46,8 @@ public class AjouterEvenementController implements Initializable {
     private TextField tfdate;
     @FXML
     private TextField tftype;
+    @FXML
+    private TextField cat_id;
     
 
     /**

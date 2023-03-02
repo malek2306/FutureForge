@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.evenement.gui.AjouterEvenementController">
    <children>
-      <TextField fx:id="tfnom" layoutX="226.0" layoutY="93.0" prefHeight="26.0" prefWidth="174.0" styleClass="shadow" />
+      <TextField fx:id="tfnom" layoutX="226.0" layoutY="76.0" prefHeight="4.0" prefWidth="174.0" styleClass="shadow" />
       <Button fx:id="addcatevent" layoutX="280.0" layoutY="302.0" mnemonicParsing="false" onAction="#addcatevent" prefHeight="26.0" prefWidth="66.0" text="Ajouter">
          <styleClass>
             <String fx:value="search-button" />
@@ -18,25 +18,27 @@
          </styleClass>
       </Button>
       <HBox prefHeight="400.0" prefWidth="166.0" styleClass="right-bar" />
-      <TextField fx:id="tftype" layoutX="226.0" layoutY="149.0" prefHeight="25.0" prefWidth="174.0" />
-      <TextField fx:id="tfdescription" layoutX="226.0" layoutY="200.0" prefHeight="25.0" prefWidth="174.0" />
-      <Label layoutX="182.0" layoutY="154.0" text="type">
+      <TextField fx:id="tftype" layoutX="226.0" layoutY="113.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="tfdescription" layoutX="226.0" layoutY="158.0" prefHeight="25.0" prefWidth="174.0" />
+      <Label layoutX="182.0" layoutY="130.0" text="type">
          <font>
             <Font name="Arial" size="13.0" />
          </font></Label>
-      <Label layoutX="147.0" layoutY="205.0" text="description">
+      <Label layoutX="151.0" layoutY="163.0" text="description">
          <font>
             <Font name="Arial" size="13.0" />
          </font></Label>
-      <Label layoutX="166.0" layoutY="246.0" text="Date">
+      <Label layoutX="181.0" layoutY="206.0" text="Date">
          <font>
             <Font name="Arial" size="13.0" />
          </font></Label>
-      <Label layoutX="168.0" layoutY="88.0" prefHeight="37.0" prefWidth="47.0" text="Nom">
+      <Label layoutX="171.0" layoutY="70.0" prefHeight="37.0" prefWidth="47.0" text="Nom">
          <font>
             <Font name="Arial" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="tfdate" layoutX="231.0" layoutY="242.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="tfdate" layoutX="226.0" layoutY="201.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="cat_id" layoutX="230.0" layoutY="250.0" prefHeight="25.0" prefWidth="174.0" />
+      <Label layoutX="181.0" layoutY="254.0" text="cat_id" />
    </children>
 </AnchorPane>
