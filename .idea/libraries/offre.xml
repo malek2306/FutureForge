@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="offre">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/dist/offre.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

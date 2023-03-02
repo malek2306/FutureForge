@@ -1,8 +1,8 @@
-package com.thnityzz.gui.front;
+package com.thnity.GUI;
 
-import com.thnityzz.MainApp;
-import com.thnityzz.utils.Animations;
-import com.thnityzz.utils.Constants;
+import com.thnity.MainApp;
+import com.thnity.utils.Animations;
+import com.thnity.utils.Constants;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,16 +23,10 @@ public class TopBarController implements Initializable {
     private final Color COLOR_PRIMARY = Color.web("#152242");
     private final Color COLOR_DARK = new Color(1, 1, 1, 0.65);
     private Button[] liens;
-    
-    @FXML
-    private Button btnAviss;
-    
+
     @FXML
     private Button btnOffres;
-    
-    @FXML
-    private Button btnProfile;
-    
+
     @FXML
     private AnchorPane mainComponent;
 
@@ -40,10 +34,7 @@ public class TopBarController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         liens = new Button[]{
-                 btnAviss,
-                 btnOffres,
-                btnProfile,
-                
+                btnOffres,
         };
 
         mainComponent.setBackground(new Background(new BackgroundFill(COLOR_PRIMARY, CornerRadii.EMPTY, Insets.EMPTY)));
@@ -53,39 +44,18 @@ public class TopBarController implements Initializable {
             lien.setBackground(new Background(new BackgroundFill(COLOR_PRIMARY, CornerRadii.EMPTY, Insets.EMPTY)));
             Animations.animateButton(lien, COLOR_GRAY, Color.WHITE, COLOR_PRIMARY, 0, false);
         }
-        
-         btnAviss.setTextFill(COLOR_DARK);
-        
-         btnOffres.setTextFill(COLOR_DARK);
-        
-        btnProfile.setTextFill(Color.WHITE);
-       
-        
-    }
-    
-    @FXML
-    private void showProfile(ActionEvent event) {
-        goToLink(Constants.FXML_FRONT_MY_PROFILE);
 
-        btnProfile.setTextFill(COLOR_PRIMARY);
-        Animations.animateButton(btnProfile, COLOR_GRAY, Color.WHITE, COLOR_PRIMARY, 0, false);
+        btnOffres.setTextFill(COLOR_DARK);
     }
-    
-    @FXML
-    private void afficherAviss(ActionEvent event) {
-        goToLink(Constants.FXML_FRONT_DISPLAY_ALL_AVIS);
 
-        btnAviss.setTextFill(COLOR_PRIMARY);
-        Animations.animateButton(btnAviss, COLOR_GRAY, Color.WHITE, COLOR_PRIMARY, 0, false);
-    }
     @FXML
     private void afficherOffres(ActionEvent event) {
-        goToLink(Constants.FXML_FRONT_DISPLAY_ALL_OFFRE);
+        goToLink(Constants.FXML_DISPLAY_ALL_OFFRE);
 
         btnOffres.setTextFill(COLOR_PRIMARY);
         Animations.animateButton(btnOffres, COLOR_GRAY, Color.WHITE, COLOR_PRIMARY, 0, false);
     }
-    
+
     private void goToLink(String link) {
         for (Button lien : liens) {
             lien.setTextFill(COLOR_DARK);

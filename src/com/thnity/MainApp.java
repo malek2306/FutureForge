@@ -1,14 +1,16 @@
-import entities.Etudiant;
+package com.thnity;
+
+import com.thnity.entities.Etudiant;
+import com.thnity.utils.Constants;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import utils.Constants;
 
 import java.io.IOException;
-import java.util.Objects;
+import java.net.URL;
 
 public class MainApp extends Application {
 
@@ -45,15 +47,15 @@ public class MainApp extends Application {
         loadScene(
                 Constants.FXML_LOGIN,
                 "Connexion",
-                500
+                300
         );
     }
 
     public void loadFront() {
         loadScene(
-                Constants.FXML_FRONT_MAIN_WINDOW,
+                Constants.FXML_MAIN_WINDOW,
                 "",
-                800
+                900
         );
     }
 
@@ -64,7 +66,6 @@ public class MainApp extends Application {
 
     public void logout() {
         session = null;
-
         System.out.println("Deconnexion ..");
         loadLogin();
     }
@@ -74,19 +75,24 @@ public class MainApp extends Application {
             Stage primaryStage = mainStage;
             primaryStage.close();
 
-            Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxmlLink))));
-            scene.setFill(Color.TRANSPARENT);
+            URL destination = getClass().getResource(fxmlLink);
 
-            primaryStage.setTitle(title);
-            primaryStage.setWidth(width);
-            primaryStage.setHeight(600);
-            primaryStage.setMinWidth(width);
-            primaryStage.setMinHeight(600);
-            primaryStage.setScene(scene);
-            primaryStage.setX((Screen.getPrimary().getBounds().getWidth() / 2) - (width / 2.0));
-            primaryStage.setY((Screen.getPrimary().getBounds().getHeight() / 2) - (600 / 2.0));
+            if (destination != null) {
+                Scene scene = new Scene(FXMLLoader.load(destination));
+                scene.setFill(Color.TRANSPARENT);
 
-            primaryStage.show();
+                primaryStage.setTitle(title);
+                primaryStage.setWidth(width);
+                primaryStage.setHeight(700);
+                primaryStage.setMinWidth(width);
+                primaryStage.setMinHeight(700);
+                primaryStage.setScene(scene);
+                primaryStage.setX((Screen.getPrimary().getBounds().getWidth() / 2) - (width / 2.0));
+                primaryStage.setY((Screen.getPrimary().getBounds().getHeight() / 2) - (700 / 2.0));
+                primaryStage.show();
+            } else {
+                System.out.println("Destination (" + fxmlLink + ") is null");
+            }
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }

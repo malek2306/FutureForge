@@ -1,6 +1,6 @@
-package com.thnityzz.gui.front;
+package com.thnity.GUI;
 
-import com.thnityzz.utils.Constants;
+import com.thnity.utils.Constants;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -34,7 +34,7 @@ public class MainWindowController implements Initializable {
         try {
             staticContent = content;
 
-            Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(Constants.FXML_FRONT_TOP_BAR)));
+            Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(Constants.FXML_TOP_BAR)));
             AnchorPane.setTopAnchor(parent, 0.0);
             AnchorPane.setBottomAnchor(parent, 0.0);
             AnchorPane.setRightAnchor(parent, 0.0);
@@ -46,7 +46,7 @@ public class MainWindowController implements Initializable {
             e.printStackTrace();
         }
 
-        loadInterface(Constants.FXML_FRONT_HOME);
+        loadInterface(Constants.FXML_HOME);
     }
 
     public void loadInterface(String location) {
