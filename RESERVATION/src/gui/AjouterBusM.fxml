@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="668.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterBusMController">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="VBOX" layoutY="-2.0" prefHeight="668.0" prefWidth="528.0">
+         <children>
+            <Text fontSmoothingType="LCD" layoutX="163.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register" wrappingWidth="151.99999831616879">
+               <font>
+                  <Font name="Bauhaus 93" size="35.0" />
+               </font>
+            </Text>
+            <Button fx:id="ajooouut" layoutX="34.0" layoutY="577.0" mnemonicParsing="false" onAction="#btAjouter" prefHeight="71.0" prefWidth="169.0" style="-fx-background-color: #206615;" text="ADD" textFill="#f8f8f8">
+               <font>
+                  <Font name="Arial Narrow Bold" size="18.0" />
+               </font>
+            </Button>
+            <Text layoutX="56.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOM" />
+            <TextField fx:id="tf_nom" layoutX="222.0" layoutY="69.0" />
+            <Text layoutX="52.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRENOM" />
+            <TextField fx:id="tf_prenom" layoutX="222.0" layoutY="155.0" />
+            <Text layoutX="51.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NUMERO PLACE" />
+            <TextField fx:id="tf_num" layoutX="222.0" layoutY="230.0" />
+            <Button graphicTextGap="8.0" layoutX="325.0" layoutY="577.0" mnemonicParsing="false" onAction="#btclean" prefHeight="71.0" prefWidth="169.0" text="CLEAN" textAlignment="CENTER" />
+            <Button fx:id="reeeetouuuur" layoutX="9.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#btnretour" text="Retour" />
+            <Text layoutX="56.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE" />
+            <Text layoutX="51.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DESTINATION" />
+            <Text layoutX="53.0" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMAIL" />
+            <TextArea fx:id="tf_date" layoutX="222.0" layoutY="304.0" prefHeight="31.0" prefWidth="187.0" />
+            <TextArea fx:id="tf_destination" layoutX="222.0" layoutY="474.0" prefHeight="40.0" prefWidth="187.0" />
+            <TextArea fx:id="tf_email" layoutX="222.0" layoutY="381.0" prefHeight="31.0" prefWidth="187.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

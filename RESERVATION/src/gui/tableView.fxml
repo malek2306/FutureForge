@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="VBOX" prefHeight="547.0" prefWidth="1202.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TableViewController">
+   <children>
+      <Text layoutX="38.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation BUS Details" textAlignment="CENTER" wrappingWidth="415.84814453125">
+         <font>
+            <Font name="Bauhaus 93" size="36.0" />
+         </font>
+      </Text>
+      <TableView fx:id="table" layoutX="18.0" layoutY="159.0" prefHeight="324.0" prefWidth="1162.0">
+        <columns>
+          <TableColumn fx:id="idcolumn" minWidth="0.0" prefWidth="0.0" text="ID reservation" />
+          <TableColumn fx:id="nomcolumn" prefWidth="191.99996948242188" text="NOM" />
+            <TableColumn fx:id="prenomcolumn" prefWidth="170.0" text="PRENOM" />
+            <TableColumn fx:id="placecolumn" prefWidth="194.0" text="NUMERO PLACE" />
+            <TableColumn fx:id="datecolumn" prefWidth="144.0" text="DATE" />
+            <TableColumn fx:id="emailcolumn" prefWidth="170.0" text="EMAIL" />
+            <TableColumn fx:id="destinationcolumn" prefWidth="154.0" text="DESTINATION" />
+            <TableColumn fx:id="editcolumn" prefWidth="124.0" />
+        </columns>
+      </TableView>
+      <Button layoutX="134.0" layoutY="93.0" mnemonicParsing="false" onAction="#btrefresh" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #388E3C;" text="REFRESH" />
+      <Button layoutX="1065.0" layoutY="22.0" mnemonicParsing="false" onAction="#cov" text="COVOITURAGE" />
+      <Button fx:id="add1" layoutX="38.0" layoutY="93.0" mnemonicParsing="false" onMouseClicked="#addbtnn" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #1565C0;" text="ADD" />
+      <TextArea fx:id="rechtxt" layoutX="803.0" layoutY="85.0" prefHeight="31.0" prefWidth="275.0" />
+      <Button fx:id="handlerecherche" layoutX="1094.0" layoutY="93.0" mnemonicParsing="false" onKeyPressed="#rech" text="Rechercher" />
+   </children>
+</AnchorPane>
