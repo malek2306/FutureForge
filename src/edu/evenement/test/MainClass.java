@@ -23,7 +23,7 @@ public class MainClass {
     
      Categories c2= new Categories (27,"roua","el","hammemi");
      Servicecategories sc = new Servicecategories();
-         sc.ajouter(c2);
+        //sc.ajouter(c2);
           
      // sc.supprimer(65);
      // System.out.println(sc.getAll());

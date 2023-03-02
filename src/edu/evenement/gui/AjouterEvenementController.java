@@ -42,6 +42,7 @@ public class AjouterEvenementController implements Initializable {
     private TextField tfdescription;
     private TextField tfphoto;
         UploadServices uploadservices= new UploadServices();
+    @FXML
     private TextField tfdate;
     @FXML
     private TextField tftype;

@@ -39,6 +39,7 @@ public class AjouterCategorieController implements Initializable {
     private TextField tfdescription;
     @FXML
     private TextField tfphoto;
+    
         UploadServices uploadservices= new UploadServices();
     @FXML
     private Button upload;
@@ -61,7 +62,7 @@ public class AjouterCategorieController implements Initializable {
         Categories ce =new Categories(noms,description,photo);
         Servicecategories ces =new Servicecategories();
         ces.ajouter(ce);
-         Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION, "Votre etat est ajouté");
+         Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION, "Votre categorie est ajouté");
 alert1.showAndWait();
     }
 
@@ -80,11 +81,21 @@ alert1.showAndWait();
     }
 
     @FXML
-    private void addcatevent(ActionEvent event) {
+    private void addcatevent(ActionEvent event)throws SQLException {
+        String noms = tfnom.getText();
+         String description = tfdescription.getText();
+         String photo = tfphoto.getText();
+            String FilenameInserver = uploadservices.upload(tfphoto.getText());
+        System.out.println("fins"+FilenameInserver);
+        Categories ce =new Categories(noms,description,photo);
+        Servicecategories ces =new Servicecategories();
+        ces.ajouter(ce);
+         Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION, "Votre categorie est ajouté");
+alert1.showAndWait();
     }
 
-    @FXML
-    private void addcatevent(MouseEvent event) {
-    }
+    
+
+   
     
 }

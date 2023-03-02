@@ -17,6 +17,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
@@ -40,8 +41,8 @@ private Categories etat;
 private Evenement ev ;
     @FXML
     private TextField txttype;
-    @FXML
     private TextField txtdate;
+    
 
  public void initData(Evenement ev) {
     this.ev = ev;

@@ -4,15 +4,28 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.evenement.gui.ModifierCategorieController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.evenement.gui.ModifierCategorieController">
    <children>
-      <TextField fx:id="txtnom" layoutX="49.0" layoutY="59.0" />
-      <Button fx:id="Modifier" layoutX="293.0" layoutY="59.0" mnemonicParsing="false" onAction="#BtnModifierEtat" prefHeight="30.0" prefWidth="109.0" text="Modifier" />
-      <TextField fx:id="txtdescription" layoutX="49.0" layoutY="128.0" />
-      <TextField fx:id="txtphoto" layoutX="49.0" layoutY="200.0" />
-      <Label layoutX="71.0" layoutY="34.0" text="nom" />
-      <Label layoutX="57.0" layoutY="100.0" text="description" />
-      <Label layoutX="57.0" layoutY="169.0" text="photo" />
+      <TextField fx:id="txtnom" layoutX="345.0" layoutY="96.0" />
+      <Button fx:id="Modifier" layoutX="236.0" layoutY="291.0" mnemonicParsing="false" onAction="#BtnModifierEtat" prefHeight="30.0" prefWidth="109.0" text="Modifier">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font></Button>
+      <TextField fx:id="txtdescription" layoutX="345.0" layoutY="152.0" prefHeight="96.0" prefWidth="149.0" />
+      <TextField fx:id="txtphoto" layoutX="87.0" layoutY="164.0" />
+      <Label layoutX="300.0" layoutY="100.0" text="Nom">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></Label>
+      <Label layoutX="275.0" layoutY="176.0" text="Description">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></Label>
+      <Label layoutX="22.0" layoutY="168.0" prefHeight="17.0" prefWidth="59.0" text="photo">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></Label>
    </children>
 </AnchorPane>
