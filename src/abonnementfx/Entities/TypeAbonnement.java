@@ -5,7 +5,10 @@
  */
 package abonnementFX.Entities;
 
-
+/**
+ *
+ * @author ASUS
+ */
 public enum TypeAbonnement {
     MENSUEL,SEMESTRILLE,ANNUELLE
 }

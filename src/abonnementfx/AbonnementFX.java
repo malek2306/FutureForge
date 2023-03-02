@@ -16,7 +16,10 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-
+/**
+ *
+ * @author ASUS
+ */
 public class AbonnementFX extends Application {
     
     @Override
@@ -24,7 +27,7 @@ public class AbonnementFX extends Application {
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource("./gui/AbonnementAdmin/AffichageOffre.fxml"));
-            Scene scene = new Scene(root, 1200, 600);
+            Scene scene = new Scene(root,600,400);
             primaryStage.setTitle("Offre");
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -32,14 +35,13 @@ public class AbonnementFX extends Application {
             System.out.println(ex.getMessage());
         }
         try {
-            root = FXMLLoader.load(getClass().getResource("./gui/AbonnementEtudent/AffichageOffre.fxml"));
-            Scene scene = new Scene(root, 1200, 600);
+            root = FXMLLoader.load(getClass().getResource("./gui/AbonnementEtudent/AffichageOffre2.fxml"));
+            Scene scene = new Scene(root,600,400);
             Stage primaryStage2 = new Stage();
             primaryStage2.setTitle("Offre");
             primaryStage2.setScene(scene);
-            
-        primaryStage2.setScene(scene);
-        primaryStage2.show();
+            primaryStage2.setScene(scene);
+            primaryStage2.show();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }

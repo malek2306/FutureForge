@@ -21,7 +21,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.TextField;
 
-
+/**
+ *
+ * @author ASUS
+ */
 public class AbonnementService {
     Connection cnx = MaConnexion.getInstance().getCnx();
 
@@ -43,6 +46,7 @@ public class AbonnementService {
             ps.setDate(9, abonnement.getDateFin());
             ps.setDouble(10, abonnement.getPrix());
             ps.setInt(11, abonnement.getId_offre());
+            
             ps.executeUpdate();
             
             System.out.println("abonnement Added !");
@@ -163,6 +167,33 @@ public class AbonnementService {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }    
+    }
+
+    public Abonnement get_abonnementByIdentifiantDate(String identifiant) {
+        Abonnement abonnement = null;
+        try {
+            String req = "SELECT * FROM abonnement where identifiant = '"+identifiant+"' and dateD<current_date() and dateF>current_date()";
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            while (rs.next()) {
+                TypeAbonnement type = null;
+                if (rs.getString("type").equals(TypeAbonnement.MENSUEL.toString())){
+                    type=TypeAbonnement.MENSUEL;
+                }
+                else if (rs.getString("type").equals(TypeAbonnement.SEMESTRILLE.toString())){
+                    type=TypeAbonnement.SEMESTRILLE;
+                }
+                else if (rs.getString("type").equals(TypeAbonnement.ANNUELLE.toString())){
+                    type=TypeAbonnement.ANNUELLE;
+                }
+                abonnement = new Abonnement(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"),rs.getString("image"),rs.getString("email"), rs.getString("identifiant"),rs.getString("cin"), type,rs.getDate("dated"), rs.getDate("datef"),rs.getDouble("prix"),rs.getInt("id_offre"));
+                
+            }
+            return abonnement;
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            return null;
+        }   
     }
 
 }

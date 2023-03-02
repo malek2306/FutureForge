@@ -10,7 +10,10 @@ import static java.time.temporal.TemporalQueries.localDate;
 import java.sql.Date;
 
 
-
+/**
+ *
+ * @author GHADA
+ */
 public class Abonnement {
     private int id_ab;
     private String nom;
@@ -74,7 +77,9 @@ public class Abonnement {
         return id_ab;
     }
 
-   
+    public void setId_ab(int id_ab) {
+        this.id_ab = id_ab;
+    }
 
     public String getNom() {
         return nom;
@@ -115,8 +120,6 @@ public class Abonnement {
     public void setType(TypeAbonnement type) {
         this.type = type;
     }
-
-   
     public Date getDateDebut() {
         return dateDebut;
     }

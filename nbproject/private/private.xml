@@ -3,20 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/GHADA/Documents/NetBeansProjects/AbonnementFX/src/abonnementfx/Entities/Abonnement.java</file>
-            <file>file:/C:/Users/GHADA/Documents/NetBeansProjects/AbonnementFX/src/abonnementfx/gui/AbonnementEtudent/AffichageOffreController.java</file>
-            <file>file:/C:/Users/GHADA/Documents/NetBeansProjects/AbonnementFX/src/abonnementfx/Entities/TypeAbonnement.java</file>
-            <file>file:/C:/Users/GHADA/Documents/NetBeansProjects/AbonnementFX/src/abonnementfx/AbonnementFX.java</file>
-            <file>file:/C:/Users/GHADA/Documents/NetBeansProjects/AbonnementFX/src/abonnementfx/Services/OffreService.java</file>
-            <file>file:/C:/Users/GHADA/Documents/NetBeansProjects/AbonnementFX/src/abonnementfx/gui/AbonnementAdmin/BareOptionController.java</file>
-            <file>file:/C:/Users/GHADA/Documents/NetBeansProjects/AbonnementFX/src/abonnementfx/Util/MaConnexion.java</file>
-            <file>file:/C:/Users/GHADA/Documents/NetBeansProjects/AbonnementFX/src/abonnementfx/Services/IServicesAbonnement.java</file>
-            <file>file:/C:/Users/GHADA/Documents/NetBeansProjects/AbonnementFX/src/abonnementfx/gui/AbonnementAdmin/AffichageOffreController.java</file>
-            <file>file:/C:/Users/GHADA/Documents/NetBeansProjects/AbonnementFX/src/abonnementfx/Services/IservicesOffre.java</file>
-            <file>file:/C:/Users/GHADA/Documents/NetBeansProjects/AbonnementFX/src/abonnementfx/Services/AbonnementService.java</file>
-            <file>file:/C:/Users/GHADA/Documents/NetBeansProjects/AbonnementFX/src/abonnementfx/Entities/Categorie.java</file>
-            <file>file:/C:/Users/GHADA/Documents/NetBeansProjects/AbonnementFX/src/abonnementfx/Entities/OffreAbonnement.java</file>
-            <file>file:/C:/Users/GHADA/Documents/NetBeansProjects/AbonnementFX/src/abonnementfx/gui/AbonnementAdmin/AffichageAbonnementController.java</file>
+            <file>file:/C:/Users/GHADA/Desktop/AbonnementFX/src/abonnementfx/Util/MaConnexion.java</file>
+            <file>file:/C:/Users/GHADA/Desktop/AbonnementFX/src/abonnementfx/gui/AbonnementAdmin/AffichageAbonnementController.java</file>
+            <file>file:/C:/Users/GHADA/Desktop/AbonnementFX/src/abonnementfx/AbonnementFX.java</file>
+            <file>file:/C:/Users/GHADA/Desktop/AbonnementFX/src/abonnementfx/gui/AbonnementEtudent/AjouterAbonnementController.java</file>
         </group>
     </open-files>
 </project-private>

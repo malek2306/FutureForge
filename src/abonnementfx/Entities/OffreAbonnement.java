@@ -7,7 +7,10 @@ package abonnementFX.Entities;
 
 import java.sql.Date;
 
-
+/**
+ *
+ * @author GHADA
+ */
 public class OffreAbonnement {
   private int id_ofab;
   private String nom;
@@ -21,7 +24,9 @@ public class OffreAbonnement {
         return id_ofab;
     }
 
-    
+    public void setId_ofab(int id_ofab) {
+        this.id_ofab = id_ofab;
+    }
 
     public String getNom() {
         return nom;
@@ -90,6 +95,11 @@ public class OffreAbonnement {
         this.type = type;
         this.date_debut = date_debut;
         this.date_fin = date_fin;
+    }
+
+    @Override
+    public String toString() {
+        return "OffreAbonnement{" + "id_ofab=" + id_ofab + ", nom=" + nom + ", description=" + description + ", reduction=" + reduction + ", type=" + type + ", date_debut=" + date_debut + ", date_fin=" + date_fin + '}';
     }
    
     

@@ -17,7 +17,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-
+/**
+ * FXML Controller class
+ *
+ * @author ASUS
+ */
 public class BareOptionController implements Initializable {
 
     @FXML

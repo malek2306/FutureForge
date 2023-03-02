@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
@@ -10,146 +11,176 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="1253.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="abonnementfx.gui.AbonnementEtudent.AffichageOffreController">
+<AnchorPane id="AnchorPane" prefHeight="814.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="abonnementfx.gui.AbonnementEtudent.AffichageOffreController">
    <children>
-      <TableView fx:id="tableOffre" layoutX="126.0" layoutY="99.0" onMouseClicked="#choisirOffre" prefHeight="351.0" prefWidth="662.0" />
-      <Text fill="#ff730e" layoutX="324.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Offres" textAlignment="CENTER" wrappingWidth="251.50048828125">
+      <TableView fx:id="tableOffre" layoutX="48.0" layoutY="99.0" onMouseClicked="#choisirOffre" prefHeight="396.0" prefWidth="333.0" />
+      <Text fill="#ff730e" layoutX="82.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Offres" textAlignment="CENTER" wrappingWidth="251.50048828125">
          <font>
-            <Font size="52.0" />
+            <Font size="34.0" />
          </font>
       </Text>
-      <ImageView fx:id="imgEtudiant" fitHeight="104.0" fitWidth="189.0" layoutX="1035.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true" />
-      <TextField fx:id="nom" layoutX="1035.0" layoutY="244.0" />
-      <Text layoutX="864.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" textAlignment="CENTER" wrappingWidth="76.50048828125">
+      <ImageView fx:id="imgEtudiant" fitHeight="81.0" fitWidth="178.0" layoutX="537.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="nom" layoutX="536.0" layoutY="221.0" prefHeight="17.0" prefWidth="131.0">
          <font>
-            <Font size="22.0" />
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Text layoutX="456.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" textAlignment="CENTER" wrappingWidth="76.50048828125">
+         <font>
+            <Font size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="prenom" layoutX="1035.0" layoutY="279.0" />
-      <Text layoutX="864.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom" textAlignment="CENTER" wrappingWidth="76.50048828125">
+      <TextField fx:id="prenom" layoutX="536.0" layoutY="246.0" prefHeight="6.0" prefWidth="131.0">
          <font>
-            <Font size="22.0" />
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Text layoutX="457.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom" textAlignment="CENTER" wrappingWidth="76.50048828125">
+         <font>
+            <Font size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="email" layoutX="1035.0" layoutY="311.0" />
-      <Text layoutX="864.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER" wrappingWidth="76.50048828125">
+      <TextField fx:id="email" layoutX="536.0" layoutY="271.0" prefHeight="16.0" prefWidth="131.0">
          <font>
-            <Font size="22.0" />
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Text layoutX="452.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER" wrappingWidth="76.50048828125">
+         <font>
+            <Font size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="identifiant" layoutX="1035.0" layoutY="343.0" />
-      <Text layoutX="852.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identifiant" textAlignment="CENTER" wrappingWidth="110.9999930858612">
+      <TextField fx:id="identifiant" layoutX="536.0" layoutY="296.0" prefHeight="1.0" prefWidth="132.0">
          <font>
-            <Font size="22.0" />
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Text layoutX="441.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identifiant" textAlignment="CENTER" wrappingWidth="110.9999930858612">
+         <font>
+            <Font size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="cin" layoutX="1035.0" layoutY="375.0" />
-      <Text layoutX="859.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CIN" textAlignment="CENTER" wrappingWidth="101.50048828125">
+      <TextField fx:id="cin" layoutX="536.0" layoutY="320.0" prefHeight="23.0" prefWidth="132.0">
          <font>
-            <Font size="22.0" />
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Text layoutX="442.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CIN" textAlignment="CENTER" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="13.0" />
          </font>
       </Text>
-      <Text layoutX="859.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" textAlignment="CENTER" wrappingWidth="101.50048828125">
+      <Text layoutX="441.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" textAlignment="CENTER" wrappingWidth="101.50048828125">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Text>
-      <ComboBox fx:id="type" layoutX="1035.0" layoutY="408.0" onAction="#typeChangerd" prefHeight="31.0" prefWidth="187.0" />
-      <DatePicker fx:id="dateD" layoutX="1035.0" layoutY="441.0" prefHeight="31.0" prefWidth="187.0" />
-      <DatePicker fx:id="dateF" layoutX="1035.0" layoutY="474.0" prefHeight="31.0" prefWidth="187.0" />
-      <Text layoutX="831.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date debut" textAlignment="CENTER" wrappingWidth="156.50048828125">
+      <ComboBox fx:id="type" layoutX="535.0" layoutY="346.0" onAction="#typeChangerd" prefHeight="16.0" prefWidth="134.0" />
+      <DatePicker fx:id="dateD" layoutX="534.0" layoutY="378.0" prefHeight="31.0" prefWidth="136.0" />
+      <DatePicker fx:id="dateF" layoutX="533.0" layoutY="410.0" prefHeight="31.0" prefWidth="137.0" />
+      <Text layoutX="413.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date debut" textAlignment="CENTER" wrappingWidth="156.50048828125">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Text>
-      <Text layoutX="859.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Fin" textAlignment="CENTER" wrappingWidth="101.50048828125">
+      <Text layoutX="441.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Fin" textAlignment="CENTER" wrappingWidth="101.50048828125">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Text>
-      <Text layoutX="373.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix sans reduction" textAlignment="CENTER" wrappingWidth="228.9999969303608">
+      <Text layoutX="360.0" layoutY="489.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix sans reduction" textAlignment="CENTER" wrappingWidth="228.9999969303608">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="idOffre" layoutX="1035.0" layoutY="517.0" />
-      <Text layoutX="854.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id offre " textAlignment="CENTER" wrappingWidth="101.50048828125">
+      <TextField fx:id="idOffre" layoutX="534.0" layoutY="442.0" prefHeight="0.0" prefWidth="135.0">
          <font>
-            <Font size="22.0" />
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Text layoutX="436.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id offre " textAlignment="CENTER" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="13.0" />
          </font>
       </Text>
-      <Text layoutX="682.0" layoutY="510.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dinar" textAlignment="CENTER" wrappingWidth="101.50048828125">
+      <Text layoutX="617.0" layoutY="489.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dinar" textAlignment="CENTER" wrappingWidth="101.50048828125">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Text>
-      <Text fx:id="prixSR" layoutX="581.0" layoutY="510.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="101.50048828125">
+      <Text fx:id="prixSR" layoutX="535.0" layoutY="489.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="101.50048828125">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Text>
-      <Text layoutX="351.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reduction" textAlignment="CENTER" wrappingWidth="228.9999969303608">
+      <Text layoutX="359.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reduction" textAlignment="CENTER" wrappingWidth="228.9999969303608">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Text>
-      <Text layoutX="681.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dinar" textAlignment="CENTER" wrappingWidth="101.50048828125">
+      <Text layoutX="618.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dinar" textAlignment="CENTER" wrappingWidth="101.50048828125">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Text>
-      <Text fx:id="reduction" fill="#1ab215" layoutX="580.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="101.50048828125">
+      <Text fx:id="reduction" fill="#1ab215" layoutX="537.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="101.50048828125">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Text>
-      <Text layoutX="352.0" layoutY="581.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix A payer" textAlignment="CENTER" wrappingWidth="228.9999969303608">
+      <Text layoutX="362.0" layoutY="560.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix A payer" textAlignment="CENTER" wrappingWidth="228.9999969303608">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Text>
-      <Text layoutX="682.0" layoutY="582.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dinar" textAlignment="CENTER" wrappingWidth="101.50048828125">
+      <Text layoutX="619.0" layoutY="560.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dinar" textAlignment="CENTER" wrappingWidth="101.50048828125">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Text>
-      <Text fx:id="prixAR" fill="RED" layoutX="576.0" layoutY="616.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="101.50048828125">
+      <Text fx:id="prixAR" fill="RED" layoutX="589.0" layoutY="580.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="101.50048828125">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Text>
-      <Button fx:id="addBTN" layoutX="932.0" layoutY="578.0" mnemonicParsing="false" onAction="#addAbonnement" prefHeight="52.0" prefWidth="212.0" style="-fx-background-color: #2abf39;" text="Add Abonnement" textFill="WHITE">
+      <Text layoutX="413.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="------------------------------------------------" textAlignment="CENTER" wrappingWidth="295.0000274479389">
          <font>
-            <Font size="21.0" />
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Button fx:id="addBTN" layoutX="488.0" layoutY="597.0" mnemonicParsing="false" onAction="#addAbonnement" prefHeight="35.0" prefWidth="144.0" style="-fx-background-color: #2abf39;" text="Add Abonnement" textFill="WHITE" />
+      <Text layoutX="464.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image" textAlignment="CENTER" wrappingWidth="76.50048828125">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Button layoutX="539.0" layoutY="89.0" mnemonicParsing="false" onAction="#ajouterImage" prefHeight="26.0" prefWidth="136.0" text="Import Image">
+         <font>
+            <Font size="12.0" />
          </font>
       </Button>
-      <Text layoutX="864.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image" textAlignment="CENTER" wrappingWidth="76.50048828125">
+      <Button layoutX="138.0" layoutY="515.0" mnemonicParsing="false" onAction="#sansOffre" prefHeight="26.0" prefWidth="139.0" style="-fx-background-color: #a1a1a1;" text="Sans Offre">
          <font>
-            <Font size="22.0" />
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="identifiantModifier" layoutX="574.0" layoutY="27.0" prefHeight="8.0" prefWidth="131.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Text layoutX="454.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identifiant" textAlignment="CENTER" wrappingWidth="110.9999930858612">
+         <font>
+            <Font size="13.0" />
          </font>
       </Text>
-      <Button layoutX="1035.0" layoutY="90.0" mnemonicParsing="false" onAction="#ajouterImage" prefHeight="31.0" prefWidth="187.0" text="Import Image" />
-      <Button layoutX="53.0" layoutY="477.0" mnemonicParsing="false" onAction="#sansOffre" prefHeight="52.0" prefWidth="212.0" style="-fx-background-color: #a1a1a1;" text="Sans Offre">
+      <Button layoutX="714.0" layoutY="26.0" mnemonicParsing="false" onAction="#searchAbonnement" prefHeight="25.0" prefWidth="59.0" text="Search">
          <font>
-            <Font size="21.0" />
+            <Font size="12.0" />
          </font>
       </Button>
-      <TextField fx:id="identifiantModifier" layoutX="1035.0" layoutY="36.0" prefHeight="31.0" prefWidth="131.0" />
-      <Text layoutX="849.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identifiant" textAlignment="CENTER" wrappingWidth="110.9999930858612">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Text>
-      <Button layoutX="1190.0" layoutY="36.0" mnemonicParsing="false" onAction="#searchAbonnement" text="Search" />
-      <Button fx:id="modifierBTN" layoutX="844.0" layoutY="578.0" mnemonicParsing="false" onAction="#ModifierAbonnement" prefHeight="52.0" prefWidth="178.0" style="-fx-background-color: #e4b339;" text="Modifier" textFill="WHITE" visible="false">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Button>
-      <Button fx:id="annulerBTN" layoutX="1091.0" layoutY="578.0" mnemonicParsing="false" onAction="#annulerAbonnement" prefHeight="52.0" prefWidth="178.0" style="-fx-background-color: #a1a1a1;" text="Annuler" textFill="WHITE" visible="false">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Button>
+      <Button fx:id="modifierBTN" layoutX="425.0" layoutY="597.0" mnemonicParsing="false" onAction="#ModifierAbonnement" prefHeight="39.0" prefWidth="108.0" style="-fx-background-color: #e4b339;" text="Modifier" textFill="WHITE" />
+      <Button fx:id="annulerBTN" layoutX="566.0" layoutY="597.0" mnemonicParsing="false" onAction="#annulerAbonnement" prefHeight="39.0" prefWidth="115.0" style="-fx-background-color: #a1a1a1;" text="Annuler" textFill="WHITE" />
+      <ListView fx:id="listview" layoutX="887.0" layoutY="144.0" prefHeight="290.0" prefWidth="499.0" />
    </children>
 </AnchorPane>

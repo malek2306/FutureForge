@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="552.0" prefWidth="622.0" style="-fx-background-color: #d7f1f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="abonnementfx.gui.AbonnementEtudent.AjouterAbonnementController">
+   <children>
+      <ImageView fx:id="imgEtudiant" fitHeight="171.0" fitWidth="267.0" layoutX="39.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="nom" layoutX="462.0" layoutY="113.0" prefHeight="17.0" prefWidth="131.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Text layoutX="320.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" wrappingWidth="76.50048828125" />
+      <TextField fx:id="prenom" layoutX="462.0" layoutY="143.0" prefHeight="6.0" prefWidth="131.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Text layoutX="320.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom" wrappingWidth="76.50048828125" />
+      <TextField fx:id="email" layoutX="462.0" layoutY="172.0" prefHeight="16.0" prefWidth="131.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Text layoutX="320.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="76.50048828125" />
+      <TextField fx:id="identifiant" layoutX="462.0" layoutY="203.0" prefHeight="1.0" prefWidth="132.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Text layoutX="320.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identifiant" wrappingWidth="110.9999930858612" />
+      <TextField fx:id="cin" layoutX="462.0" layoutY="233.0" prefHeight="23.0" prefWidth="132.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Text layoutX="320.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CIN" wrappingWidth="101.50048828125" />
+      <Text layoutX="320.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" wrappingWidth="101.50048828125" />
+      <ComboBox fx:id="type" disable="true" layoutX="461.0" layoutY="260.0" prefHeight="16.0" prefWidth="134.0" />
+      <DatePicker fx:id="dateD" layoutX="461.0" layoutY="300.0" prefHeight="31.0" prefWidth="134.0" />
+      <Text layoutX="320.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date debut" wrappingWidth="101.50049164891243" />
+      <Text layoutX="126.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix sans reduction" wrappingWidth="228.9999969303608">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="386.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dinar" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="prixSR" layoutX="316.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="90" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="126.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reduction" wrappingWidth="228.9999969303608">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="386.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dinar" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="reduction" fill="#1ab215" layoutX="316.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="126.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix A payer" wrappingWidth="228.9999969303608">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="386.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dinar" wrappingWidth="101.50048828125">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="prixAR" fill="RED" layoutX="316.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="90" wrappingWidth="59.50048828125">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="127.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="------------------------------------------------" wrappingWidth="369.0000274479389">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="addBTN" layoutX="221.0" layoutY="504.0" mnemonicParsing="false" onAction="#addAbonnement" prefHeight="35.0" prefWidth="171.0" style="-fx-background-color: #2abf39;" text="Acheter Abonnement" textFill="WHITE" />
+      <Text layoutX="39.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image" wrappingWidth="76.50048828125" />
+      <Button layoutX="105.0" layoutY="90.0" mnemonicParsing="false" onAction="#ajouterImage" prefHeight="26.0" prefWidth="136.0" text="Import Image">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+      <Text fill="#0b9a06" layoutX="143.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Acheter une Abonnement" textAlignment="CENTER" wrappingWidth="354.9999969303608">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <Text fx:id="cds1" fill="RED" layoutX="597.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" wrappingWidth="21.50048828125" />
+      <Text fx:id="cds2" fill="RED" layoutX="597.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" wrappingWidth="21.50048828125" />
+      <Text fx:id="cds3" fill="RED" layoutX="597.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" wrappingWidth="21.50048828125" />
+      <Text fx:id="cds4" fill="RED" layoutX="597.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" wrappingWidth="21.50048828125" />
+      <Text fx:id="cds5" fill="RED" layoutX="597.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" wrappingWidth="21.50048828125" />
+      <Text fx:id="cds6" fill="RED" layoutX="597.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" wrappingWidth="21.50048828125" />
+      <Text fx:id="cds" fill="RED" layoutX="422.0" layoutY="517.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remplir les champs correctement" wrappingWidth="189.00000002980232" />
+   </children>
+</AnchorPane>

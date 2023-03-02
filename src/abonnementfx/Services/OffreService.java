@@ -15,11 +15,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
+/**
+ *
+ * @author ASUS
+ */
 public class OffreService {
     Connection cnx = MaConnexion.getInstance().getCnx();
 
@@ -44,7 +48,11 @@ public class OffreService {
 
     public void annuler_offre(int id) {
         try {
-            String req = "DELETE FROM `offre` WHERE id = " + id;
+            java.util.Calendar calendar = java.util.Calendar.getInstance();
+            calendar.add(java.util.Calendar.DAY_OF_MONTH, -1);
+            
+            String req = "UPDATE `offre` SET `dateF` = '" + new java.sql.Date(calendar.getTime().getTime()) + "' WHERE `id` = " + id;
+            
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
             System.out.println("offre annuler !");
@@ -55,7 +63,7 @@ public class OffreService {
 
     public void modifier_offre(int id, OffreAbonnement offre) {
         try {
-            String req = "UPDATE `offre` SET `nom` = '" + offre.getNom() +  "', `description` = '" + offre.getDescription()+ "', `reduction` = " + offre.getReduction() +  ", `type` = '" + offre.getType().toString() + "', `dateD` = '" + offre.getDate_debut() + "', `dateF` = '" + offre.getDate_fin()+ "' WHERE `id` = " + id;
+            String req = "UPDATE `offre` SET `nom` = '" + offre.getNom() +  "', `description` = '" + offre.getDescription()+ "', `reduction` = " + offre.getReduction() +  " WHERE `id` = " + id;
             
             Statement st = cnx.createStatement();
             st.executeUpdate(req);

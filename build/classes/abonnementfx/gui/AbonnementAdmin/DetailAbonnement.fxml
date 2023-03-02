@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="459.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="abonnementfx.gui.AbonnementAdmin.DetailAbonnementController">
+   <children>
+      <Pane fx:id="pane5" layoutX="-1.0" layoutY="75.0" prefHeight="325.0" prefWidth="600.0" style="-fx-background-color: #d1d9e6;">
+         <children>
+            <Text layoutX="208.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOM :">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text layoutX="208.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRENOM :">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text layoutX="208.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IDENTIFIANT :">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text layoutX="208.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DE : ">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text fx:id="dateD" layoutX="430.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2022/02/03">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text layoutX="208.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A :">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text fx:id="dateF" layoutX="430.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2023/02/03">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text fx:id="identifiant" layoutX="429.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="213JFT4645">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text fx:id="prenom" layoutX="429.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AAAAAAA">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text fx:id="nom" layoutX="429.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AAAAAAA">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bac5d7" height="157.0" layoutX="25.0" layoutY="7.0" stroke="TRANSPARENT" strokeType="INSIDE" width="170.0" />
+            <ImageView fx:id="imageEtu" fitHeight="142.0" fitWidth="156.0" layoutX="33.0" layoutY="15.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../../../../../Desktop/image88.jpg" />
+               </image>
+            </ImageView>
+            <Text fx:id="type" fill="#ab1414" layoutX="33.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ANNUELLE">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Text>
+            <Text layoutX="208.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CIN">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text fx:id="CIN" layoutX="429.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="213JFT4645">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text layoutX="208.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gmail">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text fx:id="Gmail" layoutX="429.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="213JFT4645">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <ImageView fitHeight="206.0" fitWidth="156.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Downloads/output-onlinepngtools%20(1).png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e86f0d" height="51.0" layoutX="196.0" layoutY="12.0" stroke="BLACK" strokeType="INSIDE" width="209.0" />
+      <Text fill="WHITE" layoutX="199.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CARTE ABONNEMENT TRASNPORT" textAlignment="CENTER" wrappingWidth="202.0419921875">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Text>
+      <Button layoutX="242.0" layoutY="410.0" mnemonicParsing="false" onAction="#deleteAbonnement" prefHeight="40.0" prefWidth="117.0" style="-fx-background-color: #a11111;" text="Delete" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

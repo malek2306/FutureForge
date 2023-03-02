@@ -5,7 +5,10 @@
  */
 package abonnementFX.Entities;
 
-
+/**
+ *
+ * @author GHADA
+ */
 public class Categorie {
    private String type_abonnement ;
    private int id_type ;

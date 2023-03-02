@@ -24,6 +24,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -31,6 +32,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -50,8 +53,6 @@ public class AffichageOffreController implements Initializable {
 
     @FXML
     private TableView<OffreAbonnement> tableOffre;
-    @FXML
-    private Pane paneOption;
     @FXML
     private ImageView imgEtudiant;
     @FXML
@@ -98,6 +99,8 @@ public class AffichageOffreController implements Initializable {
     private Button modifierBTN;
     @FXML
     private Button annulerBTN;
+    @FXML
+    private ListView<OffreAbonnement> listview;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -110,7 +113,7 @@ public class AffichageOffreController implements Initializable {
     List<OffreAbonnement> offresDisponibles = offres.stream()
     .filter(offre -> today.after(offre.getDate_debut()) && today.before(offre.getDate_fin()))
     .collect(Collectors.toList());
-    
+    /*
     TableColumn<OffreAbonnement, String> nomCol = new TableColumn<>("Nom");
     nomCol.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNom()));
     
@@ -130,7 +133,30 @@ public class AffichageOffreController implements Initializable {
     dateFCol.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDate_fin().toString()));
     
     tableOffre.getColumns().addAll(nomCol, descCol, redCol, typeCol,dateDCol,dateFCol);
+  
     tableOffre.setItems(FXCollections.observableList(offresDisponibles));
+    */
+    ObservableList<OffreAbonnement> offerss = FXCollections.observableArrayList(
+            offres
+    );
+    listview.setItems(offerss);
+        Label selectedOfferLabel = new Label();
+
+        Button addButton = new Button("Add Offer");
+        addButton.setOnAction(event -> {
+            // Prompt user to enter offer details
+            String offer = "New Offer"; // Replace with user input
+            //offers.add(offer);
+        });
+
+        Button removeButton = new Button("Remove Offer");
+        removeButton.setOnAction(event -> {
+            
+        });
+
+        listview.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            //selectedOfferLabel.setText(newValue);
+        });
     }    
 
     @FXML
