@@ -36,7 +36,7 @@ public class Serviceevenement {
        st.setString(1, e.getNom());
        st.setString(2, e.getType());
        st.setString(3, e.getDescription());
-       st.setString(4, e.getDate());
+       st.setDate(4, java.sql.Date.valueOf(e.getDate()));
       st.setInt(5, e.getCategories().getId());
        st.executeUpdate();
             System.out.println("Evenement created !");
@@ -75,7 +75,7 @@ public class Serviceevenement {
        st.setString(1, e.getNom());
        st.setString(2, e.getType());
        st.setString(3, e.getDescription());
-       st.setString(4, e.getDate());
+      st.setDate(4, java.sql.Date.valueOf(e.getDate()));
       st.setInt(5, e.getCategories().getId());
       st.setInt(6,e.getId());
        st.executeUpdate();
@@ -98,7 +98,7 @@ public class Serviceevenement {
             e.setNom(rs.getString("nom"));
             e.setType(rs.getString("type"));
             e.setDescription(rs.getString("description"));
-            e.setDate(rs.getString("Date"));
+             e.setDate(rs.getDate("date").toLocalDate());
             Categories c = new Categories();
             c.setId(rs.getInt("Categorie_id"));   
             e.setCategories(c);
@@ -122,9 +122,9 @@ public Evenement getOneById(int id) {
             e.setNom(rs.getString("nom"));
             e.setType(rs.getString("type"));
             e.setDescription(rs.getString("description"));
-            e.setDate(rs.getString("date"));
+           e.setDate(rs.getDate("date").toLocalDate());
             Categories c = new Categories();
-            c.setId(rs.getInt("categories"));
+            c.setId(rs.getInt("Categorie_id"));   
             e.setCategories(c);
         }
     } catch (SQLException ex) {

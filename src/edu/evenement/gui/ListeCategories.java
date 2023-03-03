@@ -25,6 +25,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import static javafx.scene.input.KeyCode.T;
@@ -57,13 +58,25 @@ public class ListeCategories implements Initializable {
     private Button Action;
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        Servicecategories ps = new Servicecategories();
-        userListObservable = FXCollections.observableArrayList(ps.getAll());
-        usersListView.setItems(userListObservable);
-        userCountLabel.setText("Total des categories : " + userListObservable.size());
-    }
+   public void initialize(URL url, ResourceBundle rb) {
+    Servicecategories ps = new Servicecategories();
+    userListObservable = FXCollections.observableArrayList(ps.getAll());
 
+    // Configurez la cellule ListView pour afficher tous les attributs de la catégorie
+    usersListView.setCellFactory(lv -> new ListCell<Categories>() {
+        @Override
+        public void updateItem(Categories item, boolean empty) {
+            super.updateItem(item, empty);
+            if (empty) {
+                setText(null);
+            } else {
+                setText(String.format(" Nom: %s, Description: %s, Photos: %s", item.getNom(), item.getDescription(), item.getPhoto()));
+            }
+        }
+    });
+
+    usersListView.setItems(userListObservable);
+    userCountLabel.setText("Total des categories : " + userListObservable.size()); }
     @FXML
 private void handleRefresh() {
     Servicecategories ps = new Servicecategories();

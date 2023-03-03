@@ -11,9 +11,17 @@ import edu.evenement.entities.Evenement;
 import edu.evenement.services.Servicecategories;
 import edu.evenement.services.Serviceevenement;
 import edu.evenement.services.UploadServices;
+
 import java.io.File;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,6 +29,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -33,58 +43,88 @@ import javafx.stage.FileChooser;
  */
 public class AjouterEvenementController implements Initializable {
 
-    private TextField tfcatevent;
-    @FXML
-    private Button addcatevent;
-    @FXML
-    private TextField tfnom;
-    @FXML
-    private TextField tfdescription;
-    private TextField tfphoto;
-        UploadServices uploadservices= new UploadServices();
-    @FXML
-    private TextField tfdate;
-    @FXML
-    private TextField tftype;
-    @FXML
-    private TextField cat_id;
-    
+     @FXML private TextField tfcatevent;
+    @FXML private Button addcatevent;
+    @FXML private TextField tfnom;
+    @FXML private TextField tfdescription;
+    @FXML private TextField tfphoto;
+    @FXML private DatePicker tfdate;
+    @FXML private TextField tftype;
+    @FXML private ChoiceBox<Categories> categ_id;
 
+    private List<Categories> categories;
+ 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        categories = setCategories();
+        categ_id.getItems().addAll(categories);
+    
+    }
+
+    /**
+     * Retrieves all the categories from the database
+     */
+    private List<Categories> setCategories() {
+        // Replace this with actual code to retrieve categories from the database
+        List<Categories> categories = new ArrayList<>();
+    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/farah");
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery("SELECT * FROM categories")) {
+        while (rs.next()) {
+            Categories c = new Categories(rs.getInt(1), rs.getString("nom"), rs.getString("description"),rs.getString("photo"));
+            categories.add(c);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return categories;
+
+    }
 
     @FXML
     private void addcatevent(ActionEvent event) throws SQLException {
-         String noms = tfnom.getText();
+        String noms = tfnom.getText();
         String type = tftype.getText();
         String description = tfdescription.getText();
-        String date = tfdate.getText();
-        
-          Categories categ = new Categories("test","test","test");
-    categ.setId (6);
-        Evenement ce =new Evenement(noms,type,description,date,categ);
-        Serviceevenement ces =new Serviceevenement();
+        LocalDate date = tfdate.getValue();
+        Categories categ = categ_id.getValue();
+     List<Categories> categories = setCategories();
+    boolean categorieExiste = categories.contains(categ);
+        if (!categorieExiste) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "La catégorie sélectionnée n'existe pas");
+            alert.showAndWait();
+            return;
+        }
+
+
+        Evenement ce = new Evenement(noms, type, description, date, categ);
+        Serviceevenement ces = new Serviceevenement();
         ces.ajouter(ce);
-         Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION, "Votre evenement est ajouté");
-alert1.showAndWait();
+        Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION, "Votre evenement est ajouté");
+        alert1.showAndWait();
     }
 
     private void upload(ActionEvent event) {
-           FileChooser fc = new FileChooser();
+        FileChooser fc = new FileChooser();
         String imageFile = "";
         File f = fc.showOpenDialog(null);
 
         if (f != null) {
             imageFile = f.getName();
-           tfphoto.setText(imageFile);
-        
+            tfphoto.setText(imageFile);
+        }
     }
 
+   private void categ_id(ActionEvent event) throws SQLException {
+    Categories category = categ_id.getValue();
+    if (category != null) {
+        tfcatevent.setText(String.valueOf(category.getId()));
     }
+    }}
+
     
-}
+    
+    

@@ -5,6 +5,7 @@
  */
 package edu.evenement.entities;
 
+import java.time.LocalDate;
 import java.util.Date;
 import javafx.scene.control.ComboBox;
 
@@ -18,10 +19,10 @@ public class Evenement {
     private String nom;
     private String type;
     private String description;
-    private String date;
+    private LocalDate date;
     private Categories Categories ;
 
-    public Evenement(int id, String type, String description, String date, Categories Categories) {
+    public Evenement(int id, String type, String description, LocalDate date, Categories Categories) {
         this.id = id;
         this.type = type;
         this.description = description;
@@ -29,20 +30,22 @@ public class Evenement {
         this.Categories = Categories;
     }
 
-    public Evenement(String nom, String type, String date, Categories Categories) {
+    public Evenement(String nom, String type, LocalDate date, Categories Categories) {
         this.nom = nom;
         this.type = type;
         this.date = date;
         this.Categories = Categories;
     }
 
-    public Evenement(String nom, String type, String description, String date, Categories Categories) {
+    public Evenement(String nom, String type, String description, LocalDate date, Categories Categories) {
         this.nom = nom;
         this.type = type;
         this.description = description;
         this.date = date;
         this.Categories = Categories;
     }
+
+   
 
    
     public Evenement() {
@@ -54,7 +57,7 @@ public class Evenement {
         this.id = id;
     }
 
-    public Evenement(int id, String nom, String type, String description, String date, Categories Categories) {
+    public Evenement(int id, String nom, String type, String description, LocalDate date, Categories Categories) {
         this.id = id;
         this.nom = nom;
         this.type = type;
@@ -63,6 +66,10 @@ public class Evenement {
         this.Categories = Categories;
     }
 
+   
+    
+
+    
   
 
     
@@ -102,11 +109,11 @@ public class Evenement {
         this.description = description;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

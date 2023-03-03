@@ -32,6 +32,10 @@ public class Categories {
         this.description = description;
         this.photo = photo;
     }
+
+    public Categories(int i, String category_1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
 
 
@@ -68,10 +72,9 @@ public class Categories {
         this.photo = photo;
     }
 
-    @Override
+     @Override
     public String toString() {
-        return "categories{" + "id=" + id + ", nom=" + nom + ", description=" + description + ", photo=" + photo + '}';
-    }
+        return Integer.toString(id);}
 
     @Override
     public int hashCode() {
@@ -106,6 +109,7 @@ public class Categories {
         return true;
     }
 
+   
     
 
   

@@ -7,18 +7,34 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="436.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.evenement.gui.ListeCategories">
+<AnchorPane prefHeight="436.0" prefWidth="771.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.evenement.gui.ListeCategories">
    <VBox layoutX="32.0" layoutY="41.0" prefHeight="395.0" prefWidth="709.0" spacing="10.0">
       <HBox prefHeight="25.0" prefWidth="563.0" spacing="5.0">
          <TextField fx:id="searchField" onAction="#rechercher" promptText="Rechercher" />
        
-         <Button onAction="#handleRefresh" styleClass="btn" stylesheets="@crudDesign.css" text="Rafraîchir" textFill="WHITE" />
-         <Button fx:id="Supprimerprod" onAction="#Supprimerprod" styleClass="btn" stylesheets="@crudDesign.css" text="Supprimer" textFill="WHITE" />
-         <Button fx:id="modif" mnemonicParsing="false" onAction="#modif" text="modif" />
-         <Button fx:id="Action" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
+         <Button onAction="#handleRefresh" styleClass="btn" stylesheets="@crudDesign.css" text="Rafraîchir" textFill="WHITE">
+            <font>
+               <Font name="Arial Black" size="12.0" />
+            </font></Button>
+         <Button fx:id="Supprimerprod" onAction="#Supprimerprod" styleClass="btn" stylesheets="@crudDesign.css" text="Supprimer" textFill="WHITE">
+            <font>
+               <Font name="Arial Black" size="12.0" />
+            </font></Button>
+         <Button fx:id="modif" mnemonicParsing="false" onAction="#modif" text="modifier">
+            <font>
+               <Font name="Arial" size="12.0" />
+            </font></Button>
+         <Button fx:id="Action" mnemonicParsing="false" onAction="#ajouter" text="Ajouter">
+            <font>
+               <Font name="Arial" size="12.0" />
+            </font></Button>
       </HBox>
-      <Label fx:id="userCountLabel" text="Total des etats : " />
-      <ListView fx:id="usersListView" onEditStart="#lissst" prefHeight="300.0" prefWidth="661.0" />
+      <Label fx:id="userCountLabel" prefHeight="17.0" prefWidth="248.0" text="La Liste Totale des categories : ">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></Label>
+      <ListView fx:id="usersListView" onEditStart="#lissst" prefHeight="280.0" prefWidth="694.0" />
    </VBox>
 </AnchorPane>

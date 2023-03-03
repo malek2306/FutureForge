@@ -181,16 +181,9 @@ alert1.showAndWait();
     }
 
     @FXML
-    private void lissst(ListView.EditEvent<Categories> event) {
+    private void lissst(ListView.EditEvent<Evenement> event) {
     }
-
-    
- 
-   
-    
-
     
 
 }
-
 

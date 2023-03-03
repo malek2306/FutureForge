@@ -17,6 +17,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -41,7 +42,8 @@ private Categories etat;
 private Evenement ev ;
     @FXML
     private TextField txttype;
-    private TextField txtdate;
+    @FXML
+    private DatePicker txtdate;
     
 
  public void initData(Evenement ev) {
@@ -50,7 +52,7 @@ private Evenement ev ;
         txtnom.setText(ev.getNom());
         txttype.setText(ev.getType());
         txtdescription.setText(ev.getDescription());
-        txtdate.setText(ev.getDate());
+          txtdate.setValue(ev.getDate());
      
         }}
     /**
@@ -68,7 +70,7 @@ private Evenement ev ;
        ev.setNom(txtnom.getText());
         ev.setType(txttype.getText());
        ev.setDescription(txtdescription.getText());
-         ev.setDate(txtdate.getText());
+       ev.setDate(txtdate.getValue());
 
           Serviceevenement s = new Serviceevenement();
 
