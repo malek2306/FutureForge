@@ -11,12 +11,20 @@ import edu.evenement.entities.Evenement;
 import edu.evenement.services.Servicecategories;
 import edu.evenement.services.Serviceevenement;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -32,7 +40,7 @@ public class ModifierEvenementController implements Initializable {
     private TextField txtEtat;
     @FXML
     private Button Modifier;
-private Categories etat;
+
     @FXML
     private TextField txtnom;
     @FXML
@@ -44,6 +52,8 @@ private Evenement ev ;
     private TextField txttype;
     @FXML
     private DatePicker txtdate;
+    @FXML
+    private ChoiceBox<Categories> categ_id;
     
 
  public void initData(Evenement ev) {
@@ -53,16 +63,39 @@ private Evenement ev ;
         txttype.setText(ev.getType());
         txtdescription.setText(ev.getDescription());
           txtdate.setValue(ev.getDate());
+           Categories categ = categ_id.getValue();
+    }
      
-        }}
+        }
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-          Serviceevenement s = new Serviceevenement ();
-        initData(ev);
-        // TODO
+        List<Categories> categories = setCategories();
+        categ_id.getItems().addAll(categories);
+    
+    }
+
+    /**
+     * Retrieves all the categories from the database
+     */
+    private List<Categories> setCategories() {
+        // Replace this with actual code to retrieve categories from the database
+        List<Categories> categories = new ArrayList<>();
+    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/farah");
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery("SELECT * FROM categories")) {
+        while (rs.next()) {
+            Categories c = new Categories(rs.getInt(1), rs.getString("nom"), rs.getString("description"),rs.getString("photo"));
+            categories.add(c);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return categories;
+
+    
     }    
 
     @FXML
@@ -71,6 +104,14 @@ private Evenement ev ;
         ev.setType(txttype.getText());
        ev.setDescription(txtdescription.getText());
        ev.setDate(txtdate.getValue());
+         Categories categ = categ_id.getValue();
+     List<Categories> categories = setCategories();
+    boolean categorieExiste = categories.contains(categ);
+        if (!categorieExiste) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "La catégorie sélectionnée n'existe pas");
+            alert.showAndWait();
+            return;
+        }
 
           Serviceevenement s = new Serviceevenement();
 
@@ -85,7 +126,13 @@ private Evenement ev ;
         alert.showAndWait();
     }
  
-    
+   
+   private void categ_id(ActionEvent event) throws SQLException {
+    Categories category = categ_id.getValue();
+    if (category != null) {
+        tfcatevent.setText(String.valueOf(category.getId()));
+    }
+    } 
     
 }  
 
