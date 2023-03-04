@@ -62,7 +62,7 @@ public class Servicecategories {
         Statement st = cnx.createStatement();
         ResultSet rs = st.executeQuery(req);
         while (rs.next()) {
-            Categories c = new Categories(rs.getInt(1), rs.getString("nom"), rs.getString("description"), rs.getString("photo"));
+            Categories c = new Categories(rs.getInt(1), rs.getString("nom"), rs.getString("description"), rs.getBytes("photo"));
             list.add(c);
         }
     } catch (SQLException ex) {
@@ -80,7 +80,7 @@ public class Servicecategories {
         st.setInt(1, id);
         ResultSet rs = st.executeQuery();
         if (rs.next()) {
-            c = new Categories(rs.getInt(1), rs.getString("nom"), rs.getString("description"), rs.getString("photo"));
+            c = new Categories(rs.getInt(1), rs.getString("nom"), rs.getString("description"), rs.getBytes("photo"));
         }
     } catch (SQLException ex) {
         System.out.println(ex.getMessage());

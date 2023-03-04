@@ -24,10 +24,10 @@ import java.util.List;
 public class MainClass {
     public static void main(String[] args) throws SQLException  {
        
-    
-     Categories c2= new Categories (28,"roua","el","hammemi");
+    byte[] photo = new byte[0];
+     Categories c2= new Categories (28,"roua","el",photo);
      Servicecategories sc = new Servicecategories();
-        //sc.ajouter(c2);
+        sc.ajouter(c2);
           
      // sc.supprimer(65);
      // System.out.println(sc.getAll());

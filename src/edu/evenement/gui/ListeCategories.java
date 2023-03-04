@@ -4,7 +4,9 @@ package edu.evenement.gui;
 
 
 import edu.evenement.entities.Categories;
+import edu.evenement.entities.Evenement;
 import edu.evenement.services.Servicecategories;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,6 +30,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import static javafx.scene.input.KeyCode.T;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -35,6 +39,7 @@ import javafx.stage.Stage;
 
 public class ListeCategories implements Initializable {
 
+    
 
     @FXML
     private ListView<Categories> usersListView;
@@ -59,7 +64,7 @@ public class ListeCategories implements Initializable {
 
     @Override
    public void initialize(URL url, ResourceBundle rb) {
-    Servicecategories ps = new Servicecategories();
+       Servicecategories ps = new Servicecategories();
     userListObservable = FXCollections.observableArrayList(ps.getAll());
 
     // Configurez la cellule ListView pour afficher tous les attributs de la catégorie
@@ -71,9 +76,15 @@ public class ListeCategories implements Initializable {
                 setText(null);
             } else {
                 setText(String.format(" Nom: %s, Description: %s, Photos: %s", item.getNom(), item.getDescription(), item.getPhoto()));
+                ImageView imageView = new ImageView();
+                imageView.setFitWidth(50);
+                imageView.setFitHeight(50);
+                imageView.setImage(new Image(new ByteArrayInputStream(item.getPhoto())));
+                setGraphic(imageView);
             }
         }
     });
+
 
     usersListView.setItems(userListObservable);
     userCountLabel.setText("Total des categories : " + userListObservable.size()); }
@@ -166,7 +177,7 @@ alert1.showAndWait();
         Servicecategories ps = new Servicecategories();
         userListObservable.addAll(ps.getAll().stream().filter((art) 
                 -> art.getNom().toLowerCase().contains(searchField.getText().toLowerCase())
-                || art.getPhoto().toLowerCase().contains(searchField.getText().toLowerCase())
+                
                 
                 
         //                || Integer.toString(art.getPrixAchat()).equals(searchTF.getText())
@@ -180,7 +191,7 @@ alert1.showAndWait();
 
     @FXML
     private void ajouter(ActionEvent event) throws IOException {
-           FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AjouterCategorie.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AjouterCategorie.fxml"));
         Parent root = (Parent) fxmlLoader.load();
         AjouterCategorieController updateUserController = fxmlLoader.getController();
        
@@ -191,9 +202,13 @@ alert1.showAndWait();
         stage.showAndWait();
     }
 
+     
     @FXML
     private void lissst(ListView.EditEvent<Categories> event) {
     }
+    
+
+}
 
     
  
@@ -202,6 +217,6 @@ alert1.showAndWait();
 
     
 
-}
+
 
 

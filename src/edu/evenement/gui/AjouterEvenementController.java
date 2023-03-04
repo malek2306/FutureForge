@@ -74,7 +74,7 @@ public class AjouterEvenementController implements Initializable {
          Statement stmt = conn.createStatement();
          ResultSet rs = stmt.executeQuery("SELECT * FROM categories")) {
         while (rs.next()) {
-            Categories c = new Categories(rs.getInt(1), rs.getString("nom"), rs.getString("description"),rs.getString("photo"));
+            Categories c = new Categories(rs.getInt(1), rs.getString("nom"), rs.getString("description"),rs.getBytes("photo"));
             categories.add(c);
         }
     } catch (SQLException e) {
@@ -93,11 +93,7 @@ public class AjouterEvenementController implements Initializable {
         Categories categ = categ_id.getValue();
      List<Categories> categories = setCategories();
     boolean categorieExiste = categories.contains(categ);
-        if (!categorieExiste) {
-            Alert alert = new Alert(Alert.AlertType.ERROR, "La catégorie sélectionnée n'existe pas");
-            alert.showAndWait();
-            return;
-        }
+       
 
 
         Evenement ce = new Evenement(noms, type, description, date, categ);

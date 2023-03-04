@@ -15,29 +15,32 @@ public class Categories {
      private int id ;
     private String nom ;
     private String description;
-    private String photo;
-
+   private byte[] photo ;
+   
     public Categories() {
     }
 
-    public Categories(String nom, String description, String photo) {
+    public Categories(String nom, String description, byte[] photo) {
         this.nom = nom;
         this.description = description;
         this.photo = photo;
     }
 
-    public Categories(int id, String nom, String description, String photo) {
+    public Categories(int id, String nom, String description, byte[] photo) {
         this.id = id;
         this.nom = nom;
         this.description = description;
         this.photo = photo;
     }
 
-    public Categories(int i, String category_1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        
+
    
 
+  
+   
+    
+   
 
 
     public int getId() {
@@ -64,17 +67,18 @@ public class Categories {
         this.description = description;
     }
 
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
+    public byte[] getPhoto() {
+         return photo;
+     }
+     
+     public void setPhoto(byte[] photo) {
+         this.photo = photo;
+     }
 
      @Override
     public String toString() {
         return Integer.toString(id);}
+    
 
     @Override
     public int hashCode() {
