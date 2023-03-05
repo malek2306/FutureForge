@@ -191,9 +191,9 @@ alert1.showAndWait();
 
     @FXML
     private void ajouter(ActionEvent event) throws IOException {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AjouterCategorie.fxml"));
+           FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AjouterCategorie.fxml"));
         Parent root = (Parent) fxmlLoader.load();
-        AjouterCategorieController updateUserController = fxmlLoader.getController();
+        AjouterEvenementController updateUserController = fxmlLoader.getController();
        
 
         Stage stage = new Stage();
@@ -202,10 +202,11 @@ alert1.showAndWait();
         stage.showAndWait();
     }
 
-     
     @FXML
     private void lissst(ListView.EditEvent<Categories> event) {
     }
+
+     
     
 
 }

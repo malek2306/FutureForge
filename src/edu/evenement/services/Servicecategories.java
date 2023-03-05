@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.layout.GridPane;
 
 /**
  *
@@ -99,6 +100,10 @@ public class Servicecategories {
             System.out.println(ex.getMessage());
        }
 
+    }
+
+    public void delete(GridPane gridPane) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
     }

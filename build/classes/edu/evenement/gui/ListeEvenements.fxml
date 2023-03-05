@@ -1,37 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="436.0" prefWidth="771.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.evenement.gui.ListeEvenements">
-   <VBox layoutX="32.0" layoutY="41.0" prefHeight="395.0" prefWidth="709.0" spacing="10.0">
-      <HBox prefHeight="25.0" prefWidth="563.0" spacing="5.0">
-         <TextField fx:id="searchField" onAction="#rechercher" promptText="Rechercher" />
-       
-         <Button onAction="#handleRefresh" styleClass="btn" stylesheets="@crudDesign.css" text="Rafraîchir" textFill="WHITE">
-            <font>
-               <Font name="Arial" size="12.0" />
-            </font></Button>
-         <Button fx:id="Supprimerprod" onAction="#Supprimerprod" styleClass="btn" stylesheets="@crudDesign.css" text="Supprimer" textFill="WHITE">
-            <font>
-               <Font name="Arial" size="12.0" />
-            </font></Button>
-         <Button fx:id="modif" mnemonicParsing="false" onAction="#modif" text="Modifier">
-            <font>
-               <Font name="Arial" size="12.0" />
-            </font></Button>
-         <Button fx:id="Action" mnemonicParsing="false" onAction="#ajouter" text="Ajouter">
-            <font>
-               <Font name="Arial" size="12.0" />
-            </font></Button>
-      </HBox>
+<AnchorPane prefHeight="522.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.evenement.gui.ListeEvenements">
+   <VBox layoutX="150.0" layoutY="64.0" prefHeight="459.0" prefWidth="630.0" spacing="10.0">
+      <HBox prefHeight="13.0" prefWidth="624.0" spacing="5.0" />
       <Label fx:id="userCountLabel" prefHeight="17.0" prefWidth="198.0" text="Liste Total des evenements : " />
-      <ListView fx:id="usersListView" onEditStart="#lissst" prefHeight="300.0" prefWidth="661.0" />
+      <ListView fx:id="usersListView" onEditStart="#lissst" prefHeight="405.0" prefWidth="630.0" />
    </VBox>
+   <VBox layoutY="63.0" prefHeight="459.0" prefWidth="149.0" style="-fx-background-color: #64b5f6;">
+      <children>
+         <ImageView fitHeight="80.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true">
+            <VBox.margin>
+               <Insets left="25.0" top="30.0" />
+            </VBox.margin>
+            <image>
+               <Image url="@../../../images/240_F_220225133_pVveDIKf2tEVEbxjqQJjUKnDpMmrcDwH.jpg" />
+            </image>
+         </ImageView>
+         <Button fx:id="Action" mnemonicParsing="false" onAction="#ajouter" prefHeight="33.0" prefWidth="69.0" text="Ajouter" VBox.vgrow="SOMETIMES">
+            <font>
+               <Font name="Arial" size="12.0" />
+            </font>
+            <VBox.margin>
+               <Insets bottom="40.0" left="35.0" right="40.0" top="80.0" />
+            </VBox.margin>
+         </Button>
+         <Button fx:id="modif" mnemonicParsing="false" onAction="#modif" prefHeight="33.0" prefWidth="69.0" text="Modifier">
+            <font>
+               <Font name="Arial" size="12.0" />
+            </font>
+            <VBox.margin>
+               <Insets bottom="40.0" left="35.0" right="40.0" top="10.0" />
+            </VBox.margin>
+         </Button>
+         <Button fx:id="Supprimerprod" onAction="#Supprimerprod" prefHeight="33.0" prefWidth="69.0" styleClass="btn" stylesheets="@crudDesign.css" text="Supprimer" textFill="WHITE">
+            <font>
+               <Font name="Arial" size="12.0" />
+            </font>
+            <VBox.margin>
+               <Insets bottom="40.0" left="35.0" right="40.0" top="10.0" />
+            </VBox.margin>
+         </Button>
+       
+            <Button onAction="#handleRefresh" prefHeight="33.0" prefWidth="69.0" styleClass="btn" stylesheets="@crudDesign.css" text="Rafraîchir" textFill="WHITE">
+            <font>
+               <Font name="Arial" size="12.0" />
+            </font>
+            <VBox.margin>
+               <Insets bottom="40.0" left="35.0" right="40.0" top="10.0" />
+            </VBox.margin>
+         </Button>
+      </children>
+   </VBox>
+   <HBox prefHeight="64.0" prefWidth="792.0" style="-fx-background-color: #2196f3;">
+      <children>
+         <ImageView fitHeight="27.0" fitWidth="24.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" HBox.hgrow="SOMETIMES">
+            <HBox.margin>
+               <Insets left="60.0" top="15.0" />
+            </HBox.margin>
+            <image>
+               <Image url="@../../../images/240_F_109467785_eeYWH2tY4CnkDl9BtuYO6hWjk7hH0okU.jpg" />
+            </image>
+         </ImageView>
+         <TextField fx:id="searchField" alignment="TOP_LEFT" onAction="#rechercher" prefHeight="25.0" prefWidth="544.0" promptText="Rechercher">
+            <opaqueInsets>
+               <Insets bottom="14.0" left="16.0" right="25.0" top="15.0" />
+            </opaqueInsets>
+            <cursor>
+               <Cursor fx:constant="NE_RESIZE" />
+            </cursor>
+            <HBox.margin>
+               <Insets left="60.0" top="15.0" />
+            </HBox.margin></TextField>
+      </children>
+   </HBox>
+   <cursor>
+      <Cursor fx:constant="CLOSED_HAND" />
+   </cursor>
+   <opaqueInsets>
+      <Insets bottom="15.0" left="17.0" right="15.0" top="15.0" />
+   </opaqueInsets>
 </AnchorPane>
