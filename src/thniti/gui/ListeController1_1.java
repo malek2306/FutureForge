@@ -84,7 +84,7 @@ private void handleButtonAction(ActionEvent event) throws IOException {
     @FXML
     private void Supprimerprod(ActionEvent event) {
       if (!usersListView.getSelectionModel().isEmpty()) {
-        Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION, "Etes vous sur de vouloir supprimer la réclamation d'objet " + usersListView.getSelectionModel().getSelectedItem().getContenuM()+ " ?", ButtonType.YES, ButtonType.NO);
+        Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION, "Etes vous sur de vouloir supprimer le msg d'objet " + usersListView.getSelectionModel().getSelectedItem().getContenuM()+ " ?", ButtonType.YES, ButtonType.NO);
 alert1.showAndWait();
         
          Messagerie selectedSERVICE =  usersListView.getSelectionModel().getSelectedItem();

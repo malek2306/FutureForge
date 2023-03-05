@@ -24,9 +24,9 @@
    <ListView fx:id="usersListView" layoutX="240.0" layoutY="341.0" prefHeight="300.0" prefWidth="716.0" />
    <TextField fx:id="searchField" layoutX="240.0" layoutY="243.0" onAction="#searchField" promptText="Rechercher" />
  
-         <Button fx:id="handleRefresh" layoutX="432.0" layoutY="243.0" onAction="#handleRefresh" style="-fx-background-color: black;" text="Rafraîchir" textFill="WHITE" />
-   <Button fx:id="trier" layoutX="520.0" layoutY="243.0" onAction="#trier" style="-fx-background-color: black;" text="trier" textFill="WHITE" />
-   <Button fx:id="Supprimerprod" layoutX="572.0" layoutY="243.0" onAction="#Supprimerprod" style="-fx-background-color: black;" text="supp" textFill="WHITE" />
-   <Button fx:id="stat" layoutX="630.0" layoutY="243.0" onAction="#stat" style="-fx-background-color: black;" text="stat" textFill="WHITE" />
-   <Button fx:id="ajouter" layoutX="680.0" layoutY="243.0" onAction="#ajouter" style="-fx-background-color: black;" text="ajouter msg" textFill="WHITE" />
+         <Button id="line" fx:id="handleRefresh" layoutX="458.0" layoutY="238.0" onAction="#handleRefresh" stylesheets="@style.css" text="Rafraîchir" textFill="WHITE" />
+   <Button id="line" fx:id="trier" layoutX="561.0" layoutY="236.0" onAction="#trier" stylesheets="@style.css" text="trier" textFill="WHITE" />
+   <Button id="line" fx:id="Supprimerprod" layoutX="627.0" layoutY="236.0" onAction="#Supprimerprod" stylesheets="@style.css" text="supp" textFill="WHITE" />
+   <Button id="line" fx:id="stat" layoutX="699.0" layoutY="234.0" onAction="#stat" stylesheets="@style.css" text="stat" textFill="WHITE" />
+   <Button id="line" fx:id="ajouter" layoutX="771.0" layoutY="234.0" onAction="#ajouter" stylesheets="@style.css" text="ajouter msg" textFill="WHITE" />
 </AnchorPane>

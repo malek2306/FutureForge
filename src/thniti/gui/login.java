@@ -16,6 +16,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.paint.Color;
+import javafx.stage.StageStyle;
 
 
 /**
@@ -30,6 +32,11 @@ public class login extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         
        Scene scene = new Scene(root);
+       
+       stage.initStyle(StageStyle.TRANSPARENT);
+       scene.setFill(Color.TRANSPARENT);
+       scene.getStylesheets().add("thniti.gui/style.css");
+       
         
         stage.setScene(scene);
         stage.show();

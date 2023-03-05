@@ -53,6 +53,8 @@ public class ListeController1 implements Initializable {
     private Button stat;
     @FXML
     private Button trier;
+    @FXML
+    private Button handleRefresh;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
