@@ -29,6 +29,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -51,6 +53,20 @@ public class ListeCategories implements Initializable {
 
     @FXML
    private TextField searchField;
+     @FXML
+    private TableView<Categories> tableCa;
+
+    @FXML
+    private TableColumn<Categories, Integer> idCa;
+
+    @FXML
+    private TableColumn<Categories, String> nomCa;
+
+    @FXML
+    private TableColumn<Categories, String> descriptionCa;
+
+    @FXML
+    private TableColumn<Categories, Byte> photoCa;
 
     private Servicecategories userService;
 
