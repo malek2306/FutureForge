@@ -37,7 +37,7 @@
                   <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/key+password+unlock+icon-1320190937666084898.png" />
                </image>
             </ImageView>
-            <Hyperlink layoutX="106.0" layoutY="347.0" text="Mot De passe Oublier" />
+            <Hyperlink layoutX="106.0" layoutY="347.0" onAction="#GoForgotPassword" text="Mot De passe Oublier" />
             <Button fx:id="login" layoutX="34.0" layoutY="309.0" mnemonicParsing="false" onAction="#Login" prefHeight="25.0" prefWidth="267.0" style="-fx-background-color: #78b9eb;" text="Login" />
             <Label fx:id="worng_mdp" layoutX="123.0" layoutY="234.0" prefHeight="17.0" prefWidth="149.0" textFill="RED" />
             <Label fx:id="wrong_user" layoutX="106.0" layoutY="243.0" prefHeight="17.0" prefWidth="149.0" textFill="RED" />

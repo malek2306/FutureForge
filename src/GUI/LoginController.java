@@ -171,4 +171,8 @@ public class LoginController implements Initializable {
         appStage.setScene(homaepageScene);
         appStage.show();
     }
+
+    @FXML
+    private void GoForgotPassword(ActionEvent event) {
+    }
 }
