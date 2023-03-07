@@ -65,16 +65,6 @@ public class Evenement {
         this.date = date;
         this.Categories = Categories;
     }
-
-   
-    
-
-    
-  
-
-    
-    
-
   
 
     public int getId() {

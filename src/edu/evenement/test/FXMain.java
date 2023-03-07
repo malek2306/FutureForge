@@ -12,7 +12,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 /**
- *
+ *3
+ * 
+ * 
+ * 
  * @author farah
  */
 public class FXMain extends Application {
@@ -20,11 +23,11 @@ public class FXMain extends Application {
    
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../gui/ListeCategories.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../gui/ListeEvenements.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Ajouterevenement");
+        primaryStage.setTitle("AjouterEvenement");
         primaryStage.show();
         
     }

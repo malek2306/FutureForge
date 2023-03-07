@@ -13,47 +13,60 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.evenement.gui.AjouterEvenementController">
+<AnchorPane id="AnchorPane" prefHeight="543.0" prefWidth="752.0" style="-fx-background-color: #e3f2fd;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.evenement.gui.AjouterEvenementController">
    <children>
-      <TextField fx:id="tfnom" layoutX="268.0" layoutY="45.0" prefHeight="4.0" prefWidth="174.0" styleClass="shadow" />
-      <Button fx:id="addcatevent" layoutX="458.0" layoutY="350.0" mnemonicParsing="false" onAction="#addcatevent" prefHeight="26.0" prefWidth="109.0" text="Ajouter">
+      <TextField fx:id="tfnom" layoutX="300.0" layoutY="161.0" prefHeight="4.0" prefWidth="174.0" styleClass="shadow" />
+      <Button fx:id="addcatevent" layoutX="574.0" layoutY="343.0" mnemonicParsing="false" onAction="#addcatevent" prefHeight="26.0" prefWidth="109.0" text="Ajouter">
          <styleClass>
             <String fx:value="search-button" />
             <String fx:value="shadow" />
          </styleClass>
       </Button>
-      <HBox prefHeight="400.0" prefWidth="166.0" style="-fx-background-color: #1e88e5;" styleClass="right-bar">
+      <HBox layoutY="148.0" prefHeight="395.0" prefWidth="143.0" style="-fx-background-color: #bbdefb;" styleClass="right-bar">
          <children>
-            <ImageView fitHeight="101.0" fitWidth="119.0" pickOnBounds="true">
+            <ImageView fitHeight="149.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../images/2bbb6b405d96722f53e2fd3d43c668d3.jpg" />
+                  <Image url="@../../../images/task-deadline.png" />
                </image>
                <HBox.margin>
-                  <Insets left="15.0" right="15.0" top="60.0" />
+                  <Insets bottom="30.0" left="25.0" right="20.0" top="135.0" />
                </HBox.margin>
             </ImageView>
          </children></HBox>
-      <TextField fx:id="tftype" layoutX="268.0" layoutY="95.0" prefHeight="25.0" prefWidth="174.0" />
-      <TextField fx:id="tfdescription" layoutX="268.0" layoutY="129.0" prefHeight="101.0" prefWidth="174.0" />
-      <Label layoutX="214.0" layoutY="100.0" text="type">
+      <TextField fx:id="tftype" layoutX="300.0" layoutY="199.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="tfdescription" layoutX="300.0" layoutY="255.0" prefHeight="101.0" prefWidth="174.0" />
+      <Label layoutX="251.0" layoutY="204.0" text="type">
          <font>
-            <Font name="Arial" size="13.0" />
+            <Font name="Arial" size="20.0" />
          </font></Label>
-      <Label layoutX="183.0" layoutY="164.0" text="description">
+      <Label layoutX="194.0" layoutY="294.0" text="description">
          <font>
-            <Font name="Arial" size="13.0" />
+            <Font name="Arial" size="20.0" />
          </font></Label>
-      <Label layoutX="200.0" layoutY="264.0" text="Date">
+      <Label layoutX="242.0" layoutY="397.0" text="Date">
          <font>
-            <Font name="Arial" size="13.0" />
+            <Font name="Arial" size="20.0" />
          </font></Label>
-      <Label layoutX="219.0" layoutY="39.0" prefHeight="37.0" prefWidth="47.0" text="Nom">
+      <Label layoutX="242.0" layoutY="155.0" prefHeight="37.0" prefWidth="47.0" text="Nom">
          <font>
-            <Font name="Arial" size="13.0" />
+            <Font name="Arial" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="183.0" layoutY="305.0" prefHeight="17.0" prefWidth="63.0" text="categorie" />
-      <ChoiceBox fx:id="categ_id" layoutX="280.0" layoutY="301.0" prefWidth="150.0" />
-      <DatePicker fx:id="tfdate" layoutX="268.0" layoutY="259.0" />
+      <Label layoutX="220.0" layoutY="457.0" prefHeight="26.0" prefWidth="90.0" text="categorie">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <ChoiceBox fx:id="categ_id" layoutX="312.0" layoutY="459.0" prefHeight="25.0" prefWidth="174.0" />
+      <DatePicker fx:id="tfdate" layoutX="300.0" layoutY="396.0" />
+      <ImageView fitHeight="37.0" fitWidth="68.0" layoutX="528.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/add.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="146.0" fitWidth="752.0" layoutX="-1.0" pickOnBounds="true">
+         <image>
+            <Image url="@Conference.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

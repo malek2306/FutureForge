@@ -43,11 +43,11 @@ import javafx.stage.FileChooser;
  */
 public class AjouterEvenementController implements Initializable {
 
-     @FXML private TextField tfcatevent;
+     private TextField tfcatevent;
     @FXML private Button addcatevent;
     @FXML private TextField tfnom;
     @FXML private TextField tfdescription;
-    @FXML private TextField tfphoto;
+    private TextField tfphoto;
     @FXML private DatePicker tfdate;
     @FXML private TextField tftype;
     @FXML private ChoiceBox<Categories> categ_id;
@@ -119,8 +119,4 @@ public class AjouterEvenementController implements Initializable {
     if (category != null) {
         tfcatevent.setText(String.valueOf(category.getId()));
     }
-    }}
-
-    
-    
-    
+   }}

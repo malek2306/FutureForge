@@ -1,34 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.evenement.gui.ModifierEvenementController">
+<AnchorPane id="AnchorPane" prefHeight="463.0" prefWidth="680.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.evenement.gui.ModifierEvenementController">
    <children>
-      <TextField fx:id="txtnom" layoutX="209.0" layoutY="62.0" prefWidth="174.0" />
-      <Button fx:id="Modifier" layoutX="246.0" layoutY="336.0" mnemonicParsing="false" onAction="#BtnModifierEtat" prefHeight="30.0" prefWidth="109.0" text="Modifier">
-         <font>
-            <Font name="Arial Black" size="12.0" />
-         </font></Button>
-      <TextField fx:id="txttype" layoutX="209.0" layoutY="101.0" prefWidth="174.0" />
-      <TextField fx:id="txtdescription" layoutX="209.0" layoutY="134.0" prefHeight="92.0" prefWidth="174.0" />
-      <Label layoutX="142.0" layoutY="79.0" text="Nom">
+      <TextField fx:id="txtnom" layoutX="244.0" layoutY="207.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="txttype" layoutX="248.0" layoutY="259.0" prefHeight="25.0" prefWidth="167.0" />
+      <TextField fx:id="txtdescription" layoutX="461.0" layoutY="197.0" prefHeight="190.0" prefWidth="174.0" />
+      <Label layoutX="195.0" layoutY="212.0" text="Nom">
          <font>
             <Font name="Arial" size="12.0" />
          </font></Label>
-      <Label layoutX="156.0" layoutY="134.0" text="Type" />
-      <Label layoutX="140.0" layoutY="180.0" text="Description">
+      <Label layoutX="208.0" layoutY="263.0" text="Type" />
+      <Label layoutX="461.0" layoutY="164.0" text="Description">
          <font>
             <Font name="Arial" size="12.0" />
          </font></Label>
-      <Label layoutX="170.0" layoutY="247.0" text="Date" />
-      <DatePicker fx:id="txtdate" layoutX="213.0" layoutY="243.0" />
-        <ChoiceBox fx:id="categ_id" layoutX="237.0" layoutY="292.0" prefWidth="150.0" />
-      <Label layoutX="150.0" layoutY="296.0" text="categorie_id" />
+      <Label layoutX="208.0" layoutY="307.0" text="Date" />
+      <DatePicker fx:id="txtdate" layoutX="244.0" layoutY="303.0" prefHeight="25.0" prefWidth="174.0" />
+        <ChoiceBox fx:id="categ_id" layoutX="247.0" layoutY="350.0" prefHeight="25.0" prefWidth="174.0" />
+      <Label layoutX="183.0" layoutY="354.0" text="categorie" />
+      <HBox prefHeight="106.0" prefWidth="680.0">
+         <children>
+            <ImageView fitHeight="144.0" fitWidth="685.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../images/Conference.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <VBox layoutX="-3.0" layoutY="143.0" prefHeight="320.0" prefWidth="124.0" style="-fx-background-color: #bbdefb;">
+         <children>
+            <ImageView fitHeight="71.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="30.0" right="25.0" top="60.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../../../images/240_F_220225133_pVveDIKf2tEVEbxjqQJjUKnDpMmrcDwH.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="Modifier" mnemonicParsing="false" onAction="#BtnModifierEtat" prefHeight="30.0" prefWidth="139.0" text="Modifier">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="25.0" left="20.0" right="20.0" top="25.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

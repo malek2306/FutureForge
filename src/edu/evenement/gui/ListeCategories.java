@@ -33,6 +33,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import static javafx.scene.input.KeyCode.T;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -61,6 +62,8 @@ public class ListeCategories implements Initializable {
     private Button modif;
     @FXML
     private Button Action;
+    @FXML
+    private AnchorPane gridPaneContainer;
 
     @Override
    public void initialize(URL url, ResourceBundle rb) {
@@ -187,13 +190,12 @@ alert1.showAndWait();
     }
 
     
-    
 
     @FXML
-    private void ajouter(ActionEvent event) throws IOException {
+    private void Ajouter(ActionEvent event) throws IOException {
            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AjouterCategorie.fxml"));
         Parent root = (Parent) fxmlLoader.load();
-        AjouterEvenementController updateUserController = fxmlLoader.getController();
+        AjouterCategorieController updateUserController = fxmlLoader.getController();
        
 
         Stage stage = new Stage();
@@ -217,7 +219,3 @@ alert1.showAndWait();
     
 
     
-
-
-
-

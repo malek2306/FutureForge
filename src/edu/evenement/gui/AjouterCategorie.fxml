@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
@@ -15,7 +16,7 @@
 
 <AnchorPane id="AnchorPane" onDragDetected="#addcatevent" prefHeight="505.0" prefWidth="806.0" style="-fx-background-color: #e3f2fd;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.evenement.gui.AjouterCategorieController">
    <children>
-      <Button fx:id="addcatevent" layoutX="590.0" layoutY="447.0" mnemonicParsing="false" onAction="#addcatevent" prefHeight="34.0" prefWidth="148.0" text="Ajouter">
+      <Button fx:id="addcatevent" layoutX="590.0" layoutY="439.0" mnemonicParsing="false" onAction="#addcatevent" prefHeight="42.0" prefWidth="148.0" text="Ajouter">
          <styleClass>
             <String fx:value="search-button" />
             <String fx:value="shadow" />
@@ -24,12 +25,22 @@
             <Font name="Arial Black" size="11.0" />
          </font>
       </Button>
-      <HBox accessibleRole="IMAGE_VIEW" layoutY="107.0" prefHeight="420.0" prefWidth="191.0" style="-fx-background-color: #1e88e5;" styleClass="right-bar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="107.0" />
-      <Label layoutX="235.0" layoutY="60.0" text="Nom">
+      <HBox accessibleRole="IMAGE_VIEW" layoutY="48.0" prefHeight="457.0" prefWidth="136.0" style="-fx-background-color: #bbdefb;" styleClass="right-bar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="48.0">
+         <children>
+            <ImageView fitHeight="115.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/category%20(2).png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="20.0" right="16.0" top="80.0" />
+               </HBox.margin>
+            </ImageView>
+         </children></HBox>
+      <Label layoutX="228.0" layoutY="90.0" text="Nom">
          <font>
             <Font name="Arial" size="17.0" />
          </font></Label>
-      <Button fx:id="upload" layoutX="579.0" layoutY="387.0" mnemonicParsing="false" onAction="#upload" prefHeight="34.0" prefWidth="113.0" text="upload">
+      <Button fx:id="upload" layoutX="570.0" layoutY="379.0" mnemonicParsing="false" onAction="#upload" prefHeight="42.0" prefWidth="122.0" text="upload">
          <font>
             <Font name="Arial Black" size="11.0" />
          </font></Button>
@@ -45,9 +56,28 @@
             <Cursor fx:constant="TEXT" />
          </cursor></TextArea>
       <TextField fx:id="tfnom" alignment="TOP_CENTER" layoutX="228.0" layoutY="119.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="34.0" prefWidth="232.0" />
-      <ImageView fitHeight="119.0" fitWidth="191.0" pickOnBounds="true" preserveRatio="true">
+      <HBox layoutY="-1.0" prefHeight="72.0" prefWidth="806.0" style="-fx-background-color: #1565c0;">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/view-timeline.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" prefHeight="72.0" prefWidth="680.0" text="Ajouter Categorie" textAlignment="RIGHT">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="543.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/maxresdefault.jpg" />
+            <Image url="@../../../images/arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="42.0" fitWidth="50.0" layoutX="508.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/upload.png" />
          </image>
       </ImageView>
    </children>
