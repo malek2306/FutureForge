@@ -97,8 +97,6 @@ public class AdminController implements Initializable {
     @FXML
     private Label nbr_users;
     @FXML
-    private ImageView pfp;
-    @FXML
     private Label nbr_motor;
     @FXML
     private TableView<User> table = new TableView<>();
@@ -129,6 +127,12 @@ public class AdminController implements Initializable {
     private TextField searchbar;
     @FXML
     private TextField searchbar1;
+    @FXML
+    private ImageView user_pfp;
+    @FXML
+    private TextField matricule1;
+    @FXML
+    private TextField matricule;
 
     //ObservableList<String> list = FXCollections.observableArrayList("s","ss");
     /**
@@ -140,6 +144,9 @@ public class AdminController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         tablepanel.setVisible(false);
+        listv.setVisible(false);
+        matricule.setVisible(false);
+        matricule1.setVisible(false);
         try {
             int id = 0;
             ServiceUser sp = new ServiceUser();
@@ -163,7 +170,7 @@ public class AdminController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         //table
         ServiceUser sp = new ServiceUser();
         List<User> userList = sp.getAll();
@@ -184,6 +191,10 @@ public class AdminController implements Initializable {
         ServiceUser sp = new ServiceUser();
         String un = list.getSelectionModel().getSelectedItem();
         User u = sp.getOneByUsername(un);
+
+        uname.setText(u.getUsername());
+        uname1.setText(u.getUsername());
+
         nom.setText(u.getNom());
         nom1.setText(u.getNom());
 
@@ -201,6 +212,16 @@ public class AdminController implements Initializable {
         role.setText(u.getRole());
         role1.setText(u.getRole());
 
+        if (u.getRole().equals("Etudiant_m")) {
+            matricule.setVisible(true);
+            matricule1.setVisible(true);
+            matricule.setText(u.getMat());
+            matricule1.setText(u.getMat());
+        } else {
+            matricule.setVisible(false);
+            matricule1.setVisible(false);
+        }
+        sp.displayUserImage(u.getId(), user_pfp);
         System.out.println(id);
         //pfp
     }
@@ -213,7 +234,7 @@ public class AdminController implements Initializable {
         if (alert.getResult() == ButtonType.YES) {
             ServiceUser sp = new ServiceUser();
             sp.supprimerusername(uname.getText());
-            list.refresh();
+            //refresh
         }
     }
 
@@ -290,12 +311,54 @@ public class AdminController implements Initializable {
     private void ShowTable(MouseEvent event) {
         listpanel.setVisible(false);
         tablepanel.setVisible(true);
+        tablev.setVisible(false);
+        listv.setVisible(true);
     }
 
     @FXML
     private void ShowList(MouseEvent event) {
         listpanel.setVisible(true);
         tablepanel.setVisible(false);
+        tablev.setVisible(true);
+        listv.setVisible(false);
+    }
+
+    @FXML
+    private void OnTableClick(MouseEvent event) throws SQLException, IOException {
+        ServiceUser sp = new ServiceUser();
+        User u = table.getSelectionModel().getSelectedItem();
+
+        uname.setText(u.getUsername());
+        uname1.setText(u.getUsername());
+
+        nom.setText(u.getNom());
+        nom1.setText(u.getNom());
+
+        prenom.setText(u.getPrenom());
+        prenom1.setText(u.getPrenom());
+
+        email.setText(u.getEmail());
+        email1.setText(u.getEmail());
+
+        tel.setText(u.getTel());
+        tel1.setText(u.getTel());
+
+        /*uname.setText(u.getUsername());
+        uname1.setText(u.getUsername());*/
+        role.setText(u.getRole());
+        role1.setText(u.getRole());
+
+        if (u.getRole().equals("Etudiant_m")) {
+            matricule.setVisible(true);
+            matricule1.setVisible(true);
+            matricule.setText(u.getMat());
+            matricule1.setText(u.getMat());
+        } else {
+            matricule.setVisible(false);
+            matricule1.setVisible(false);
+        }
+        sp.displayUserImage(u.getId(), user_pfp);
+        System.out.println(id);
     }
 
 }

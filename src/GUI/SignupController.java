@@ -18,6 +18,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.file.Files;
@@ -38,6 +39,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Base64;
 import java.util.Optional;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.embed.swing.SwingFXUtils;
@@ -60,6 +62,12 @@ import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import static sun.security.krb5.Confounder.bytes;
 
 /**
@@ -125,6 +133,7 @@ public class SignupController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         mat.setVisible(false);
+        
 
     }
 
@@ -146,9 +155,8 @@ public class SignupController implements Initializable {
         }
 
     }
-
     @FXML
-    private void submit(ActionEvent event) throws NoSuchAlgorithmException, IOException, SQLException {
+    private void submit(ActionEvent event) throws NoSuchAlgorithmException, IOException, SQLException, MessagingException {
         //controle nom
         int ok = 1;
         String n = nom.getText();

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -9,68 +10,20 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="774.0" prefWidth="1151.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AdminController">
+<AnchorPane id="AnchorPane" prefHeight="805.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AdminController">
    <children>
-      <AnchorPane fx:id="listpanel" layoutX="311.0" layoutY="237.0" prefHeight="497.0" prefWidth="803.0">
+      <AnchorPane fx:id="listpanel" layoutX="315.0" layoutY="230.0" prefHeight="391.0" prefWidth="294.0">
          <children>
-            <ListView fx:id="list" layoutX="35.0" layoutY="48.0" onMouseClicked="#OnMouseClick" prefHeight="415.0" prefWidth="233.0" />
-            <AnchorPane layoutX="282.0" layoutY="21.0" prefHeight="415.0" prefWidth="500.0" style="-fx-background-color: E7ECF9; -fx-background-radius: 50px;">
-               <children>
-                  <TextField fx:id="uname1" layoutX="77.0" layoutY="24.0" promptText="Username" style="-fx-background-radius: 50px;" />
-                  <TextField fx:id="role1" layoutX="296.0" layoutY="24.0" promptText="role" style="-fx-background-radius: 50px;" />
-                  <TextField fx:id="nom" layoutX="77.0" layoutY="64.0" promptText="Nom" style="-fx-background-radius: 50px;" />
-                  <Label layoutX="21.0" layoutY="68.0" text="Nom:">
-                     <font>
-                        <Font name="Yu Gothic Light" size="17.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="prenom1" layoutX="296.0" layoutY="64.0" promptText="Prenom" style="-fx-background-radius: 50px;" />
-                  <TextField fx:id="email1" layoutX="77.0" layoutY="106.0" promptText="Email" style="-fx-background-radius: 50px;" />
-                  <TextField fx:id="tel1" layoutX="77.0" layoutY="145.0" promptText="Tel" style="-fx-background-radius: 50px;" />
-                  <TextField fx:id="role" layoutX="296.0" layoutY="24.0" promptText="Role" style="-fx-background-radius: 50px;" />
-                  <TextField fx:id="nom1" layoutX="77.0" layoutY="64.0" promptText="Nom" style="-fx-background-radius: 50px;" />
-                  <TextField fx:id="prenom" layoutX="296.0" layoutY="64.0" promptText="Prenom" style="-fx-background-radius: 50px;" />
-                  <TextField fx:id="email" layoutX="77.0" layoutY="106.0" promptText="Email" style="-fx-background-radius: 50px;" />
-                  <TextField fx:id="tel" layoutX="77.0" layoutY="145.0" promptText="Tel" style="-fx-background-radius: 50px;" />
-                  <Label layoutX="233.0" layoutY="66.0" text="Prenom:">
-                     <font>
-                        <Font name="Yu Gothic Light" size="17.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="21.0" layoutY="108.0" text="E-mail:">
-                     <font>
-                        <Font name="Yu Gothic Light" size="17.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="21.0" layoutY="147.0" text="Tel">
-                     <font>
-                        <Font name="Yu Gothic Light" size="17.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="pfp" fitHeight="150.0" fitWidth="200.0" layoutX="21.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true" />
-                  <TextField fx:id="uname" layoutX="77.0" layoutY="24.0" promptText="Username" style="-fx-background-radius: 50px;" />
-                  <Label layoutX="21.0" layoutY="26.0" text="User">
-                     <font>
-                        <Font name="Yu Gothic Light" size="17.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="234.0" layoutY="26.0" text="Role">
-                     <font>
-                        <Font name="Yu Gothic Light" size="17.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <Button fx:id="modify" layoutX="291.0" layoutY="438.0" mnemonicParsing="false" onAction="#ModifyUser" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: green; -fx-background-radius: 50px;" text="Modify" />
-            <Button fx:id="delete" layoutX="519.0" layoutY="438.0" mnemonicParsing="false" onAction="#DeleteUser" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: red; -fx-background-radius: 50px;" text="Delete" />
+            <ListView fx:id="list" layoutX="35.0" layoutY="48.0" onMouseClicked="#OnMouseClick" prefHeight="320.0" prefWidth="233.0" />
             <TextField fx:id="searchbar" layoutX="35.0" layoutY="21.0" prefHeight="25.0" prefWidth="233.0" promptText="Recherche" />
          </children>
       </AnchorPane>
       <ImageView fitHeight="36.0" fitWidth="48.0" layoutX="1169.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
-      <AnchorPane layoutX="325.0" layoutY="74.0" prefHeight="127.0" prefWidth="240.0" style="-fx-background-color: CBD1E2; -fx-background-radius: 50px;">
+      <AnchorPane layoutX="354.0" layoutY="74.0" prefHeight="127.0" prefWidth="240.0" style="-fx-background-color: CBD1E2; -fx-background-radius: 50px;">
          <children>
             <Text layoutX="50.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilisateurs">
                <font>
@@ -84,7 +37,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="586.0" layoutY="74.0" prefHeight="127.0" prefWidth="240.0" style="-fx-background-color: CBD1E2; -fx-background-radius: 50px;">
+      <AnchorPane layoutX="637.0" layoutY="74.0" prefHeight="127.0" prefWidth="240.0" style="-fx-background-color: CBD1E2; -fx-background-radius: 50px;">
          <children>
             <Text layoutX="50.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conducteurs">
                <font>
@@ -98,28 +51,14 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="845.0" layoutY="74.0" prefHeight="127.0" prefWidth="240.0" style="-fx-background-color: CBD1E2; -fx-background-radius: 50px;">
-         <children>
-            <Text layoutX="50.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilisateurs">
-               <font>
-                  <Font name="Yu Gothic Light" size="29.0" />
-               </font>
-            </Text>
-            <Label layoutX="93.0" layoutY="46.0" text="N/A" textFill="#00d707">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
       <Text layoutX="343.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
          <font>
             <Font name="Yu Gothic Light" size="29.0" />
          </font>
       </Text>
-      <AnchorPane fx:id="tablepanel" layoutX="411.0" layoutY="245.0" prefHeight="428.0" prefWidth="756.0">
+      <AnchorPane fx:id="tablepanel" layoutX="343.0" layoutY="231.0" prefHeight="367.0" prefWidth="573.0">
          <children>
-            <TableView fx:id="table" layoutX="6.0" layoutY="40.0" prefHeight="388.0" prefWidth="528.0">
+            <TableView fx:id="table" layoutX="6.0" layoutY="40.0" onMouseClicked="#OnTableClick" prefHeight="320.0" prefWidth="528.0">
               <columns>
                 <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Nom" />
                   <TableColumn fx:id="prenomColumn" prefWidth="75.0" text="Prenom" />
@@ -133,16 +72,100 @@
             <TextField fx:id="searchbar1" layoutX="6.0" layoutY="14.0" prefHeight="25.0" prefWidth="528.0" promptText="Recherche" />
          </children>
       </AnchorPane>
-      <ImageView fx:id="tablev" fitHeight="36.0" fitWidth="70.0" layoutX="343.0" layoutY="209.0" onMouseClicked="#ShowTable" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="tablev" fitHeight="21.0" fitWidth="21.0" layoutX="349.0" layoutY="220.0" onMouseClicked="#ShowTable" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/787235.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="listv" fitHeight="36.0" fitWidth="70.0" layoutX="386.0" layoutY="209.0" onMouseClicked="#ShowList" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="listv" fitHeight="21.0" fitWidth="23.0" layoutX="349.0" layoutY="220.0" onMouseClicked="#ShowList" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/1950715.png" />
          </image>
       </ImageView>
-      <Button fx:id="GoBack" layoutX="252.0" layoutY="1.0" mnemonicParsing="false" onAction="#GoHome" text="&lt;---" />
+      <Button fx:id="GoBack" layoutX="931.0" layoutY="52.0" mnemonicParsing="false" onAction="#GoHome" text="&lt;---" />
+      <ImageView fitHeight="32.0" fitWidth="35.0" layoutX="970.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/2767155.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="45.0" fitWidth="35.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/ff.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="59.0" layoutY="10.0" prefHeight="45.0" prefWidth="129.0" text="Dashboard">
+         <font>
+            <Font name="Berlin Sans FB" size="25.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="359.0" layoutY="598.0" prefHeight="320.0" prefWidth="500.0" style="-fx-background-color: E7ECF9; -fx-background-radius: 50px;">
+         <children>
+            <TextField fx:id="matricule1" layoutX="78.0" layoutY="219.0" promptText="Matricule" style="-fx-background-radius: 50px;" />
+            <TextField fx:id="uname1" layoutX="77.0" layoutY="24.0" promptText="Username" style="-fx-background-radius: 50px;" />
+            <TextField fx:id="role1" layoutX="78.0" layoutY="181.0" promptText="role" style="-fx-background-radius: 50px;" />
+            <TextField fx:id="nom" layoutX="77.0" layoutY="64.0" promptText="Nom" style="-fx-background-radius: 50px;" />
+            <Label layoutX="21.0" layoutY="68.0" text="Nom:">
+               <font>
+                  <Font name="Yu Gothic Light" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="prenom1" layoutX="296.0" layoutY="64.0" promptText="Prenom" style="-fx-background-radius: 50px;" />
+            <TextField fx:id="email1" layoutX="77.0" layoutY="106.0" promptText="Email" style="-fx-background-radius: 50px;" />
+            <TextField fx:id="tel1" layoutX="77.0" layoutY="145.0" promptText="Tel" style="-fx-background-radius: 50px;" />
+            <TextField fx:id="role" layoutX="78.0" layoutY="181.0" promptText="Role" style="-fx-background-radius: 50px;" />
+            <TextField fx:id="nom1" layoutX="77.0" layoutY="64.0" promptText="Nom" style="-fx-background-radius: 50px;" />
+            <TextField fx:id="prenom" layoutX="296.0" layoutY="64.0" promptText="Prenom" style="-fx-background-radius: 50px;" />
+            <TextField fx:id="email" layoutX="77.0" layoutY="106.0" promptText="Email" style="-fx-background-radius: 50px;" />
+            <TextField fx:id="tel" layoutX="77.0" layoutY="145.0" promptText="Tel" style="-fx-background-radius: 50px;" />
+            <Label layoutX="233.0" layoutY="66.0" text="Prenom:">
+               <font>
+                  <Font name="Yu Gothic Light" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="108.0" text="E-mail:">
+               <font>
+                  <Font name="Yu Gothic Light" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="147.0" text="Tel">
+               <font>
+                  <Font name="Yu Gothic Light" size="17.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="user_pfp" fitHeight="150.0" fitWidth="200.0" layoutX="253.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" />
+            <TextField fx:id="uname" layoutX="77.0" layoutY="24.0" promptText="Username" style="-fx-background-radius: 50px;" />
+            <Label layoutX="21.0" layoutY="26.0" text="User">
+               <font>
+                  <Font name="Yu Gothic Light" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="183.0" text="Role">
+               <font>
+                  <Font name="Yu Gothic Light" size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="modify" layoutX="11.0" layoutY="273.0" mnemonicParsing="false" onAction="#ModifyUser" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: green; -fx-background-radius: 50px;" text="Modify" />
+            <Button fx:id="delete" layoutX="295.0" layoutY="273.0" mnemonicParsing="false" onAction="#DeleteUser" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: red; -fx-background-radius: 50px;" text="Delete" />
+            <TextField fx:id="matricule" layoutX="77.0" layoutY="219.0" promptText="Matricule" style="-fx-background-radius: 50px;" />
+         </children>
+      </AnchorPane>
+      <Text layoutX="931.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="...">
+         <font>
+            <Font name="Yu Gothic Light" size="29.0" />
+         </font>
+      </Text>
+      <FontAwesomeIconView glyphName="QUESTION" layoutX="59.0" layoutY="844.0" size="20" wrappingWidth="12.857142925262451" />
+      <Text layoutX="86.0" layoutY="843.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assistance Clients">
+         <font>
+            <Font name="Yu Gothic Light" size="16.0" />
+         </font>
+      </Text>
+      <FontAwesomeIconView glyphName="WARNING" layoutX="59.0" layoutY="813.0" size="20" wrappingWidth="12.857142925262451" />
+      <Text layoutX="86.0" layoutY="813.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quoi de neuf?">
+         <font>
+            <Font name="Yu Gothic Light" size="16.0" />
+         </font>
+      </Text>
+      <Line endX="-100.0" endY="223.0" layoutX="323.0" layoutY="684.0" startX="-100.0" />
    </children>
 </AnchorPane>
