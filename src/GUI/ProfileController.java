@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import com.thnity.MainApp;
+import static com.thnity.utils.Constants.FXML_DISPLAY_ALL_OFFRE;
 import entities.Friend;
 import entities.User;
 import java.io.FileWriter;
@@ -400,6 +402,20 @@ public class ProfileController implements Initializable {
     private void FriendList(ActionEvent event) {
         friendpanel.setVisible(true);
         welcome.setVisible(false);
+    }
+
+    @FXML
+    private void GoOffre(ActionEvent event) throws IOException {
+        Parent homPage = FXMLLoader.load(getClass().getResource(FXML_DISPLAY_ALL_OFFRE));
+        Scene homaepageScene = new Scene(homPage);
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage.setScene(homaepageScene);
+        appStage.show();
+        /*
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(FXML_DISPLAY_ALL_OFFRE));
+        Parent root = loader.load();
+        friendpanel.getChildren().add(root);
+        */
     }
 
 }

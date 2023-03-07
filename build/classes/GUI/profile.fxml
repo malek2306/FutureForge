@@ -13,30 +13,16 @@
 
 <AnchorPane id="AnchorPane" prefHeight="848.0" prefWidth="1261.0" style="-fx-background-color: e2f5f8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ProfileController">
    <children>
-      <AnchorPane fx:id="welcome" layoutX="299.0" layoutY="17.0" prefHeight="237.0" prefWidth="340.0">
-         <children>
-            <Label layoutX="21.0" layoutY="7.0" prefHeight="29.0" prefWidth="80.0" text="welcome" textAlignment="CENTER">
-               <font>
-                  <Font name="Lucida Sans Unicode" size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="219.0" layoutY="7.0" prefHeight="29.0" prefWidth="102.0" text="Bienvenue" textAlignment="CENTER">
-               <font>
-                  <Font name="Lucida Sans Unicode" size="18.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="welcome_pfp" fitHeight="160.0" fitWidth="181.0" layoutX="81.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../pfp/880594.png" />
-               </image>
-            </ImageView>
-            <Label fx:id="session_user1" layoutX="111.0" layoutY="23.0" text="...">
-               <font>
-                  <Font name="Yu Gothic Light" size="20.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
+      <Label fx:id="user" layoutX="731.0" layoutY="2.0" prefHeight="43.0" prefWidth="29.0" text="..." textAlignment="CENTER">
+         <font>
+            <Font name="Yu Gothic Light" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="welcome_name" layoutX="689.0" layoutY="11.0" prefHeight="43.0" prefWidth="29.0" text="..." textAlignment="CENTER">
+         <font>
+            <Font name="Yu Gothic Light" size="30.0" />
+         </font>
+      </Label>
       <AnchorPane fx:id="slider" layoutX="-31.0" layoutY="-7.0" prefHeight="814.0" prefWidth="272.0" style="-fx-background-color: white; -fx-background-radius: 0px; -fx-border-color: black;">
          <children>
             <ImageView fx:id="MenuClose" fitHeight="43.0" fitWidth="43.0" layoutX="218.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
@@ -70,7 +56,7 @@
                   <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/chimney-home-icon-transparent-1.png" />
                </image>
             </ImageView>
-            <Button layoutX="22.0" layoutY="422.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="181.0" style="-fx-border-color: black; -fx-background-color: white;" text="Home" />
+            <Button layoutX="22.0" layoutY="422.0" mnemonicParsing="false" onAction="#GoOffre" prefHeight="43.0" prefWidth="181.0" style="-fx-border-color: black; -fx-background-color: white;" text="Offre" />
             <Button layoutX="22.0" layoutY="478.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="181.0" style="-fx-border-color: black; -fx-background-color: white;" text="Home" />
             <Button layoutX="22.0" layoutY="532.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="181.0" style="-fx-border-color: black; -fx-background-color: white;" text="Home" />
             <ImageView fx:id="session_user_pfp" fitHeight="85.0" fitWidth="80.0" layoutX="86.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true">
@@ -138,7 +124,7 @@
             </Text>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="friendpanel" layoutX="696.0" layoutY="45.0" prefHeight="759.0" prefWidth="582.0">
+      <AnchorPane fx:id="friendpanel" layoutX="418.0" layoutY="94.0" prefHeight="685.0" prefWidth="684.0">
          <children>
             <TextField fx:id="recherche" layoutX="85.0" layoutY="14.0" prefHeight="43.0" prefWidth="386.0" promptText="Recherche" style="-fx-background-radius: 50px;" />
             <ImageView fitHeight="43.0" fitWidth="49.0" layoutX="525.0" layoutY="14.0" onMouseClicked="#SearchMouseClick" pickOnBounds="true" preserveRatio="true">
@@ -225,16 +211,20 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Label fx:id="user" layoutX="635.0" layoutY="469.0" prefHeight="43.0" prefWidth="29.0" text="..." textAlignment="CENTER">
-         <font>
-            <Font name="Yu Gothic Light" size="30.0" />
-         </font>
-      </Label>
-      <Label fx:id="welcome_name" layoutX="593.0" layoutY="478.0" prefHeight="43.0" prefWidth="29.0" text="..." textAlignment="CENTER">
-         <font>
-            <Font name="Yu Gothic Light" size="30.0" />
-         </font>
-      </Label>
       <ImageView fx:id="user_add_pfp" fitHeight="150.0" fitWidth="200.0" layoutX="393.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true" />
+      <AnchorPane fx:id="welcome" layoutX="258.0" layoutY="14.0" prefHeight="80.0" prefWidth="314.0">
+         <children>
+            <ImageView fx:id="welcome_pfp" fitHeight="52.0" fitWidth="56.0" layoutX="247.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../pfp/880594.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="session_user1" layoutX="111.0" layoutY="23.0" text="...">
+               <font>
+                  <Font name="Yu Gothic Light" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
