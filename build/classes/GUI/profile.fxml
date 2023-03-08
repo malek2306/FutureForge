@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="background" prefHeight="781.0" prefWidth="1278.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ProfileController">
+<AnchorPane id="AnchorPane" fx:id="background" prefHeight="807.0" prefWidth="1244.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ProfileController">
    <children>
       <AnchorPane fx:id="panetest" layoutY="66.0" prefHeight="160.0" prefWidth="1278.0" style="-fx-background-color: #E2F5F8;">
          <children>
@@ -27,12 +27,12 @@
             </Label>
          </children>
       </AnchorPane>
-      <Label fx:id="user" layoutX="731.0" layoutY="2.0" prefHeight="43.0" prefWidth="29.0" textAlignment="CENTER">
+      <Label fx:id="user" layoutX="246.0" layoutY="11.0" prefHeight="43.0" prefWidth="29.0" textAlignment="CENTER">
          <font>
             <Font name="Yu Gothic Light" size="30.0" />
          </font>
       </Label>
-      <Label fx:id="welcome_name" layoutX="690.0" layoutY="2.0" prefHeight="43.0" prefWidth="29.0" textAlignment="CENTER">
+      <Label fx:id="welcome_name" layoutX="277.0" layoutY="11.0" prefHeight="43.0" prefWidth="29.0" textAlignment="CENTER">
          <font>
             <Font name="Yu Gothic Light" size="30.0" />
          </font>
@@ -97,7 +97,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="920.0" layoutY="237.0" prefHeight="64.0" prefWidth="338.0" style="-fx-background-color: #4A73DA; -fx-background-radius: 25px;">
+      <AnchorPane layoutX="914.0" layoutY="729.0" prefHeight="64.0" prefWidth="338.0" style="-fx-background-color: #4A73DA; -fx-background-radius: 25px;">
          <children>
             <Text layoutX="56.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AMÉLIORERVOTRE VOYAGE">
                <font>
@@ -112,6 +112,7 @@
             </Text>
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="friendpanel" layoutX="246.0" layoutY="414.0" prefHeight="296.0" prefWidth="967.0" />
       <ImageView fitHeight="39.0" fitWidth="34.0" layoutX="274.0" layoutY="235.0" onMouseClicked="#GoToAddFriend" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/add-friends-14.png" />
@@ -122,7 +123,7 @@
             <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/765939-200.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="548.0" layoutY="2.0" prefHeight="64.0" prefWidth="329.0">
+      <AnchorPane layoutX="565.0" layoutY="1.0" prefHeight="64.0" prefWidth="329.0">
          <children>
             <ImageView fx:id="setting" fitHeight="28.0" fitWidth="25.0" layoutX="280.0" layoutY="14.0" onMouseEntered="#SettingHover" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -157,9 +158,9 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="panel" layoutX="479.0" layoutY="274.0" prefHeight="191.0" prefWidth="481.0" style="-fx-background-radius: 50px; -fx-border-color: white; -fx-border-radius: 50px;">
+      <AnchorPane fx:id="panel" layoutX="505.0" layoutY="235.0" prefHeight="233.0" prefWidth="430.0" style="-fx-background-radius: 50px; -fx-border-color: white; -fx-border-radius: 50px;">
          <children>
-            <Label fx:id="uname" layoutX="81.0" layoutY="53.0" prefHeight="29.0" prefWidth="210.0" text="..." textAlignment="CENTER">
+            <Label fx:id="uname" layoutX="85.0" layoutY="67.0" prefHeight="29.0" prefWidth="210.0" text="..." textAlignment="CENTER">
                <font>
                   <Font name="Lucida Sans Unicode" size="18.0" />
                </font>
@@ -169,17 +170,17 @@
                   <Font name="Lucida Sans Unicode" size="14.0" />
                </font>
             </Button>
-            <Label fx:id="label" layoutX="28.0" layoutY="53.0" prefHeight="29.0" prefWidth="49.0" text="User:" textAlignment="CENTER" underline="true">
+            <Label fx:id="label" layoutX="32.0" layoutY="67.0" prefHeight="29.0" prefWidth="49.0" text="User:" textAlignment="CENTER" underline="true">
                <font>
                   <Font name="Lucida Sans Unicode" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="role" layoutX="81.0" layoutY="82.0" prefHeight="29.0" prefWidth="210.0" text="..." textAlignment="CENTER">
+            <Label fx:id="role" layoutX="85.0" layoutY="96.0" prefHeight="29.0" prefWidth="210.0" text="..." textAlignment="CENTER">
                <font>
                   <Font name="Lucida Sans Unicode" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="label1" layoutX="28.0" layoutY="82.0" prefHeight="29.0" prefWidth="49.0" text="Role:" textAlignment="CENTER" underline="true">
+            <Label fx:id="label1" layoutX="32.0" layoutY="96.0" prefHeight="29.0" prefWidth="49.0" text="Role:" textAlignment="CENTER" underline="true">
                <font>
                   <Font name="Lucida Sans Unicode" size="18.0" />
                </font>
@@ -194,7 +195,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="panel1" layoutX="441.0" layoutY="290.0" prefHeight="369.0" prefWidth="558.0" style="-fx-background-radius: 50px; -fx-border-color: white; -fx-border-radius: 50px;">
+      <AnchorPane fx:id="panel1" layoutX="481.0" layoutY="246.0" prefHeight="369.0" prefWidth="558.0" style="-fx-background-radius: 50px; -fx-border-color: white; -fx-border-radius: 50px;">
          <children>
             <TextField fx:id="friendtodelete" layoutX="40.0" layoutY="119.0" />
             <Label fx:id="label2" layoutX="221.0" prefHeight="29.0" prefWidth="116.0" text="Liste d'amis" textAlignment="CENTER" underline="true">

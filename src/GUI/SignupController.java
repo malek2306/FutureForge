@@ -40,6 +40,7 @@ import java.sql.SQLException;
 import java.util.Base64;
 import java.util.Optional;
 import java.util.Properties;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.embed.swing.SwingFXUtils;
@@ -122,10 +123,24 @@ public class SignupController implements Initializable {
     private FileInputStream fis;
     private Connection connection;
     private InputStream respfp;
+    private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    private static final int CODE_LENGTH = 6;
     @FXML
     private TextField pfp;
 
     File f = null;
+    @FXML
+    private AnchorPane signup_pane;
+    @FXML
+    private AnchorPane codepane;
+    @FXML
+    private Button submit1;
+    @FXML
+    private Button submit11;
+    @FXML
+    private TextField verfication;
+    @FXML
+    private TextField code_hide;
 
     /**
      * Initializes the controller class.
@@ -133,7 +148,7 @@ public class SignupController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         mat.setVisible(false);
-        
+        codepane.setVisible(false);
 
     }
 
@@ -155,6 +170,7 @@ public class SignupController implements Initializable {
         }
 
     }
+
     @FXML
     private void submit(ActionEvent event) throws NoSuchAlgorithmException, IOException, SQLException, MessagingException {
         //controle nom
@@ -297,6 +313,17 @@ public class SignupController implements Initializable {
         }
         System.out.println(ok);
         if (ok == 8) {
+            //verfication
+            signup_pane.setVisible(false);
+            codepane.setVisible(true);
+            StringBuilder code = new StringBuilder();
+            Random random = new Random();
+            for (int i = 0; i < CODE_LENGTH; i++) {
+                code.append(CHARACTERS.charAt(random.nextInt(CHARACTERS.length())));
+            }
+            System.out.println(code);
+            code_hide.setText(code.toString());
+            //verficatiion
             //pfp
             javafx.scene.image.Image image = imageView.getImage();
             if (image != null) {
@@ -308,24 +335,6 @@ public class SignupController implements Initializable {
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-            }
-            System.out.println(pfp.getText());
-            System.out.println(respfp);
-            if (checkBox.isSelected()) {
-                Alert a = new Alert(Alert.AlertType.INFORMATION, "User created", ButtonType.OK);
-                Etudiantm u1 = new Etudiantm(nom.getText(), prenom.getText(), uname.getText(), email.getText(), tel.getText(), mdp.getText(), role, respfp, mat.getText());
-                ServiceUser su = new ServiceUser();
-                su.ajouter(u1);
-                a.show();
-                System.out.println("car");
-            } else {
-                System.out.println("KAKAKAKAK");
-                Alert a = new Alert(Alert.AlertType.INFORMATION, "User created", ButtonType.OK);
-                User u1 = new User(nom.getText(), prenom.getText(), uname.getText(), email.getText(), tel.getText(), hashedPassword, role, respfp, mat.getText());
-                ServiceUser su = new ServiceUser();
-                su.ajouter(u1);
-                a.show();
-                System.out.println("normal");
             }
         }
     }
@@ -366,6 +375,49 @@ public class SignupController implements Initializable {
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         appStage.setScene(homaepageScene);
         appStage.show();
+    }
+
+    @FXML
+    private void CancelVerfication(ActionEvent event) {
+        signup_pane.setVisible(true);
+        codepane.setVisible(false);
+    }
+
+    @FXML
+    private void SubmitAfterCode(ActionEvent event) throws IOException {
+        String n = nom.getText();
+        String p = prenom.getText();
+        String u = uname.getText();
+        String e = email.getText();
+        String t = tel.getText();
+        String m = mdp.getText();
+        String cm = cmdp.getText();
+        String role = "";
+        String regexPattern = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
+                + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
+        String hashedPassword = "";
+        ServiceUser sut = new ServiceUser();
+        if (verfication.getText().equals(code_hide.getText())) {
+            if (checkBox.isSelected()) {
+                Alert a = new Alert(Alert.AlertType.INFORMATION, "User created", ButtonType.OK);
+                Etudiantm u1 = new Etudiantm(nom.getText(), prenom.getText(), uname.getText(), email.getText(), tel.getText(), mdp.getText(), role, respfp, mat.getText());
+                ServiceUser su = new ServiceUser();
+                su.ajouter(u1);
+                a.show();
+                signup_pane.setVisible(true);
+                codepane.setVisible(false);
+            } else {
+                System.out.println("KAKAKAKAK");
+                Alert a = new Alert(Alert.AlertType.INFORMATION, "User created", ButtonType.OK);
+                User u1 = new User(nom.getText(), prenom.getText(), uname.getText(), email.getText(), tel.getText(), hashedPassword, role, respfp, mat.getText());
+                ServiceUser su = new ServiceUser();
+                su.ajouter(u1);
+                a.show();
+                System.out.println("normal");
+                signup_pane.setVisible(true);
+                codepane.setVisible(false);
+            }
+        }
     }
 
 }

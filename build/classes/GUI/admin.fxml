@@ -15,7 +15,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="840.0" prefWidth="1217.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AdminController">
    <children>
-      <AnchorPane fx:id="listpanel" layoutX="29.0" layoutY="201.0" prefHeight="391.0" prefWidth="294.0">
+      <AnchorPane fx:id="listpanel" layoutX="315.0" layoutY="201.0" prefHeight="391.0" prefWidth="294.0">
          <children>
             <ListView fx:id="list" layoutX="35.0" layoutY="48.0" onMouseClicked="#OnMouseClick" prefHeight="320.0" prefWidth="233.0" />
             <TextField fx:id="searchbar" layoutX="35.0" layoutY="21.0" prefHeight="25.0" prefWidth="233.0" promptText="Recherche" />
@@ -55,7 +55,7 @@
             <Font name="Yu Gothic Light" size="29.0" />
          </font>
       </Text>
-      <AnchorPane fx:id="tablepanel" layoutX="57.0" layoutY="201.0" prefHeight="367.0" prefWidth="573.0">
+      <AnchorPane fx:id="tablepanel" layoutX="571.0" layoutY="552.0" prefHeight="367.0" prefWidth="573.0">
          <children>
             <TableView fx:id="table" layoutX="6.0" layoutY="40.0" onMouseClicked="#OnTableClick" prefHeight="320.0" prefWidth="528.0">
               <columns>
@@ -71,12 +71,12 @@
             <TextField fx:id="searchbar1" layoutX="6.0" layoutY="14.0" prefHeight="25.0" prefWidth="528.0" promptText="Recherche" />
          </children>
       </AnchorPane>
-      <ImageView fx:id="tablev" fitHeight="21.0" fitWidth="21.0" layoutX="27.0" layoutY="201.0" onMouseClicked="#ShowTable" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="tablev" fitHeight="21.0" fitWidth="21.0" layoutX="675.0" layoutY="191.0" onMouseClicked="#ShowTable" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/787235.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="listv" fitHeight="21.0" fitWidth="23.0" layoutX="27.0" layoutY="201.0" onMouseClicked="#ShowList" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="listv" fitHeight="21.0" fitWidth="23.0" layoutX="627.0" layoutY="191.0" onMouseClicked="#ShowList" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/1950715.png" />
          </image>
@@ -171,5 +171,6 @@
             <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/55281.png" />
          </image>
       </ImageView>
+      <AnchorPane prefHeight="919.0" prefWidth="266.0" />
    </children>
 </AnchorPane>
