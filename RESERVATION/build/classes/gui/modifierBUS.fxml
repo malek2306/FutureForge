@@ -7,16 +7,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="668.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterBusMController">
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gui.ModifierBUSController">
    <children>
-      <AnchorPane id="AnchorPane" fx:id="VBOX" prefHeight="668.0" prefWidth="528.0">
+      <AnchorPane id="AnchorPane" fx:id="VBOX" prefHeight="678.0" prefWidth="600.0">
          <children>
             <Text fontSmoothingType="LCD" layoutX="143.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fill in the form" wrappingWidth="345.9999983161688">
                <font>
                   <Font name="Bauhaus 93" size="35.0" />
                </font>
             </Text>
-            <Button fx:id="ajooouut" layoutX="34.0" layoutY="577.0" mnemonicParsing="false" onAction="#btAjouter" prefHeight="71.0" prefWidth="169.0" style="-fx-background-color: #206615;" text="ADD" textFill="#f8f8f8">
+            <Button fx:id="modif" layoutX="34.0" layoutY="577.0" mnemonicParsing="false" onAction="#btmodif" prefHeight="71.0" prefWidth="169.0" style="-fx-background-color: #206615;" text="MODIFY" textFill="#f8f8f8">
                <font>
                   <Font name="Arial Narrow Bold" size="18.0" />
                </font>

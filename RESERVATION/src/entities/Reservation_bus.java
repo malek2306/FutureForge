@@ -5,12 +5,18 @@
  */
 package entities;
 
+import javax.mail.Message;
+
 /**
  *
  * @author LENOVO
  */
 
 public class Reservation_bus {
+
+    public static void send(Message message) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     private int id_reservation_bus;
     private String nom, prenom,date,email,destination;
     private int num_place ;
@@ -138,13 +144,7 @@ public class Reservation_bus {
         return true;
     }
 
-    public void setUpdate(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setTextField(int id_reservation_bus, String nom, String prenom, int num_place) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
 
     

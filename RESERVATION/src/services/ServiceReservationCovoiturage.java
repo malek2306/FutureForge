@@ -24,16 +24,32 @@ public class ServiceReservationCovoiturage {
 
     Connection cnx = DataSource.getInstance().getCnx();
 
-    public void ajouter(Reservation_covoiturage r) {
+     public void ajouter(Reservation_covoiturage r) {
         try {
-            String req = "INSERT INTO `Reservation_covoiturage` (`nom`, `prenom`,`pnt_rencontre`,`distination`,`nbr_place`,`date`) VALUES ('" + r.getNom() + "', '" + r.getPrenom() + "' , '" + r.getPnt_rencontre() + "' , '" + r.getDistination() + "' , '" + r.getNbr_place() + "','" + r.getDate() + "')";
+            String req = "INSERT INTO `reservation_covoiturage` (`nom`, `prenom`,`pnt_rencontre`,`distination`,`nbr_place`,`date`) VALUES ('" + r.getNom() + "', '" + r.getPrenom() + "' , '" + r.getPnt_rencontre() + "' , '" + r.getDistination() + "' , '" + r.getNbr_place() + "','" + r.getDate() + "')";
+            Statement st = cnx.createStatement();
+            st.executeUpdate(req);
+            System.out.println("reservation crée !");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }}
+        
+        
+        // public void ajouter(Reservation_covoiturage r) {
+       
+       /* try {
+           String req = "INSERT INTO `reservation_covoiturage` (`nom`, `prenom`, `pnt_rencontre`, `distination`, `nbr_place`, `date`) " 
+                    + "VALUES ('" + r.getNom()+ "', '" + r.getPrenom()+ "' , '" + r.getPnt_rencontre()+ "','" +r.getDistination()+"','" +r.getNbr_place()+ "','"+r.getDate()+ "')";
+
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
             System.out.println("reservation crée !");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-    }
+       
+        
+    }*/
     
     public void supprimer(int id_reservation) {
         try {

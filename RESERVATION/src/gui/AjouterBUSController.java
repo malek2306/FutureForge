@@ -78,6 +78,7 @@ public class AjouterBUSController implements Initializable {
         // TODO
 
     }
+    
 
     @FXML
     private void btAjouter(ActionEvent event) {

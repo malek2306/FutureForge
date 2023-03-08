@@ -111,13 +111,13 @@ public class AjouterCovController implements Initializable {
 
     private boolean checkUserExistence(String nom, String prenom) {
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/thnity(1)", "root", "");
-            Statement stmt = conn.createStatement();
+            Connection cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/thnity(1)", "root", "");
+            Statement stmt = cnx.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM reservation_covoiturage WHERE nom='" + nom + "' AND prenom='" + prenom + "'");
             if (rs.next()) {
                 return true;
             }
-            conn.close();
+            cnx.close();
         } catch (SQLException ex) {
             System.out.println("Erreur lors de la vérification de l'existence de l'utilisateur : " + ex.getMessage());
         }
@@ -164,7 +164,7 @@ public class AjouterCovController implements Initializable {
     }
 
     @FXML
-    private void btnretour(MouseEvent event) {
+    private void btnretour() {
 
         try {
             VBOX.getScene().getWindow().hide();

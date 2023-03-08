@@ -17,13 +17,13 @@ import entities.Reservation_bus;
 public class SendSMS {
     
     public static final String ACCOUNT_SID = System.getenv("AC0b065bb9ba457e183a39d09c13170b40");
-    public static final String AUTH_TOKEN = System.getenv("a19f5ee3e18872333a12059072e26bc2");
+    public static final String AUTH_TOKEN = System.getenv("1196b9d782a9608c4bfdfb93e7fd25c3");
 
     public static void sendSMS(Reservation_bus r) {
-        Twilio.init("AC0b065bb9ba457e183a39d09c13170b40", "a19f5ee3e18872333a12059072e26bc2");
+        Twilio.init("AC0b065bb9ba457e183a39d09c13170b40", "1196b9d782a9608c4bfdfb93e7fd25c3");
         Message message = Message.creator(new PhoneNumber("+21694392948"),
                 new PhoneNumber("+12765308592"),
-                "reservation ajouté: nom: "+r.getNom()+" prenom: "+r.getPrenom()+" destination: "+r.getDestination()).create();
+                "reservation ajoutée avec succes de   "+r.getNom()+"   "+r.getPrenom()+" vers  "+r.getDestination()).create();
 
 
         System.out.println(message.getSid());

@@ -216,24 +216,21 @@ public class TableViewController implements Initializable {
                         });
                         editIcon.setOnMouseClicked((MouseEvent event) -> {
                             
-                            reservation_bus = table.getSelectionModel().getSelectedItem();
-                            FXMLLoader loader = new FXMLLoader ();
-                            loader.setLocation(getClass().getResource("AjouterBusM.fxml"));
+                           reservation_bus = table.getSelectionModel().getSelectedItem();
                           
-                          
-                            
+                          FXMLLoader loader = new FXMLLoader ();
+                           loader.setLocation(getClass().getResource("modifierBUS.fxml")); 
                             try {
-                                
                                 loader.load();
                             } catch (IOException ex) {
                                 Logger.getLogger(TableViewController.class.getName()).log(Level.SEVERE, null, ex);
                             }
                             
                             
-                           reservation_bus = loader.getController();
-                            reservation_bus.setUpdate(true);
-                            reservation_bus.setTextField(reservation_bus.getId_reservation_bus(), reservation_bus.getNom(), 
-                                    reservation_bus.getPrenom(),reservation_bus.getNum_place());
+                           ModifierBUSController modifierBUSController = loader.getController();
+                           // modifierBUSController.setUpdate(true);
+                            modifierBUSController.setTextField(reservation_bus.getNom(), 
+                                    reservation_bus.getPrenom(),reservation_bus.getNum_place(),reservation_bus.getDate(),reservation_bus.getEmail(),reservation_bus.getDestination());
                             Parent parent = loader.getRoot();
                             Stage stage = new Stage();
                             stage.setScene(new Scene(parent));
@@ -266,13 +263,17 @@ public class TableViewController implements Initializable {
     }
 
     @FXML
-    private void cov(ActionEvent event) throws IOException {
-         VBOX.getScene().getWindow().hide();
-        Stage Affiche = new Stage();
-        Parent fxml = FXMLLoader.load(getClass().getResource("tableViewCovoiturage.fxml"));
-        Scene scene = new Scene(fxml);
-        Affiche.setScene(scene);
-        Affiche.show();
+    private void cov(ActionEvent event) {
+        try {
+            VBOX.getScene().getWindow().hide();
+            Stage Affiche = new Stage();
+            Parent fxml = FXMLLoader.load(getClass().getResource("tableViewCovoiturage.fxml"));
+            Scene scene = new Scene(fxml);
+            Affiche.setScene(scene);
+            Affiche.show();
+        } catch (IOException ex) {
+            Logger.getLogger(TableViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
 

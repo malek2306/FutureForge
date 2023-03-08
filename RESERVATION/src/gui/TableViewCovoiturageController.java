@@ -139,7 +139,7 @@ public class TableViewCovoiturageController implements Initializable {
 
     private void loadDate() {
 
-        // Connection cnx = DataSource.getInstance().getCnx();
+       // Connection cnx = DataSource.getInstance().getCnx();
         btrefresh();
 
         idcolumn.setCellValueFactory(new PropertyValueFactory<>("id_reservation"));
@@ -181,7 +181,7 @@ public class TableViewCovoiturageController implements Initializable {
                         deleteIcon.setOnMouseClicked((MouseEvent event) -> {
 
                             try {
-                                reservation_covoiturage = table.getSelectionModel().getSelectedItem();
+                                Reservation_covoiturage reservation_covoiturage = table.getSelectionModel().getSelectedItem();
                                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                                 alert.setHeaderText("Warning");
                                 alert.setContentText("Voulez-vous supprimer cette ligne");
@@ -204,27 +204,26 @@ public class TableViewCovoiturageController implements Initializable {
                         editIcon.setOnMouseClicked((MouseEvent event) -> {
 
                             reservation_covoiturage = table.getSelectionModel().getSelectedItem();
-                            FXMLLoader loader = new FXMLLoader();
-                            loader.setLocation(getClass().getResource("AjouterCov.fxml"));
-
+                          
+                          FXMLLoader loader = new FXMLLoader ();
+                           loader.setLocation(getClass().getResource("modifierCOV.fxml")); 
                             try {
-
                                 loader.load();
                             } catch (IOException ex) {
                                 Logger.getLogger(TableViewController.class.getName()).log(Level.SEVERE, null, ex);
                             }
-
-                            reservation_covoiturage = loader.getController();
-                            reservation_covoiturage.setUpdate(true);
-                            reservation_covoiturage.setTextField(reservation_covoiturage.getId_reservation(), reservation_covoiturage.getNom(),
-                                    reservation_covoiturage.getPrenom(), reservation_covoiturage.getPnt_rencontre(),reservation_covoiturage.getDistination(),reservation_covoiturage.getNbr_place()
-                            ,reservation_covoiturage.getDate());
+                            
+                            
+                           ModifierCOVController modifierCOVController = loader.getController();
+                           // modifierBUSController.setUpdate(true);
+                            modifierCOVController.setTextField(reservation_covoiturage.getNom(), 
+                                    reservation_covoiturage.getPrenom(),reservation_covoiturage.getPnt_rencontre(),reservation_covoiturage.getDistination(),reservation_covoiturage.getNbr_place(),reservation_covoiturage.getDate());
                             Parent parent = loader.getRoot();
                             Stage stage = new Stage();
                             stage.setScene(new Scene(parent));
                             stage.initStyle(StageStyle.UTILITY);
                             stage.show();
-
+                           
                         });
 
                         HBox managebtn = new HBox(editIcon, deleteIcon);
@@ -250,6 +249,20 @@ public class TableViewCovoiturageController implements Initializable {
 
     @FXML
     private void btback(ActionEvent event) {
+        try {
+            VBOX.getScene().getWindow().hide();
+            Stage Affiche = new Stage();
+            Parent fxml;
+            
+            fxml = FXMLLoader.load(getClass().getResource("tableView.fxml"));
+            
+            
+            Scene scene = new Scene(fxml);
+            Affiche.setScene(scene);
+            Affiche.show();
+        } catch (IOException ex) {
+            Logger.getLogger(TableViewCovoiturageController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          } 
     }
 
-}

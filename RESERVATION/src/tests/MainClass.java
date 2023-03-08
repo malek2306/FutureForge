@@ -41,8 +41,8 @@ public class MainClass {
  //System.out.println(sp.getAll());
   //sp.getOneById(5);
     
-        SendSMS sm = new SendSMS();
-        sm.sendSMS(r2);
+       // SendSMS sm = new SendSMS();
+        //sm.sendSMS(r2);
     
     
     
