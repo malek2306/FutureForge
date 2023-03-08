@@ -158,7 +158,45 @@ public class ServiceUser {
             System.out.println(ex.getMessage());
         }
     }
+    
+    public void blockUser(String username) {
+        String req = "UPDATE `User` SET `active` = 1 WHERE user_name= ?";
+        try (PreparedStatement statement = cnx.prepareStatement(req)) {
+            statement.setString(1, username);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Error checking username: " + e.getMessage());
+        }
+    }
+    
+    public void unblockUser(String username) {
+        String req = "UPDATE `User` SET `active` = 0 WHERE user_name= ?";
+        try (PreparedStatement statement = cnx.prepareStatement(req)) {
+            statement.setString(1, username);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Error checking username: " + e.getMessage());
+        }
+    }
+    public boolean isBlocked(String username) {
+        boolean isTaken = false;
+        String req = "SELECT active FROM user WHERE user_name = ?";
 
+        try (PreparedStatement statement = cnx.prepareStatement(req)) {
+            statement.setString(1, username);
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+            int count = resultSet.getInt(1);
+
+            if (count == 1) {
+                isTaken = true;
+            }
+        } catch (SQLException e) {
+            System.err.println("Error checking username: " + e.getMessage());
+        }
+        return isTaken;
+    }
+    
     public List<User> getAll() {
         List<User> list = new ArrayList<>();
         try {

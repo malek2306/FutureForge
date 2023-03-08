@@ -30,6 +30,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.TranslateTransition;
 import javafx.collections.transformation.FilteredList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
@@ -51,6 +52,7 @@ import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import javax.imageio.ImageIO;
 
 /**
@@ -136,6 +138,16 @@ public class AdminController implements Initializable {
     private TextField matricule;
     @FXML
     private Line line;
+    @FXML
+    private AnchorPane sidepanel;
+    @FXML
+    private ImageView Menu;
+    @FXML
+    private ImageView MenuClose;
+    @FXML
+    private Button block;
+    @FXML
+    private Button block1;
 
     //ObservableList<String> list = FXCollections.observableArrayList("s","ss");
     /**
@@ -151,6 +163,34 @@ public class AdminController implements Initializable {
         listv.setVisible(false);
         matricule.setVisible(false);
         matricule1.setVisible(false);
+        //slide
+        Menu.setOnMouseClicked(event -> {
+            TranslateTransition slide = new TranslateTransition();
+            slide.setDuration(Duration.seconds(0.4));
+            slide.setNode(sidepanel);
+            slide.setToX(0);
+            slide.play();
+            sidepanel.setTranslateX(-176);
+            slide.setOnFinished((ActionEvent e) -> {
+                Menu.setVisible(false);
+                MenuClose.setVisible(true);
+            });
+        }
+        );
+        MenuClose.setOnMouseClicked(event -> {
+            TranslateTransition slide = new TranslateTransition();
+            slide.setDuration(Duration.seconds(0.4));
+            slide.setNode(sidepanel);
+            slide.setToX(-176);
+            slide.play();
+            sidepanel.setTranslateX(0);
+            slide.setOnFinished((ActionEvent e) -> {
+                Menu.setVisible(true);
+                MenuClose.setVisible(false);
+            });
+        }
+        );
+        //slide
         try {
             int id = 0;
             ServiceUser sp = new ServiceUser();
@@ -381,7 +421,31 @@ public class AdminController implements Initializable {
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         appStage.setScene(homaepageScene);
         appStage.show();
-        
+
+    }
+
+    @FXML
+    private void SlideControl(MouseEvent event) {
+    }
+
+    @FXML
+    private void BlockUser(ActionEvent event) {
+        Alert alert = new Alert(AlertType.CONFIRMATION, "êtes-vous sûr de vouloir bloquer " + uname.getText() + " ?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+        alert.showAndWait();
+        if (alert.getResult() == ButtonType.YES) {
+            ServiceUser su = new ServiceUser();
+            su.blockUser(uname.getText());
+        }
+    }
+
+    @FXML
+    private void UnBlockUser(ActionEvent event) {
+        Alert alert = new Alert(AlertType.CONFIRMATION, "êtes-vous sûr de vouloir unbloquer " + uname.getText() + " ?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+        alert.showAndWait();
+        if (alert.getResult() == ButtonType.YES) {
+            ServiceUser su = new ServiceUser();
+            su.unblockUser(uname.getText());
+        }
     }
 
 }

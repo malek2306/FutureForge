@@ -104,39 +104,43 @@ public class LoginController implements Initializable {
             wrong_user.setText("Donner mot de passe!!");
         } else if (su.isUsernameTaken(user.getText())) {
             if (u.getMdp().equals(mdp.getText())) {
-                System.out.println(u.getRole());
-                if (u.getRole().equals("Admin")) {
-                    login.setUsername(u.getUsername());
-                    login.setPassword(u.getMdp());
-                    login.setUserid(u.getId());
-                    Parent homPage = FXMLLoader.load(getClass().getResource("admin.fxml"));
-                    Scene homaepageScene = new Scene(homPage);
-                    Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    appStage.setScene(homaepageScene);
-                    appStage.show();
-                } else if (u.getRole().equals("Etudiant") || u.getRole().equals("Etudiant_m")) {
-                    login.setUsername(u.getUsername());
-                    login.setPassword(u.getMdp());
-                    login.setUserid(u.getId());
-                    //file
-                    if (remember.isSelected()) {
-                        FileWriter myWriter = new FileWriter("filename.txt");
-                        myWriter.write(login.getUsername());
-                        myWriter.close();
-                        System.out.println("Successfully wrote to the file.");
-                    } else {
-                        FileWriter myWriter = new FileWriter("filename.txt");
-                        myWriter.write("");
-                        myWriter.close();
+                if (!su.isBlocked(user.getText())) {
+                    System.out.println(u.getRole());
+                    if (u.getRole().equals("Admin")) {
+                        login.setUsername(u.getUsername());
+                        login.setPassword(u.getMdp());
+                        login.setUserid(u.getId());
+                        Parent homPage = FXMLLoader.load(getClass().getResource("admin.fxml"));
+                        Scene homaepageScene = new Scene(homPage);
+                        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        appStage.setScene(homaepageScene);
+                        appStage.show();
+                    } else if (u.getRole().equals("Etudiant") || u.getRole().equals("Etudiant_m")) {
+                        login.setUsername(u.getUsername());
+                        login.setPassword(u.getMdp());
+                        login.setUserid(u.getId());
+                        //file
+                        if (remember.isSelected()) {
+                            FileWriter myWriter = new FileWriter("filename.txt");
+                            myWriter.write(login.getUsername());
+                            myWriter.close();
+                            System.out.println("Successfully wrote to the file.");
+                        } else {
+                            FileWriter myWriter = new FileWriter("filename.txt");
+                            myWriter.write("");
+                            myWriter.close();
+                        }
+                        //file
+                        Parent homPage = FXMLLoader.load(getClass().getResource("profile.fxml"));
+                        Scene homaepageScene = new Scene(homPage);
+                        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        appStage.setScene(homaepageScene);
+                        appStage.show();
                     }
-                    //file
-                    Parent homPage = FXMLLoader.load(getClass().getResource("profile.fxml"));
-                    Scene homaepageScene = new Scene(homPage);
-                    Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    appStage.setScene(homaepageScene);
-                    appStage.show();
                 }
+                else{wrong_user.setText("votre compte est bloqué, veuillez contacter un administrateur ou écrire un ticket pour faire appel");}
             }
+            else{wrong_user.setText("mauvais mot de passe réessayer");}
         } else {
             wrong_user.setText("User nexiste pas!!");
         }
