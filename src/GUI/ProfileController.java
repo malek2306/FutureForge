@@ -5,8 +5,6 @@
  */
 package GUI;
 
-import com.thnity.MainApp;
-import static com.thnity.utils.Constants.FXML_DISPLAY_ALL_OFFRE;
 import entities.Friend;
 import entities.User;
 import java.io.FileWriter;
@@ -38,6 +36,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -116,6 +115,24 @@ public class ProfileController implements Initializable {
     private Label user1;
     @FXML
     private ImageView user_add_pfp;
+    @FXML
+    private AnchorPane background;
+    @FXML
+    private AnchorPane panel;
+    @FXML
+    private AnchorPane panel1;
+    @FXML
+    private Label label;
+    @FXML
+    private Label label1;
+    @FXML
+    private Label label2;
+    @FXML
+    private Label label5;
+    @FXML
+    private Label label3;
+    @FXML
+    private Label label4;
 
     /**
      * Initializes the controller class.
@@ -257,6 +274,7 @@ public class ProfileController implements Initializable {
             recherche.setStyle("");
             uname.setText(u.getUsername());
             role.setText(u.getRole());
+            su.displayUserImage(u.getId(), Friend_pfp);
             su.displayUserImage(u.getId(), user_add_pfp);
         }
     }
@@ -406,16 +424,30 @@ public class ProfileController implements Initializable {
 
     @FXML
     private void GoOffre(ActionEvent event) throws IOException {
-        Parent homPage = FXMLLoader.load(getClass().getResource(FXML_DISPLAY_ALL_OFFRE));
-        Scene homaepageScene = new Scene(homPage);
-        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        appStage.setScene(homaepageScene);
-        appStage.show();
-        /*
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(FXML_DISPLAY_ALL_OFFRE));
-        Parent root = loader.load();
-        friendpanel.getChildren().add(root);
-        */
+        
+    }
+
+    @FXML
+    private void GoDarkMode(MouseEvent event) {
+        background.setStyle("-fx-background-color: #0A2647");
+        slider.setStyle("-fx-background-color: #144272");
+        recherche.setStyle("-fx-text-color: #205295");
+        recherche.setStyle("-fx-background-color: #2C74B3");
+        uname.setTextFill(Color.web("#2C74B3"));
+        role.setTextFill(Color.web("#2C74B3"));
+        friend_name.setTextFill(Color.web("#2C74B3"));
+        friend_prenom.setTextFill(Color.web("#2C74B3"));
+        friend_role.setTextFill(Color.web("#2C74B3"));
+        session_user.setTextFill(Color.web("#2C74B3"));
+        label.setTextFill(Color.web("#2C74B3"));
+        label1.setTextFill(Color.web("#2C74B3"));
+        label2.setTextFill(Color.web("#2C74B3"));
+        label3.setTextFill(Color.web("#2C74B3"));
+        label4.setTextFill(Color.web("#2C74B3"));
+        label5.setTextFill(Color.web("#2C74B3"));
+        is_friend.setStyle("-fx-background-color: #2C74B3");
+        is_friend.setStyle("-fx-text-color: #205295");
+        
     }
 
 }

@@ -133,7 +133,7 @@ public class ServiceFriend {
 
     public List<Friend> IsFriend(String u) {
         List<Friend> list = new ArrayList<>();
-        String req = "SELECT * FROM friends WHERE username1 = ? OR username2 = ? AND valide_f = 1";
+        String req = "SELECT * FROM friends WHERE (username1 = ? OR username2 = ?) AND valide_f = 1";
         try (PreparedStatement statement = cnx.prepareStatement(req)) {
             statement.setString(1, u);
             statement.setString(2, u);

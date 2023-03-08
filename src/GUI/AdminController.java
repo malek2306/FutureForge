@@ -49,6 +49,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
 
@@ -133,6 +134,8 @@ public class AdminController implements Initializable {
     private TextField matricule1;
     @FXML
     private TextField matricule;
+    @FXML
+    private Line line;
 
     //ObservableList<String> list = FXCollections.observableArrayList("s","ss");
     /**
@@ -143,6 +146,7 @@ public class AdminController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        line.getStrokeDashArray().addAll(25d, 20d, 5d, 20d);
         tablepanel.setVisible(false);
         listv.setVisible(false);
         matricule.setVisible(false);
@@ -359,6 +363,25 @@ public class AdminController implements Initializable {
         }
         sp.displayUserImage(u.getId(), user_pfp);
         System.out.println(id);
+    }
+
+    @FXML
+    private void LogOut(MouseEvent event) throws IOException {
+        Parent homPage = FXMLLoader.load(getClass().getResource("FXML.fxml"));
+        Scene homaepageScene = new Scene(homPage);
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage.setScene(homaepageScene);
+        appStage.show();
+    }
+
+    @FXML
+    private void GoCalendar(MouseEvent event) throws IOException {
+        Parent homPage = FXMLLoader.load(getClass().getResource("src\fullCalendar.fxml"));
+        Scene homaepageScene = new Scene(homPage);
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage.setScene(homaepageScene);
+        appStage.show();
+        
     }
 
 }

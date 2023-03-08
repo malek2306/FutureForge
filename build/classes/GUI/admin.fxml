@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -14,37 +13,37 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="805.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AdminController">
+<AnchorPane id="AnchorPane" prefHeight="840.0" prefWidth="1217.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AdminController">
    <children>
-      <AnchorPane fx:id="listpanel" layoutX="315.0" layoutY="230.0" prefHeight="391.0" prefWidth="294.0">
+      <AnchorPane fx:id="listpanel" layoutX="29.0" layoutY="201.0" prefHeight="391.0" prefWidth="294.0">
          <children>
             <ListView fx:id="list" layoutX="35.0" layoutY="48.0" onMouseClicked="#OnMouseClick" prefHeight="320.0" prefWidth="233.0" />
             <TextField fx:id="searchbar" layoutX="35.0" layoutY="21.0" prefHeight="25.0" prefWidth="233.0" promptText="Recherche" />
          </children>
       </AnchorPane>
       <ImageView fitHeight="36.0" fitWidth="48.0" layoutX="1169.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
-      <AnchorPane layoutX="354.0" layoutY="74.0" prefHeight="127.0" prefWidth="240.0" style="-fx-background-color: CBD1E2; -fx-background-radius: 50px;">
+      <AnchorPane layoutX="326.0" layoutY="74.0" prefHeight="75.0" prefWidth="171.0" style="-fx-background-color: CBD1E2; -fx-background-radius: 10px;">
          <children>
-            <Text layoutX="50.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilisateurs">
+            <Text layoutX="16.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilisateurs">
                <font>
                   <Font name="Yu Gothic Light" size="29.0" />
                </font>
             </Text>
-            <Label fx:id="nbr_users" layoutX="103.0" layoutY="46.0" text="N/A" textFill="RED">
+            <Label fx:id="nbr_users" layoutX="59.0" layoutY="46.0" text="N/A" textFill="RED">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="637.0" layoutY="74.0" prefHeight="127.0" prefWidth="240.0" style="-fx-background-color: CBD1E2; -fx-background-radius: 50px;">
+      <AnchorPane layoutX="532.0" layoutY="74.0" prefHeight="65.0" prefWidth="163.0" style="-fx-background-color: CBD1E2; -fx-background-radius: 10px;">
          <children>
-            <Text layoutX="50.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conducteurs">
+            <Text layoutX="13.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conducteurs">
                <font>
                   <Font name="Yu Gothic Light" size="29.0" />
                </font>
             </Text>
-            <Label fx:id="nbr_motor" layoutX="102.0" layoutY="46.0" text="N/A" textFill="#0004ff">
+            <Label fx:id="nbr_motor" layoutX="59.0" layoutY="46.0" text="N/A" textFill="#0004ff">
                <font>
                   <Font size="30.0" />
                </font>
@@ -56,7 +55,7 @@
             <Font name="Yu Gothic Light" size="29.0" />
          </font>
       </Text>
-      <AnchorPane fx:id="tablepanel" layoutX="343.0" layoutY="231.0" prefHeight="367.0" prefWidth="573.0">
+      <AnchorPane fx:id="tablepanel" layoutX="57.0" layoutY="201.0" prefHeight="367.0" prefWidth="573.0">
          <children>
             <TableView fx:id="table" layoutX="6.0" layoutY="40.0" onMouseClicked="#OnTableClick" prefHeight="320.0" prefWidth="528.0">
               <columns>
@@ -72,33 +71,33 @@
             <TextField fx:id="searchbar1" layoutX="6.0" layoutY="14.0" prefHeight="25.0" prefWidth="528.0" promptText="Recherche" />
          </children>
       </AnchorPane>
-      <ImageView fx:id="tablev" fitHeight="21.0" fitWidth="21.0" layoutX="349.0" layoutY="220.0" onMouseClicked="#ShowTable" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="tablev" fitHeight="21.0" fitWidth="21.0" layoutX="27.0" layoutY="201.0" onMouseClicked="#ShowTable" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/787235.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="listv" fitHeight="21.0" fitWidth="23.0" layoutX="349.0" layoutY="220.0" onMouseClicked="#ShowList" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="listv" fitHeight="21.0" fitWidth="23.0" layoutX="27.0" layoutY="201.0" onMouseClicked="#ShowList" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/1950715.png" />
          </image>
       </ImageView>
-      <Button fx:id="GoBack" layoutX="931.0" layoutY="52.0" mnemonicParsing="false" onAction="#GoHome" text="&lt;---" />
-      <ImageView fitHeight="32.0" fitWidth="35.0" layoutX="970.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="GoBack" layoutX="1162.0" layoutY="776.0" mnemonicParsing="false" onAction="#GoHome" text="&lt;---" />
+      <ImageView fitHeight="32.0" fitWidth="35.0" layoutX="1169.0" layoutY="13.0" onMouseClicked="#LogOut" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/2767155.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="45.0" fitWidth="35.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="65.0" fitWidth="48.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/ff.png" />
          </image>
       </ImageView>
-      <Label layoutX="59.0" layoutY="10.0" prefHeight="45.0" prefWidth="129.0" text="Dashboard">
+      <Label layoutX="74.0" layoutY="22.0" prefHeight="45.0" prefWidth="129.0" text="Dashboard">
          <font>
             <Font name="Berlin Sans FB" size="25.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="359.0" layoutY="598.0" prefHeight="320.0" prefWidth="500.0" style="-fx-background-color: E7ECF9; -fx-background-radius: 50px;">
+      <AnchorPane layoutX="637.0" layoutY="225.0" prefHeight="320.0" prefWidth="500.0" style="-fx-background-color: E7ECF9; -fx-background-radius: 50px;">
          <children>
             <TextField fx:id="matricule1" layoutX="78.0" layoutY="219.0" promptText="Matricule" style="-fx-background-radius: 50px;" />
             <TextField fx:id="uname1" layoutX="77.0" layoutY="24.0" promptText="Username" style="-fx-background-radius: 50px;" />
@@ -149,23 +148,28 @@
             <TextField fx:id="matricule" layoutX="77.0" layoutY="219.0" promptText="Matricule" style="-fx-background-radius: 50px;" />
          </children>
       </AnchorPane>
-      <Text layoutX="931.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="...">
+      <Text layoutX="1036.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="...">
          <font>
             <Font name="Yu Gothic Light" size="29.0" />
          </font>
       </Text>
-      <FontAwesomeIconView glyphName="QUESTION" layoutX="59.0" layoutY="844.0" size="20" wrappingWidth="12.857142925262451" />
-      <Text layoutX="86.0" layoutY="843.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assistance Clients">
+      <Text layoutX="76.0" layoutY="804.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assistance Clients">
          <font>
             <Font name="Yu Gothic Light" size="16.0" />
          </font>
       </Text>
-      <FontAwesomeIconView glyphName="WARNING" layoutX="59.0" layoutY="813.0" size="20" wrappingWidth="12.857142925262451" />
-      <Text layoutX="86.0" layoutY="813.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quoi de neuf?">
+      <Text layoutX="76.0" layoutY="767.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quoi de neuf?">
          <font>
             <Font name="Yu Gothic Light" size="16.0" />
          </font>
       </Text>
-      <Line endX="-100.0" endY="223.0" layoutX="323.0" layoutY="684.0" startX="-100.0" />
+      <Line endX="91.0" endY="-1.52587890625E-5" layoutX="128.0" layoutY="818.0" startX="-100.0" />
+      <Line endX="91.0" endY="-1.52587890625E-5" layoutX="128.0" layoutY="781.0" startX="-100.0" />
+      <Line fx:id="line" endX="91.0" endY="-1.52587890625E-5" layoutX="101.0" layoutY="87.0" startX="-100.0" />
+      <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="981.0" layoutY="18.0" onMouseClicked="#GoCalendar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/55281.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

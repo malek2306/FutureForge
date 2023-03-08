@@ -11,8 +11,47 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="848.0" prefWidth="1261.0" style="-fx-background-color: e2f5f8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ProfileController">
+<AnchorPane id="AnchorPane" fx:id="background" prefHeight="848.0" prefWidth="932.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ProfileController">
    <children>
+      <AnchorPane layoutX="835.0" prefHeight="848.0" prefWidth="443.0" style="-fx-background-color: #E2F5F8;">
+         <children>
+            <AnchorPane layoutX="114.0" layoutY="14.0" prefHeight="64.0" prefWidth="329.0">
+               <children>
+                  <ImageView fx:id="setting" fitHeight="28.0" fitWidth="25.0" layoutX="280.0" layoutY="14.0" onMouseEntered="#SettingHover" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/126472.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="setting1" fitHeight="43.0" fitWidth="49.0" layoutX="271.0" layoutY="5.0" onMouseExited="#SettingHoverOut" onMousePressed="#GoSetting" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/126472.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="43.0" fitWidth="49.0" layoutX="207.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/f0c404c8486dea5ab74ff001af848ab7.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="friend_list" fitHeight="43.0" fitWidth="34.0" layoutX="146.0" layoutY="8.0" onMouseEntered="#FriendHover" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/880594.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="friend_list1" fitHeight="43.0" fitWidth="49.0" layoutX="141.0" layoutY="3.0" onMouseExited="#FriendHoverExit" onMousePressed="#GoFriendList" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/880594.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="not_nb" layoutX="178.0" layoutY="30.0" prefHeight="16.0" prefWidth="15.0" style="-fx-background-color: red; -fx-background-radius: 150px;" text=" 0" textAlignment="CENTER" />
+                  <ImageView fitHeight="43.0" fitWidth="39.0" layoutX="75.0" layoutY="6.0" onMouseClicked="#GoDarkMode" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/180700.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
       <Label fx:id="user" layoutX="731.0" layoutY="2.0" prefHeight="43.0" prefWidth="29.0" text="..." textAlignment="CENTER">
          <font>
             <Font name="Yu Gothic Light" size="30.0" />
@@ -35,7 +74,7 @@
                   <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/VisualEditor_-_Icon_-_Menu.svg.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="171.0" fitWidth="134.0" layoutX="69.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="116.0" layoutX="81.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/logo.png" />
                </image>
@@ -59,14 +98,14 @@
             <Button layoutX="22.0" layoutY="422.0" mnemonicParsing="false" onAction="#GoOffre" prefHeight="43.0" prefWidth="181.0" style="-fx-border-color: black; -fx-background-color: white;" text="Offre" />
             <Button layoutX="22.0" layoutY="478.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="181.0" style="-fx-border-color: black; -fx-background-color: white;" text="Home" />
             <Button layoutX="22.0" layoutY="532.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="181.0" style="-fx-border-color: black; -fx-background-color: white;" text="Home" />
-            <ImageView fx:id="session_user_pfp" fitHeight="85.0" fitWidth="80.0" layoutX="86.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="session_user_pfp" fitHeight="85.0" fitWidth="80.0" layoutX="99.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../pfp/880594.png" />
                </image>
             </ImageView>
             <Button layoutX="22.0" layoutY="587.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="181.0" style="-fx-border-color: black; -fx-background-color: white;" text="Home" />
             <Button layoutX="22.0" layoutY="642.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="181.0" style="-fx-border-color: black; -fx-background-color: white;" text="Home" />
-            <Label fx:id="user1" layoutX="45.0" layoutY="284.0" prefHeight="17.0" prefWidth="158.0" style="-fx-background-color: #536ADF; -fx-background-radius: 50px;" text="meilleur utilisateur" textAlignment="CENTER">
+            <Label fx:id="user1" layoutX="60.0" layoutY="243.0" prefHeight="17.0" prefWidth="158.0" style="-fx-background-color: #536ADF; -fx-background-radius: 50px;" text="meilleur utilisateur" textAlignment="CENTER">
                <font>
                   <Font name="Yu Gothic Light" size="19.0" />
                </font>
@@ -83,32 +122,6 @@
             </Label>
          </children>
       </AnchorPane>
-      <ImageView fx:id="setting" fitHeight="28.0" fitWidth="25.0" layoutX="1230.0" layoutY="17.0" onMouseEntered="#SettingHover" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/126472.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="setting1" fitHeight="43.0" fitWidth="49.0" layoutX="1221.0" layoutY="8.0" onMouseExited="#SettingHoverOut" onMousePressed="#GoSetting" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/126472.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="49.0" layoutX="1157.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/f0c404c8486dea5ab74ff001af848ab7.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="friend_list" fitHeight="43.0" fitWidth="34.0" layoutX="1096.0" layoutY="11.0" onMouseEntered="#FriendHover" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/880594.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="friend_list1" fitHeight="43.0" fitWidth="49.0" layoutX="1091.0" layoutY="6.0" onMouseExited="#FriendHoverExit" onMousePressed="#GoFriendList" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/880594.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="not_nb" layoutX="1123.0" layoutY="34.0" prefHeight="16.0" prefWidth="15.0" style="-fx-background-color: red; -fx-background-radius: 150px;" text=" 0" textAlignment="CENTER" />
       <AnchorPane layoutY="796.0" prefHeight="52.0" prefWidth="1278.0" style="-fx-background-color: #4A73DA;">
          <children>
             <Text layoutX="56.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AMÉLIORERVOTRE VOYAGE">
@@ -124,15 +137,15 @@
             </Text>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="friendpanel" layoutX="418.0" layoutY="94.0" prefHeight="685.0" prefWidth="684.0">
+      <AnchorPane fx:id="friendpanel" layoutX="689.0" layoutY="98.0" prefHeight="685.0" prefWidth="577.0">
          <children>
             <TextField fx:id="recherche" layoutX="85.0" layoutY="14.0" prefHeight="43.0" prefWidth="386.0" promptText="Recherche" style="-fx-background-radius: 50px;" />
-            <ImageView fitHeight="43.0" fitWidth="49.0" layoutX="525.0" layoutY="14.0" onMouseClicked="#SearchMouseClick" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="29.0" fitWidth="34.0" layoutX="483.0" layoutY="21.0" onMouseClicked="#SearchMouseClick" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/122932.png" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="14.0" layoutY="68.0" prefHeight="177.0" prefWidth="558.0" style="-fx-background-radius: 50px; -fx-border-color: white; -fx-border-radius: 50px;">
+            <AnchorPane fx:id="panel" layoutX="14.0" layoutY="68.0" prefHeight="177.0" prefWidth="558.0" style="-fx-background-radius: 50px; -fx-border-color: white; -fx-border-radius: 50px;">
                <children>
                   <Label fx:id="uname" layoutX="88.0" layoutY="14.0" prefHeight="29.0" prefWidth="210.0" text="..." textAlignment="CENTER">
                      <font>
@@ -144,7 +157,7 @@
                         <Font name="Lucida Sans Unicode" size="14.0" />
                      </font>
                   </Button>
-                  <Label layoutX="35.0" layoutY="14.0" prefHeight="29.0" prefWidth="49.0" text="User:" textAlignment="CENTER" underline="true">
+                  <Label fx:id="label" layoutX="35.0" layoutY="14.0" prefHeight="29.0" prefWidth="49.0" text="User:" textAlignment="CENTER" underline="true">
                      <font>
                         <Font name="Lucida Sans Unicode" size="18.0" />
                      </font>
@@ -154,24 +167,25 @@
                         <Font name="Lucida Sans Unicode" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="35.0" layoutY="43.0" prefHeight="29.0" prefWidth="49.0" text="Role:" textAlignment="CENTER" underline="true">
+                  <Label fx:id="label1" layoutX="35.0" layoutY="43.0" prefHeight="29.0" prefWidth="49.0" text="Role:" textAlignment="CENTER" underline="true">
                      <font>
                         <Font name="Lucida Sans Unicode" size="18.0" />
                      </font>
                   </Label>
                   <ImageView fx:id="user_pfp" fitHeight="150.0" fitWidth="200.0" layoutX="279.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="user_add_pfp" fitHeight="150.0" fitWidth="200.0" layoutX="260.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="12.0" layoutY="257.0" prefHeight="369.0" prefWidth="558.0" style="-fx-background-radius: 50px; -fx-border-color: white; -fx-border-radius: 50px;">
+            <AnchorPane fx:id="panel1" layoutX="-1.0" layoutY="245.0" prefHeight="369.0" prefWidth="558.0" style="-fx-background-radius: 50px; -fx-border-color: white; -fx-border-radius: 50px;">
                <children>
                   <TextField fx:id="friendtodelete" layoutX="40.0" layoutY="119.0" />
-                  <Label layoutX="221.0" prefHeight="29.0" prefWidth="116.0" text="Liste d'amis" textAlignment="CENTER" underline="true">
+                  <Label fx:id="label2" layoutX="221.0" prefHeight="29.0" prefWidth="116.0" text="Liste d'amis" textAlignment="CENTER" underline="true">
                      <font>
                         <Font name="Lucida Sans Unicode" size="18.0" />
                      </font>
                   </Label>
                   <ListView fx:id="is_friend" layoutX="14.0" layoutY="109.0" onMouseClicked="#DeleteFriendList" prefHeight="219.0" prefWidth="200.0" />
-                  <Button fx:id="delete" layoutX="348.0" mnemonicParsing="false" onAction="#DeleteFriendButton" style="-fx-background-radius: 150px; -fx-background-color: red;" text="-">
+                  <Button fx:id="delete" layoutX="337.0" layoutY="296.0" mnemonicParsing="false" onAction="#DeleteFriendButton" prefHeight="10.0" prefWidth="25.0" style="-fx-background-radius: 150px; -fx-background-color: red;" text="-">
                      <font>
                         <Font name="Lucida Sans Unicode" size="14.0" />
                      </font>
@@ -182,7 +196,7 @@
                         <Font name="Lucida Sans Unicode" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="252.0" layoutY="261.0" prefHeight="29.0" prefWidth="49.0" text="Role:" textAlignment="CENTER" underline="true">
+                  <Label fx:id="label5" layoutX="252.0" layoutY="261.0" prefHeight="29.0" prefWidth="49.0" text="Role:" textAlignment="CENTER" underline="true">
                      <font>
                         <Font name="Lucida Sans Unicode" size="18.0" />
                      </font>
@@ -192,7 +206,7 @@
                         <Font name="Lucida Sans Unicode" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="252.0" layoutY="193.0" prefHeight="29.0" prefWidth="63.0" text="Nom:" textAlignment="CENTER" underline="true">
+                  <Label fx:id="label3" layoutX="252.0" layoutY="193.0" prefHeight="29.0" prefWidth="63.0" text="Nom:" textAlignment="CENTER" underline="true">
                      <font>
                         <Font name="Lucida Sans Unicode" size="18.0" />
                      </font>
@@ -202,7 +216,7 @@
                         <Font name="Lucida Sans Unicode" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="253.0" layoutY="222.0" prefHeight="29.0" prefWidth="80.0" text="Prenom:" textAlignment="CENTER" underline="true">
+                  <Label fx:id="label4" layoutX="253.0" layoutY="222.0" prefHeight="29.0" prefWidth="80.0" text="Prenom:" textAlignment="CENTER" underline="true">
                      <font>
                         <Font name="Lucida Sans Unicode" size="18.0" />
                      </font>
@@ -211,15 +225,14 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <ImageView fx:id="user_add_pfp" fitHeight="150.0" fitWidth="200.0" layoutX="393.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true" />
-      <AnchorPane fx:id="welcome" layoutX="258.0" layoutY="14.0" prefHeight="80.0" prefWidth="314.0">
+      <AnchorPane fx:id="welcome" layoutX="246.0" layoutY="6.0" prefHeight="139.0" prefWidth="134.0">
          <children>
-            <ImageView fx:id="welcome_pfp" fitHeight="52.0" fitWidth="56.0" layoutX="247.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="welcome_pfp" fitHeight="52.0" fitWidth="56.0" layoutX="25.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../pfp/880594.png" />
                </image>
             </ImageView>
-            <Label fx:id="session_user1" layoutX="111.0" layoutY="23.0" text="...">
+            <Label fx:id="session_user1" layoutX="25.0" layoutY="14.0" text="...">
                <font>
                   <Font name="Yu Gothic Light" size="20.0" />
                </font>
