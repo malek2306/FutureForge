@@ -96,7 +96,6 @@ public class ProfileController implements Initializable {
     private ImageView welcome_pfp;
     @FXML
     private Label welcome_name;
-    @FXML
     private AnchorPane welcome;
     @FXML
     private ImageView Friend_pfp;
@@ -133,12 +132,16 @@ public class ProfileController implements Initializable {
     private Label label3;
     @FXML
     private Label label4;
+    @FXML
+    private AnchorPane panetest;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        panel1.setVisible(false);
+        panel.setVisible(false);
         //slide
         Menu.setOnMouseClicked(event -> {
             TranslateTransition slide = new TranslateTransition();
@@ -424,7 +427,7 @@ public class ProfileController implements Initializable {
 
     @FXML
     private void GoOffre(ActionEvent event) throws IOException {
-        
+
     }
 
     @FXML
@@ -447,7 +450,19 @@ public class ProfileController implements Initializable {
         label5.setTextFill(Color.web("#2C74B3"));
         is_friend.setStyle("-fx-background-color: #2C74B3");
         is_friend.setStyle("-fx-text-color: #205295");
-        
+
+    }
+
+    @FXML
+    private void GoToAddFriend(MouseEvent event) {
+        panel.setVisible(true);
+        panel1.setVisible(false);
+    }
+
+    @FXML
+    private void GoToFriendList(MouseEvent event) {
+        panel.setVisible(false);
+        panel1.setVisible(true);
     }
 
 }
