@@ -9,6 +9,8 @@ import edu.evenement.services.Servicecategories;
 import edu.evenement.services.Serviceevenement;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,6 +24,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.*;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -57,14 +64,33 @@ public class ListeEvenements implements Initializable {
     private Button modif;
     @FXML
     private Button Action;
+    
+    @FXML
+    private BarChart<String,Number>eventsBarChart;
+     @FXML
+    private PieChart PieChart;
+
+       @FXML
+      private CategoryAxis dateAxis;
+
+        @FXML
+        private NumberAxis countAxis;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+       
         Serviceevenement ps = new Serviceevenement();
         userListObservable = FXCollections.observableArrayList(ps.getAll());
         usersListView.setItems(userListObservable);
         userCountLabel.setText("Total des evenements : " + userListObservable.size());
+        try {
+            generateBarChart();
+            generatePieChart();
+        } catch (SQLException ex) {
+            Logger.getLogger(ListeEvenements.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+    
 
     @FXML
 private void handleRefresh() {
@@ -184,6 +210,34 @@ alert1.showAndWait();
     private void lissst(ListView.EditEvent<Evenement> event) {
     }
     
+    
+    
+    private void generateBarChart() throws SQLException {
+        Serviceevenement sa = new Serviceevenement();
+        List<Object[]> eventsCountByDate = sa.getEvenementsCountByDate();
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        for (Object[] row :eventsCountByDate) {
+            series.getData().add(new XYChart.Data<>(row[0].toString(), (int) row[1]));
+        }
+        eventsBarChart.getData().add(series);
+        eventsBarChart.setLegendVisible(false);
+        eventsBarChart.setTitle("Appointments Count By Date");
+        
+    
 
 }
+   private void generatePieChart() throws SQLException {
+    Serviceevenement sa = new Serviceevenement();
+    List<Object[]> doctorsCountBySpecialty = sa.countEveByType();
+    ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
+    for (Object[] row : doctorsCountBySpecialty) {
+        String specialty = row[0].toString();
+        int count = (int) row[1];
+        pieChartData.add(new PieChart.Data(specialty, count));
+    }
+    PieChart.setData(pieChartData);
+    PieChart.setTitle("Number of events Specialty");
+    PieChart.setLegendVisible(false);
+}
+    }
 

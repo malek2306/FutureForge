@@ -13,8 +13,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
@@ -132,6 +135,34 @@ public Evenement getOneById(int id) {
     }
     return e;
 }
+public List<Object[]> getEvenementsCountByDate() throws SQLException {
+    List<Object[]> evenementsCountByDate = new ArrayList<>();
+    String req = "SELECT date, COUNT(*) as evenements_count FROM evenements GROUP BY date";
+    Statement st = cnx.createStatement();
+    ResultSet rs = st.executeQuery(req);
+    while (rs.next()) {
+        Object[] row = new Object[2];
+        row[0] = rs.getString("date");
+        row[1] = rs.getInt("evenements_count");
+        evenementsCountByDate.add(row);
+    }
+    return evenementsCountByDate;
+}
+ public List<Object[]> countEveByType() throws SQLException {
+    List<Object[]> countEveByType = new ArrayList<>();
+    String req = "select type, count(*) as eve_count from evenements group by type";
+    Statement st = cnx.createStatement();
+    ResultSet rs = st.executeQuery(req);
+    while (rs.next()) {
+        Object[] row = new Object[2];
+        row[0] = rs.getString("type");
+        row[1] = rs.getInt("eve_count");
+        countEveByType.add(row);
+    }
+    return countEveByType;
+}
+
+
 
    
 }
