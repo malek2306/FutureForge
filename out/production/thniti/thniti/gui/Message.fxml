@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="702.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thniti.gui.MessageController">
+   <right>
+      <HBox alignment="CENTER_RIGHT" prefHeight="702.0" prefWidth="420.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="contactsList" prefHeight="702.0" prefWidth="356.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="42.0" prefWidth="315.0" style="-fx-border-radius: 20 20 20 20; -fx-background-radius: 20 20 20 20;">
+                     <children>
+                        <ImageView fitHeight="27.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../img/search%20(1).png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <TextField prefHeight="25.0" prefWidth="162.0">
+                           <HBox.margin>
+                              <Insets left="1.0" />
+                           </HBox.margin></TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Pane prefHeight="5.0" prefWidth="315.0" />
+                  <ListView fx:id="conversationList" prefHeight="653.0" prefWidth="353.0" styleClass=".list-view:filled:hover" stylesheets="@sheet.css" />
+               </children>
+            </VBox>
+            <VBox alignment="BOTTOM_CENTER" prefHeight="702.0" prefWidth="70.0" style="-fx-background-color: CBD1E2;">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleDeleteConversation" prefHeight="41.0" prefWidth="50.0" style="-fx-background-radius: 50;">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../img/cross.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <stylesheets>
+                        <URL value="@../values/LightTheme.css" />
+                        <URL value="@../values/Start.css" />
+                     </stylesheets>
+                     <styleClass>
+                        <String fx:value="send-button" />
+                        <String fx:value="root" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#handleEditConversation" prefHeight="40.0" prefWidth="50.0" style="-fx-background-radius: 50;">
+                     <graphic>
+                        <ImageView fitHeight="33.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../img/pencil.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <stylesheets>
+                        <URL value="@../values/Start.css" />
+                        <URL value="@../values/LightTheme.css" />
+                     </stylesheets>
+                     <styleClass>
+                        <String fx:value="send-button" />
+                        <String fx:value="root" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="58.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="showButton" mnemonicParsing="false" onAction="#loadConversations" style="-fx-background-radius: 50;">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../img/chat%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <stylesheets>
+                        <URL value="@../values/Start.css" />
+                        <URL value="@../values/LightTheme.css" />
+                     </stylesheets>
+                     <styleClass>
+                        <String fx:value="send-button" />
+                        <String fx:value="root" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Region prefHeight="19.0" prefWidth="92.0" />
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </right>
+   <center>
+      <VBox prefHeight="702.0" prefWidth="399.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="72.0" prefWidth="581.0" style="-fx-background-color: CBD1E2;">
+               <children>
+                  <Label prefHeight="35.0" prefWidth="122.0" text="chat!" textFill="#00000094">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Circle fill="#00bc51" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <Label prefHeight="19.0" prefWidth="175.0" text="Online" textFill="#000000ab">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="73.0" prefWidth="248.0" style="-fx-background-radius: 20 20 00;" styleClass="linear-grad" stylesheets="@../resources/fullpackstyling.css">
+                     <children>
+                        <ImageView fitHeight="34.0" fitWidth="20.0" layoutX="-308.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../img/girl.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="172.0" layoutY="9.0" text="Bonjour!" textFill="#221f1f">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="goToHome" alignment="CENTER" layoutX="101.0" layoutY="16.0" mnemonicParsing="false" onAction="#btnHome" prefHeight="32.0" prefWidth="86.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20 20 0 0;" text="Enjoy!" textFill="#6494e1">
+                           <font>
+                              <Font name="Bell MT Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="stop" alignment="CENTER" layoutX="19.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnStop" prefHeight="32.0" prefWidth="79.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20 20 0 0;" text="Stop!" textFill="#6494e1">
+                           <font>
+                              <Font name="Bell MT Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <ScrollPane prefHeight="588.0" prefWidth="589.0">
+               <content>
+                  <Pane prefHeight="572.0" prefWidth="583.0">
+                     <children>
+                        <ListView id="chat" fx:id="messageList" prefHeight="575.0" prefWidth="583.0" stylesheets="@sheet.css" />
+                        <FontAwesomeIconView fill="#242524" glyphName="DOWNLOAD" layoutX="525.0" layoutY="553.0" lineSpacing="5.0" onMouseClicked="#download" size="30" text="" wrappingWidth="1.0" />
+                     </children>
+                  </Pane>
+               </content>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ScrollPane>
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="586.0">
+               <children>
+                  <JFXButton fx:id="statistique" onAction="#statistiqueAction" prefHeight="31.0" prefWidth="19.0" style="-fx-border-radius: 20 20 20 20; -fx-background-radius: 10; -fx-background-color: #fa9dc9;" text="statistique" />
+                  <TextField fx:id="messageField" prefHeight="40.0" prefWidth="403.0" />
+                  <FontAwesomeIconView fill="#0cfc18" glyphName="SEND" lineSpacing="5.0" onMouseClicked="#sendMessage" size="30" />
+                  <FontAwesomeIconView fill="#0addf7" glyphName="EDIT" onMouseClicked="#handleEditMessage" size="30" />
+                  <FontAwesomeIconView fill="#f20b0b" glyphName="TRASH" layoutX="-10.0" layoutY="-20.0" lineSpacing="5.0" onMouseClicked="#deleteMessage" size="30" wrappingWidth="12.0" x="-10.0" y="-9.0" />
+               </children></HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

@@ -6,15 +6,9 @@
 package thniti.gui;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.paint.Color;
 import javafx.stage.StageStyle;
@@ -30,7 +24,8 @@ public class login extends Application {
     public void start(Stage stage)throws Exception {
         
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
-        
+        //Parent root = FXMLLoader.load(getClass().getResource("discussion.fxml"));
+
        Scene scene = new Scene(root);
        
        stage.initStyle(StageStyle.TRANSPARENT);

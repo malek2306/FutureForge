@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
@@ -67,6 +68,15 @@ public class LoginController implements Initializable {
             }
         }
     }
+
+    public void dragged(MouseEvent mouseEvent) {
     }
+
+    public void pressed(MouseEvent mouseEvent) {
+    }
+
+    public void closeStage(MouseEvent mouseEvent) {
+    }
+}
     
 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thniti.gui.BackController">
+   <children>
+      <Button fx:id="reclamation" layoutX="167.0" layoutY="113.0" mnemonicParsing="false" onAction="#reclamation" prefHeight="13.0" prefWidth="284.0" text="la liste des reclamations ">
+         <effect>
+            <Lighting bumpInput="$null">
+               <light>
+                  <Light.Distant color="#7af2ff" />
+               </light>
+            </Lighting>
+         </effect></Button>
+      <Button fx:id="messageries" layoutX="166.0" layoutY="211.0" mnemonicParsing="false" onAction="#messageries" prefHeight="31.0" prefWidth="284.0" text="la liste des messageries">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#75e8ff" />
+               </light>
+            </Lighting>
+         </effect></Button>
+   </children>
+   <stylesheets>
+      <URL value="@style.css" />
+      <URL value="@style.css" />
+   </stylesheets>
+</AnchorPane>

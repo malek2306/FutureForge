@@ -80,7 +80,7 @@ public class FrontController implements Initializable {
     @FXML
     private void messagerie(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("Liste_1_1.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Message.fxml"));
             //Scene scene = new Scene(root, 1100, 650);
             Scene scene = new Scene(root);//fhemtha faza edhyka imchi hajet tefha le:p hhh
             Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
