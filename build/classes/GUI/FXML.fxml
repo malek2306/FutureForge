@@ -27,9 +27,9 @@
                </image>
             </ImageView>
             <Button fx:id="admin" layoutX="699.0" layoutY="17.0" mnemonicParsing="false" onAction="#goToAdmin" prefHeight="25.0" prefWidth="12.0" text="Admin" />
-            <Label fx:id="message" layoutX="177.0" layoutY="216.0" prefHeight="52.0" prefWidth="374.0" style="-fx-background-size: 25;" text="utilisez la voiture pour atteindre votre objectif" textAlignment="CENTER" textOverrun="CLIP">
+            <Label fx:id="message" layoutX="122.0" layoutY="218.0" prefHeight="60.0" prefWidth="484.0" style="-fx-background-size: 25;" text="utilisez la voiture pour atteindre votre objectif" textAlignment="CENTER" textOverrun="CLIP">
                <font>
-                  <Font name="Lucida Sans Unicode" size="16.0" />
+                  <Font name="Lucida Sans Unicode" size="21.0" />
                </font>
             </Label>
          </children>

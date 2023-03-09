@@ -10,37 +10,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="621.0" prefWidth="1236.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.SignupController">
+<AnchorPane id="AnchorPane" prefHeight="623.0" prefWidth="666.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.SignupController">
    <children>
-      <AnchorPane fx:id="signup_pane" prefHeight="621.0" prefWidth="442.0">
+      <AnchorPane fx:id="signup_pane" prefHeight="619.0" prefWidth="661.0">
          <children>
-            <TextField fx:id="code_hide" layoutX="201.0" layoutY="590.0" prefHeight="17.0" prefWidth="57.0" text="code_hide" />
-            <TextField fx:id="pfp" layoutX="246.0" layoutY="408.0" promptText="Matricule voiture" style="-fx-background-radius: 50px;" />
-            <Label layoutX="153.0" layoutY="14.0" text="Sign_Up" textFill="#78b9eb">
+            <TextField fx:id="code_hide" layoutX="428.0" layoutY="433.0" prefHeight="17.0" prefWidth="57.0" text="code_hide" />
+            <TextField fx:id="pfp" layoutX="457.0" layoutY="445.0" prefHeight="17.0" prefWidth="32.0" promptText="Matricule voiture" style="-fx-background-radius: 50px;" />
+            <Label layoutX="264.0" layoutY="4.0" text="Sign_Up" textFill="#78b9eb">
                <font>
                   <Font name="Lucida Sans Unicode" size="35.0" />
                </font>
             </Label>
-            <TextField fx:id="nom" layoutX="37.0" layoutY="82.0" promptText="Nom" style="-fx-background-radius: 50px;" />
-            <TextField fx:id="prenom" layoutX="37.0" layoutY="115.0" promptText="Prenom" style="-fx-background-radius: 50px;" />
-            <TextField fx:id="email" layoutX="37.0" layoutY="187.0" promptText="Email" style="-fx-background-radius: 50px;" />
-            <TextField fx:id="tel" layoutX="37.0" layoutY="222.0" promptText="Tel" style="-fx-background-radius: 50px;" />
-            <Button fx:id="submit" layoutX="147.0" layoutY="591.0" mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #78b9eb;" text="Submit!" />
-            <Label fx:id="nom_wrong" layoutX="193.0" layoutY="86.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
-            <Label fx:id="prenom_wrong" layoutX="193.0" layoutY="119.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
-            <Label fx:id="email_wrong" layoutX="193.0" layoutY="191.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
-            <Label fx:id="tel_wrong" layoutX="193.0" layoutY="226.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
-            <PasswordField fx:id="mdp" layoutX="37.0" layoutY="259.0" promptText="mot de passe" style="-fx-background-radius: 50px;" />
-            <TextField fx:id="uname" layoutX="37.0" layoutY="153.0" promptText="Username" style="-fx-background-radius: 50px;" />
-            <PasswordField fx:id="cmdp" layoutX="37.0" layoutY="295.0" promptText="confimer mot de passe" style="-fx-background-radius: 50px;" />
-            <Label fx:id="mdp_wrong" layoutX="193.0" layoutY="263.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
-            <Label fx:id="uname_wrong" layoutX="193.0" layoutY="157.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
-            <Label fx:id="cmdp_wrong" layoutX="193.0" layoutY="299.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
-            <CheckBox fx:id="checkBox" layoutX="52.0" layoutY="330.0" mnemonicParsing="false" onAction="#ShowMat" text="As-tu une voiture?" />
-            <TextField fx:id="mat" layoutX="37.0" layoutY="354.0" promptText="Matricule voiture" style="-fx-background-radius: 50px;" />
-            <Label fx:id="mat_wrong" layoutX="193.0" layoutY="358.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
-            <Button layoutX="52.0" layoutY="433.0" mnemonicParsing="false" onAction="#Pfp" prefHeight="32.0" prefWidth="149.0" text="Aouter photo de profil" />
-            <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" layoutX="245.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true">
+            <TextField fx:id="nom" layoutX="85.0" layoutY="128.0" prefHeight="32.0" prefWidth="171.0" promptText="Nom" style="-fx-background-radius: 50px;" />
+            <TextField fx:id="prenom" layoutX="85.0" layoutY="192.0" prefHeight="32.0" prefWidth="171.0" promptText="Prenom" style="-fx-background-radius: 50px;" />
+            <TextField fx:id="email" layoutX="85.0" layoutY="257.0" prefHeight="32.0" prefWidth="171.0" promptText="Email" style="-fx-background-radius: 50px;" />
+            <TextField fx:id="tel" layoutX="85.0" layoutY="327.0" prefHeight="32.0" prefWidth="171.0" promptText="Tel" style="-fx-background-radius: 50px;" />
+            <Button fx:id="submit" layoutX="204.0" layoutY="553.0" mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #78b9eb;" text="Submit!" />
+            <Label fx:id="nom_wrong" layoutX="64.0" layoutY="166.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
+            <Label fx:id="prenom_wrong" layoutX="64.0" layoutY="225.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
+            <Label fx:id="email_wrong" layoutX="64.0" layoutY="292.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
+            <Label fx:id="tel_wrong" layoutX="64.0" layoutY="358.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
+            <PasswordField fx:id="mdp" layoutX="371.0" layoutY="192.0" prefHeight="32.0" prefWidth="171.0" promptText="mot de passe" style="-fx-background-radius: 50px;" />
+            <TextField fx:id="uname" layoutX="371.0" layoutY="128.0" prefHeight="32.0" prefWidth="171.0" promptText="Username" style="-fx-background-radius: 50px;" />
+            <PasswordField fx:id="cmdp" layoutX="371.0" layoutY="257.0" prefHeight="32.0" prefWidth="171.0" promptText="confimer mot de passe" style="-fx-background-radius: 50px;" />
+            <Label fx:id="mdp_wrong" layoutX="350.0" layoutY="225.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
+            <Label fx:id="uname_wrong" layoutX="350.0" layoutY="158.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
+            <Label fx:id="cmdp_wrong" layoutX="350.0" layoutY="292.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
+            <CheckBox fx:id="checkBox" layoutX="111.0" layoutY="390.0" mnemonicParsing="false" onAction="#ShowMat" text="As-tu une voiture?" />
+            <TextField fx:id="mat" layoutX="87.0" layoutY="417.0" prefHeight="32.0" prefWidth="171.0" promptText="Matricule voiture" style="-fx-background-radius: 50px;" />
+            <Label fx:id="mat_wrong" layoutX="71.0" layoutY="450.0" prefHeight="17.0" prefWidth="212.0" textFill="RED" />
+            <Button layoutX="382.0" layoutY="327.0" mnemonicParsing="false" onAction="#Pfp" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: gray;" text="Aouter photo de profil" />
+            <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" layoutX="381.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/pfp.jpg" />
                </image>
@@ -50,25 +50,30 @@
                   <Image url="file:/C:/Users/Name/Documents/NetBeansProjects/thniyti_user/pfp/3916837.png" />
                </image>
             </ImageView>
-         </children>
-      </AnchorPane>
-      <Button fx:id="GoBack" layoutX="674.0" layoutY="440.0" mnemonicParsing="false" onAction="#GoHome" text="&lt;---" />
-      <ImageView fitHeight="632.0" fitWidth="794.0" layoutX="442.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="file:/C:/Users/Name/Pictures/Untitled-1.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="999.0" layoutY="12.0" text="Déjà membre?">
-         <font>
-            <Font name="Lucida Sans Unicode" size="17.0" />
-         </font>
-      </Label>
-      <Button layoutX="1130.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoLogin" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: white;" text="Login" />
-      <AnchorPane fx:id="codepane" layoutX="37.0" layoutY="235.0" prefHeight="130.0" prefWidth="457.0">
-         <children>
-            <TextField fx:id="verfication" layoutX="112.0" layoutY="14.0" prefHeight="58.0" prefWidth="182.0" promptText="Entrez le code de vérification" style="-fx-background-radius: 25px;" />
-            <Button fx:id="submit1" layoutX="14.0" layoutY="84.0" mnemonicParsing="false" onAction="#SubmitAfterCode" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #78b9eb;" text="Submit!" />
-            <Button fx:id="submit11" layoutX="243.0" layoutY="84.0" mnemonicParsing="false" onAction="#CancelVerfication" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: grey;" text="Cancel" />
+            <Label layoutX="442.0" layoutY="18.0" text="Déjà membre?">
+               <font>
+                  <Font name="Lucida Sans Unicode" size="17.0" />
+               </font>
+            </Label>
+            <Button layoutX="573.0" layoutY="20.0" mnemonicParsing="false" onAction="#GoLogin" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: white;" text="Login" />
+            <Button fx:id="GoBack" layoutX="5.0" layoutY="593.0" mnemonicParsing="false" onAction="#GoHome" prefHeight="17.0" prefWidth="0.0" text="&lt;---" />
+            <Label layoutX="76.0" layoutY="95.0" text="informations générales" textFill="#757575" underline="true">
+               <font>
+                  <Font name="Lucida Sans Unicode" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="342.0" layoutY="95.0" text="Information sur le compte" textFill="#757575" underline="true">
+               <font>
+                  <Font name="Lucida Sans Unicode" size="18.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="codepane" layoutX="78.0" layoutY="208.0" prefHeight="130.0" prefWidth="587.0">
+               <children>
+                  <TextField fx:id="verfication" layoutX="112.0" layoutY="14.0" prefHeight="58.0" prefWidth="182.0" promptText="Entrez le code de vérification" style="-fx-background-radius: 25px;" />
+                  <Button fx:id="submit1" layoutX="14.0" layoutY="84.0" mnemonicParsing="false" onAction="#SubmitAfterCode" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #78b9eb;" text="Submit!" />
+                  <Button fx:id="submit11" layoutX="243.0" layoutY="84.0" mnemonicParsing="false" onAction="#CancelVerfication" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: grey;" text="Cancel" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>

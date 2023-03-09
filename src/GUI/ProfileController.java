@@ -134,6 +134,10 @@ public class ProfileController implements Initializable {
     private Label label4;
     @FXML
     private AnchorPane panetest;
+    @FXML
+    private ImageView darkmode;
+    @FXML
+    private ImageView lightmode;
 
     /**
      * Initializes the controller class.
@@ -432,6 +436,8 @@ public class ProfileController implements Initializable {
 
     @FXML
     private void GoDarkMode(MouseEvent event) {
+        lightmode.setVisible(true);
+        darkmode.setVisible(false);
         background.setStyle("-fx-background-color: #0A2647");
         slider.setStyle("-fx-background-color: #144272");
         recherche.setStyle("-fx-text-color: #205295");
@@ -450,6 +456,7 @@ public class ProfileController implements Initializable {
         label5.setTextFill(Color.web("#2C74B3"));
         is_friend.setStyle("-fx-background-color: #2C74B3");
         is_friend.setStyle("-fx-text-color: #205295");
+        session_user1.setStyle("-fx-text-color: white");
 
     }
 
@@ -463,6 +470,31 @@ public class ProfileController implements Initializable {
     private void GoToFriendList(MouseEvent event) {
         panel.setVisible(false);
         panel1.setVisible(true);
+    }
+
+    @FXML
+    private void GoLightMode(MouseEvent event) {
+        lightmode.setVisible(false);
+        darkmode.setVisible(true);
+        background.setStyle("");
+        slider.setStyle("");
+        recherche.setStyle("");
+        recherche.setStyle("");
+        uname.setTextFill(Color.web("#2C74B3"));
+        role.setTextFill(Color.web("#2C74B3"));
+        friend_name.setTextFill(Color.web("#2C74B3"));
+        friend_prenom.setTextFill(Color.web("#2C74B3"));
+        friend_role.setTextFill(Color.web("#2C74B3"));
+        session_user.setTextFill(Color.web("#2C74B3"));
+        label.setTextFill(Color.web("#2C74B3"));
+        label1.setTextFill(Color.web("#2C74B3"));
+        label2.setTextFill(Color.web("#2C74B3"));
+        label3.setTextFill(Color.web("#2C74B3"));
+        label4.setTextFill(Color.web("#2C74B3"));
+        label5.setTextFill(Color.web("#2C74B3"));
+        is_friend.setStyle("-fx-background-color: #2C74B3");
+        is_friend.setStyle("-fx-text-color: #205295");
+        session_user1.setStyle("-fx-text-color: white");
     }
 
 }
