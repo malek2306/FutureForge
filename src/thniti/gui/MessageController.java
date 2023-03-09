@@ -455,7 +455,7 @@ public class MessageController /*implements WebSocketListener*/ {
 
 
     public void btnHome (ActionEvent event) {
-        playMusic("C:\\Users\\21692\\Downloads\\thniti\\Sound.wav");
+        playMusic("C:\\Users\\21692\\Downloads\\thniti\\ressources\\Sound.wav");
 
     }
 

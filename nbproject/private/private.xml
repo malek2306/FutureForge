@@ -3,20 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/21692/Documents/NetBeansProjects/thniti/src/thniti/gui/ListeController1_2.java</file>
-            <file>file:/C:/Users/21692/Documents/NetBeansProjects/thniti/src/thniti/gui/AjoutMessageController.java</file>
-            <file>file:/C:/Users/21692/Documents/NetBeansProjects/thniti/src/thniti/gui/ModifierController.java</file>
-            <file>file:/C:/Users/21692/Documents/NetBeansProjects/thniti/src/thniti/gui/login.java</file>
-            <file>file:/C:/Users/21692/Documents/NetBeansProjects/thniti/src/thniti/gui/BackController.java</file>
-            <file>file:/C:/Users/21692/Documents/NetBeansProjects/thniti/src/thniti/utils/Animations.java</file>
-            <file>file:/C:/Users/21692/Documents/NetBeansProjects/thniti/src/thniti/gui/BarChartController.java</file>
-            <file>file:/C:/Users/21692/Documents/NetBeansProjects/thniti/src/thniti/services/BadWordsFilter.java</file>
-            <file>file:/C:/Users/21692/Documents/NetBeansProjects/thniti/src/thniti/gui/AjouterRecController.java</file>
-            <file>file:/C:/Users/21692/Documents/NetBeansProjects/thniti/src/thniti/gui/ListeController1.java</file>
-            <file>file:/C:/Users/21692/Documents/NetBeansProjects/thniti/src/thniti/gui/style.css</file>
-            <file>file:/C:/Users/21692/Documents/NetBeansProjects/thniti/src/thniti/gui/LoginController.java</file>
-            <file>file:/C:/Users/21692/Documents/NetBeansProjects/thniti/src/thniti/gui/FrontController.java</file>
-            <file>file:/C:/Users/21692/Documents/NetBeansProjects/thniti/src/thniti/gui/ListeController1_1.java</file>
+            <file>file:/C:/Users/21692/Downloads/thniti/src/thniti/gui/login.java</file>
+            <file>file:/C:/Users/21692/Downloads/thniti/src/thniti/gui/style.css</file>
+            <file>file:/C:/Users/21692/Downloads/thniti/src/thniti/services/CRUDMessage.java</file>
+            <file>file:/C:/Users/21692/Downloads/thniti/src/thniti/gui/ListeController1.java</file>
+            <file>file:/C:/Users/21692/Downloads/thniti/src/thniti/gui/MessageController.java</file>
+            <file>file:/C:/Users/21692/Downloads/thniti/src/thniti/gui/ajouter_rec.fxml</file>
+            <file>file:/C:/Users/21692/Downloads/thniti/src/thniti/gui/FrontController.java</file>
+            <file>file:/C:/Users/21692/Downloads/thniti/src/thniti/gui/Front.fxml</file>
+            <file>file:/C:/Users/21692/Downloads/thniti/src/thniti/gui/AjouterRecController.java</file>
+            <file>file:/C:/Users/21692/Downloads/thniti/src/thniti/gui/Liste_1.fxml</file>
         </group>
     </open-files>
 </project-private>

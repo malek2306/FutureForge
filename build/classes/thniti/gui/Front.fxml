@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane id="AnchorPane" fx:id="ajouterButtton" prefHeight="1033.0" prefWidth="1404.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thniti.gui.FrontController">
+<AnchorPane id="AnchorPane" fx:id="ajouterButtton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="373.0" prefWidth="543.0" style="-fx-background-color: E2F5F8;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thniti.gui.FrontController">
    <children>
       <BorderPane fx:id="BorderPane" layoutX="318.0" layoutY="414.0" prefHeight="202.0" prefWidth="616.0" />
-      <Button fx:id="reclamtion" layoutX="586.0" layoutY="120.0" mnemonicParsing="false" onAction="#reclamation" prefHeight="41.0" prefWidth="95.0" style="-fx-background-color: black;" text="reclammer" textFill="#f5f3f3" />
-      <Button fx:id="messagerie" layoutX="707.0" layoutY="120.0" mnemonicParsing="false" onAction="#messagerie" prefHeight="41.0" prefWidth="112.0" style="-fx-background-color: black;" text="chat" textFill="#f8f5f5" />
+      <Button id="sale" fx:id="reclamation" layoutX="200.0" layoutY="108.0" mnemonicParsing="false" onAction="#reclamation" prefHeight="49.0" prefWidth="143.0" style="-fx-background-color: #2962ff;" stylesheets="@style.css" text="reclammer" textFill="#f5f3f3" />
+      <Button id="sale" fx:id="messagerie" layoutX="200.0" layoutY="272.0" mnemonicParsing="false" onAction="#messagerie" prefHeight="49.0" prefWidth="143.0" style="-fx-background-color: #2962ff;" stylesheets="@style.css" text="chat" textFill="#f8f5f5" />
+      <ImageView fitHeight="71.0" fitWidth="81.0" layoutX="236.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/m.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="71.0" fitWidth="71.0" layoutX="231.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/a.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

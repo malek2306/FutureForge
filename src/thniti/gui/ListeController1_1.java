@@ -51,10 +51,6 @@ public class ListeController1_1 implements Initializable {
     @FXML
     private Button Supprimerprod;
     @FXML
-    private Button stat;
-    @FXML
-    private Button ajouter;
-    @FXML
     private Button handleRefresh;
 
     @Override
@@ -118,7 +114,6 @@ alert1.showAndWait();
 
     
 
-    @FXML
     private void stat(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BarChart.fxml"));
@@ -160,7 +155,6 @@ alert1.showAndWait();
     userCountLabel.setText("Total des messages : " + userListObservable.size());
     }
 
-    @FXML
     private void ajouter(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ajouter_msg.fxml"));
         Parent root = (Parent) fxmlLoader.load();

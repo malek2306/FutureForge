@@ -33,11 +33,12 @@ public class FrontController implements Initializable {
     private BorderPane BorderPane;
    
     @FXML
-    private Button reclamtion;
-    @FXML
     private Button messagerie;
     @FXML
     private AnchorPane ajouterButtton;
+    private Button showRelatedFiles;
+    @FXML
+    private Button reclamation;
     
     
 
@@ -92,5 +93,10 @@ public class FrontController implements Initializable {
     }
 
     }
-}
+    public void showHandleBtn(ActionEvent event) throws Exception {
+        Parent root  = FXMLLoader.load(getClass().getResource("Liste_1.fxml"));
 
+        Stage window =(Stage) showRelatedFiles.getScene().getWindow();
+        window.setScene(new Scene(root, 1500, 1700));
+    }
+}

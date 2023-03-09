@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -9,16 +10,42 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="915.0" prefWidth="1254.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thniti.gui.ListeController1_2">
-   <VBox layoutX="105.0" layoutY="275.0" prefHeight="521.0" prefWidth="1057.0" spacing="10.0">
-      <HBox prefHeight="25.0" prefWidth="563.0" spacing="5.0">
-         <TextField fx:id="searchField" onAction="#searchField" promptText="Rechercher" />
-         <Button fx:id="traitter" mnemonicParsing="false" onAction="#traitter" onTouchMoved="#initialize" style="-fx-background-color: black;" text="traitter" textFill="WHITE" />
+<AnchorPane prefHeight="624.0" prefWidth="790.0" style="-fx-background-color: #64b5f6;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thniti.gui.ListeController1_2">
+   <VBox layoutX="81.0" layoutY="192.0" prefHeight="513.0" prefWidth="805.0" spacing="10.0">
+      <HBox prefHeight="4.0" prefWidth="846.0" spacing="5.0">
+         <children>
+            <Label fx:id="userCountLabel" text="Total des reclamations: " textFill="#393737">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
       </HBox>
-      <Label fx:id="userCountLabel" text="Total des reclamations: " textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font></Label>
-      <ListView fx:id="usersListView" prefHeight="300.0" prefWidth="661.0" />
+      <ListView fx:id="usersListView" prefHeight="336.0" prefWidth="792.0" />
+      <Button fx:id="traitter" mnemonicParsing="false" onAction="#traitter" onTouchMoved="#initialize" prefHeight="37.0" prefWidth="262.0" style="-fx-background-color: black;" text="traitter" textFill="WHITE">
+         <VBox.margin>
+            <Insets left="600.0" />
+         </VBox.margin>
+      </Button>
    </VBox>
+   <HBox prefHeight="81.0" prefWidth="941.0" style="-fx-background-color: #1565c0;">
+      <children>
+         <Label prefHeight="77.0" prefWidth="362.0" text="Reclamation">
+            <font>
+               <Font size="53.0" />
+            </font>
+            <HBox.margin>
+               <Insets left="250.0" />
+            </HBox.margin>
+         </Label>
+      </children>
+   </HBox>
+   <HBox layoutY="100.0" prefHeight="66.0" prefWidth="941.0">
+      <children>
+         <TextField fx:id="searchField" onAction="#searchField" prefHeight="37.0" prefWidth="786.0" promptText="Rechercher">
+            <HBox.margin>
+               <Insets left="120.0" />
+            </HBox.margin></TextField>
+      </children>
+   </HBox>
 </AnchorPane>
