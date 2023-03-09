@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="724.0" prefWidth="1081.0" style="-fx-background-color: #d7f1f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="abonnementfx.gui.AbonnementEtudent.AffichageOffre2Controller">
+   <children>
+      <Pane fx:id="pane1" layoutX="30.0" layoutY="196.0" onMouseClicked="#getSelectedOffre" prefHeight="386.0" prefWidth="324.0" style="-fx-border-color: #ababab; -fx-border-radius: 20;">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ababab" height="85.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="324.0" />
+            <Text fill="#686868" layoutX="23.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 mois" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="41.0" />
+               </font>
+            </Text>
+            <Text fx:id="prix1" fill="#686868" layoutX="31.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="120 Dt" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="51.0" />
+               </font>
+            </Text>
+            <Text fill="#686868" layoutX="27.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Garantie 30 jours satisfait ou remboursé" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="pane2" layoutX="402.0" layoutY="196.0" onMouseClicked="#getSelectedOffre" prefHeight="386.0" prefWidth="324.0" style="-fx-border-color: #ababab; -fx-border-radius: 20;">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ababab" height="85.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="324.0" />
+            <Text fill="#686868" layoutX="23.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6 mois" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="41.0" />
+               </font>
+            </Text>
+            <Text fx:id="prix2" fill="#686868" layoutX="31.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="120 Dt" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="51.0" />
+               </font>
+            </Text>
+            <Text fill="#686868" layoutX="31.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Garantie 30 jours satisfait ou remboursé" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="pane3" layoutX="768.0" layoutY="196.0" onMouseClicked="#getSelectedOffre" prefHeight="386.0" prefWidth="324.0" style="-fx-border-color: #ababab; -fx-border-radius: 20;">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ababab" height="85.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="324.0" />
+            <Text fill="#686868" layoutX="23.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12 mois" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="41.0" />
+               </font>
+            </Text>
+            <Text fx:id="prix3" fill="#686868" layoutX="31.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="120 Dt" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="51.0" />
+               </font>
+            </Text>
+            <Text fill="#686868" layoutX="29.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Garantie 30 jours satisfait ou remboursé" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="pane4" layoutX="30.0" layoutY="196.0" onMouseClicked="#getSelectedOffre" prefHeight="386.0" prefWidth="324.0" scaleX="1.1" scaleY="1.1" style="-fx-border-color: blue; -fx-border-radius: 20; -fx-border-width: 3;" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="85.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="324.0" />
+            <Text fill="WHITE" layoutX="23.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 mois" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="41.0" />
+               </font>
+            </Text>
+            <Text fx:id="prixR4" fill="BLUE" layoutX="31.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="120 Dt" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font name="System Bold" size="51.0" />
+               </font>
+            </Text>
+            <Text fill="#686868" layoutX="26.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Garantie 30 jours satisfait ou remboursé" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="59.0" layoutX="265.0" layoutY="17.0" stroke="WHITE" strokeType="INSIDE" width="52.0" />
+            <Ellipse fill="BLUE" layoutX="290.0" layoutY="80.0" radiusX="34.0" radiusY="16.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Text fill="BLUE" layoutX="262.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="remis" textAlignment="CENTER" wrappingWidth="57.200022250413895">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text fx:id="remis4" fill="BLUE" layoutX="262.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50%" textAlignment="CENTER" wrappingWidth="57.200022250413895">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text fx:id="prixSR4" fill="#c9c9c9" layoutX="29.0" layoutY="134.0" strikethrough="true" strokeType="OUTSIDE" strokeWidth="0.0" text="240 Dt" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fx:id="desc4" fill="#51748f" layoutX="30.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Black Friday" textAlignment="CENTER" wrappingWidth="271.99996876716614">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="pane5" layoutX="402.0" layoutY="196.0" onMouseClicked="#getSelectedOffre" prefHeight="386.0" prefWidth="324.0" scaleX="1.1" scaleY="1.1" style="-fx-border-color: blue; -fx-border-radius: 20; -fx-border-width: 3;" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="85.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="324.0" />
+            <Text fill="WHITE" layoutX="23.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6 mois" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="41.0" />
+               </font>
+            </Text>
+            <Text fx:id="prixR5" fill="BLUE" layoutX="31.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="120 Dt" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font name="System Bold" size="51.0" />
+               </font>
+            </Text>
+            <Text fill="#686868" layoutX="26.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Garantie 30 jours satisfait ou remboursé" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="59.0" layoutX="265.0" layoutY="17.0" stroke="WHITE" strokeType="INSIDE" width="52.0" />
+            <Ellipse fill="BLUE" layoutX="290.0" layoutY="80.0" radiusX="34.0" radiusY="16.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Text fill="BLUE" layoutX="262.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="remis" textAlignment="CENTER" wrappingWidth="57.200022250413895">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text fx:id="remis5" fill="BLUE" layoutX="262.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50%" textAlignment="CENTER" wrappingWidth="57.200022250413895">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text fx:id="prixSR5" fill="#c9c9c9" layoutX="29.0" layoutY="134.0" strikethrough="true" strokeType="OUTSIDE" strokeWidth="0.0" text="240 Dt" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fx:id="desc5" fill="#51748f" layoutX="41.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Black Friday" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="pane6" layoutX="776.0" layoutY="196.0" onMouseClicked="#getSelectedOffre" prefHeight="386.0" prefWidth="324.0" scaleX="1.1" scaleY="1.1" style="-fx-border-color: blue; -fx-border-radius: 20; -fx-border-width: 3;" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="85.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="324.0" />
+            <Text fill="WHITE" layoutX="23.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12 mois" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="41.0" />
+               </font>
+            </Text>
+            <Text fx:id="prixR6" fill="BLUE" layoutX="31.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="120 Dt" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font name="System Bold" size="51.0" />
+               </font>
+            </Text>
+            <Text fill="#686868" layoutX="26.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Garantie 30 jours satisfait ou remboursé" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="59.0" layoutX="265.0" layoutY="17.0" stroke="WHITE" strokeType="INSIDE" width="52.0" />
+            <Ellipse fill="BLUE" layoutX="290.0" layoutY="80.0" radiusX="34.0" radiusY="16.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Text fill="BLUE" layoutX="262.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="remis" textAlignment="CENTER" wrappingWidth="57.200022250413895">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text fx:id="remis6" fill="BLUE" layoutX="262.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50%" textAlignment="CENTER" wrappingWidth="57.200022250413895">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text fx:id="prixSR6" fill="#c9c9c9" layoutX="29.0" layoutY="134.0" strikethrough="true" strokeType="OUTSIDE" strokeWidth="0.0" text="240 Dt" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fx:id="desc6" fill="#51748f" layoutX="26.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Black Friday" textAlignment="CENTER" wrappingWidth="254.6708984375">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Button layoutX="832.0" layoutY="50.0" mnemonicParsing="false" onAction="#abonnementsBTN" prefHeight="52.0" prefWidth="264.0" style="-fx-background-color: #607d8b;" text="Mon Abonnement" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Text fill="BLUE" layoutX="441.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Offres" textAlignment="CENTER" wrappingWidth="245.50048828125">
+         <font>
+            <Font name="System Bold Italic" size="52.0" />
+         </font>
+      </Text>
+      <Text fx:id="cds" fill="#da1313" layoutX="301.0" layoutY="706.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etudiant a deja une abonnement fonctionnel" visible="false" wrappingWidth="572.1379979848862">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
