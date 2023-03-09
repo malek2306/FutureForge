@@ -21,7 +21,7 @@ public class Data {
     
     private final String USER = "root";
     private final String PWD = "";
-    private final String URL = "jdbc:mysql://localhost:3306/thniyti";
+    private final String URL = "jdbc:mysql://localhost:3306/thniyt2";
 
     private Data() {
         try {

@@ -114,6 +114,19 @@ public class ServiceUser {
         }
     }
 
+    /*public void modifierpfp(String username) throws IOException, SQLException {
+        String req = "UPDATE `user` SET pfp_u=? WHERE user_name LIKE" + username;
+        PreparedStatement ps = cnx.prepareStatement(req);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        byte[] buffer = new byte[1024];
+        int len;
+        while ((len = u.getPfp().read(buffer)) > -1) {
+            baos.write(buffer, 0, len);
+        }
+        baos.flush();
+        ps.setBytes(9, baos.toByteArray());
+    }*/
+
 
     /*public void ajouter2(User u) {
         try {
@@ -158,9 +171,9 @@ public class ServiceUser {
             System.out.println(ex.getMessage());
         }
     }
-    
+
     public void blockUser(String username) {
-        String req = "UPDATE `User` SET `active` = 1 WHERE user_name= ?";
+        String req = "UPDATE `User` SET `active` = 1  WHERE user_name= ?";
         try (PreparedStatement statement = cnx.prepareStatement(req)) {
             statement.setString(1, username);
             statement.executeUpdate();
@@ -168,7 +181,7 @@ public class ServiceUser {
             System.err.println("Error checking username: " + e.getMessage());
         }
     }
-    
+
     public void unblockUser(String username) {
         String req = "UPDATE `User` SET `active` = 0 WHERE user_name= ?";
         try (PreparedStatement statement = cnx.prepareStatement(req)) {
@@ -178,6 +191,7 @@ public class ServiceUser {
             System.err.println("Error checking username: " + e.getMessage());
         }
     }
+
     public boolean isBlocked(String username) {
         boolean isTaken = false;
         String req = "SELECT active FROM user WHERE user_name = ?";
@@ -196,7 +210,7 @@ public class ServiceUser {
         }
         return isTaken;
     }
-    
+
     public List<User> getAll() {
         List<User> list = new ArrayList<>();
         try {
@@ -213,6 +227,7 @@ public class ServiceUser {
 
         return list;
     }
+
     public List<User> Search(String text) {
         List<User> list = new ArrayList<>();
         try {

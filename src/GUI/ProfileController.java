@@ -146,6 +146,7 @@ public class ProfileController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         panel1.setVisible(false);
         panel.setVisible(false);
+        lightmode.setVisible(false);
         //slide
         Menu.setOnMouseClicked(event -> {
             TranslateTransition slide = new TranslateTransition();
@@ -439,6 +440,7 @@ public class ProfileController implements Initializable {
         lightmode.setVisible(true);
         darkmode.setVisible(false);
         background.setStyle("-fx-background-color: #0A2647");
+        panetest.setStyle("-fx-background-color: #0A2647");
         slider.setStyle("-fx-background-color: #144272");
         recherche.setStyle("-fx-text-color: #205295");
         recherche.setStyle("-fx-background-color: #2C74B3");
@@ -448,6 +450,7 @@ public class ProfileController implements Initializable {
         friend_prenom.setTextFill(Color.web("#2C74B3"));
         friend_role.setTextFill(Color.web("#2C74B3"));
         session_user.setTextFill(Color.web("#2C74B3"));
+        session_user1.setTextFill(Color.web("#2C74B3"));
         label.setTextFill(Color.web("#2C74B3"));
         label1.setTextFill(Color.web("#2C74B3"));
         label2.setTextFill(Color.web("#2C74B3"));
@@ -480,21 +483,22 @@ public class ProfileController implements Initializable {
         slider.setStyle("");
         recherche.setStyle("");
         recherche.setStyle("");
-        uname.setTextFill(Color.web("#2C74B3"));
-        role.setTextFill(Color.web("#2C74B3"));
-        friend_name.setTextFill(Color.web("#2C74B3"));
-        friend_prenom.setTextFill(Color.web("#2C74B3"));
-        friend_role.setTextFill(Color.web("#2C74B3"));
-        session_user.setTextFill(Color.web("#2C74B3"));
-        label.setTextFill(Color.web("#2C74B3"));
-        label1.setTextFill(Color.web("#2C74B3"));
-        label2.setTextFill(Color.web("#2C74B3"));
-        label3.setTextFill(Color.web("#2C74B3"));
-        label4.setTextFill(Color.web("#2C74B3"));
-        label5.setTextFill(Color.web("#2C74B3"));
-        is_friend.setStyle("-fx-background-color: #2C74B3");
-        is_friend.setStyle("-fx-text-color: #205295");
-        session_user1.setStyle("-fx-text-color: white");
+        panetest.setStyle("");
+        uname.setTextFill(Color.web("#000000"));
+        role.setTextFill(Color.web("#000000"));
+        friend_name.setTextFill(Color.web(""));
+        friend_prenom.setTextFill(Color.web("#000000"));
+        friend_role.setTextFill(Color.web("#000000"));
+        session_user.setTextFill(Color.web("#000000"));
+        label.setTextFill(Color.web("#000000"));
+        label1.setTextFill(Color.web("#000000"));
+        label2.setTextFill(Color.web("#000000"));
+        label3.setTextFill(Color.web("#000000"));
+        label4.setTextFill(Color.web("#000000"));
+        label5.setTextFill(Color.web("#000000"));
+        is_friend.setStyle("");
+        is_friend.setStyle("");
+        session_user1.setStyle("");
     }
 
 }

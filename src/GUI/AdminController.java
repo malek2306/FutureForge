@@ -28,6 +28,9 @@ import service.ServiceUser;
 import util.Data;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.TranslateTransition;
@@ -43,6 +46,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -148,6 +152,8 @@ public class AdminController implements Initializable {
     private Button block;
     @FXML
     private Button block1;
+    @FXML
+    private DatePicker date_block;
 
     //ObservableList<String> list = FXCollections.observableArrayList("s","ss");
     /**
@@ -430,6 +436,8 @@ public class AdminController implements Initializable {
 
     @FXML
     private void BlockUser(ActionEvent event) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
         Alert alert = new Alert(AlertType.CONFIRMATION, "êtes-vous sûr de vouloir bloquer " + uname.getText() + " ?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
         alert.showAndWait();
         if (alert.getResult() == ButtonType.YES) {

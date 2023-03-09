@@ -177,6 +177,11 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    private void GoForgotPassword(ActionEvent event) {
+    private void GoForgotPassword(ActionEvent event) throws IOException {
+        Parent homPage = FXMLLoader.load(getClass().getResource("forgotmdp.fxml"));
+        Scene homaepageScene = new Scene(homPage);
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage.setScene(homaepageScene);
+        appStage.show();
     }
 }

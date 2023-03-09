@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="369.0" prefWidth="260.0" style="-fx-background-color: #E2F5F8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ForgotmdpController">
+   <children>
+      <Label layoutX="30.0" layoutY="14.0" text="Mot de passe oublié?">
+         <font>
+            <Font name="Lucida Sans Unicode" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="old" layoutX="30.0" layoutY="73.0" prefHeight="49.0" prefWidth="204.0" promptText="ancien mot de passe" style="-fx-background-radius: 25px;" />
+      <TextField fx:id="newmdp" layoutX="30.0" layoutY="155.0" prefHeight="49.0" prefWidth="204.0" promptText="nouveau mot de passe" style="-fx-background-radius: 25px;" />
+      <TextField fx:id="confirm" layoutX="31.0" layoutY="213.0" prefHeight="49.0" prefWidth="204.0" promptText="confirmer nouveau mot de passe" style="-fx-background-radius: 25px;" />
+      <Button layoutX="99.0" layoutY="342.0" mnemonicParsing="false" onAction="#ConfirmChange" style="-fx-background-color: white; -fx-border-color: gray;" text="confirmer" />
+      <Label fx:id="message" layoutX="119.0" layoutY="262.0" text="..." textFill="RED" />
+   </children>
+</AnchorPane>
